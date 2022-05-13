@@ -14,7 +14,7 @@ namespace Flexbook.Data.Models.UserManagement
         public string LastName { get; set; }
 
         [Required]
-        [MaxLength(40)]
+        [MaxLength(30)]
         public string Username { get; private set; }
         [Required]
         [MaxLength(25)]

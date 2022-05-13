@@ -1,6 +1,5 @@
-﻿using Flexbook.Data.Models.UserManagement;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using Flexbook.Data.Models.ShoppingManagement;
+using Flexbook.Data.Models.UserManagement;
 
 namespace Flexbook.Data.Models.Users
 {
@@ -11,8 +10,8 @@ namespace Flexbook.Data.Models.Users
         string LandlineNumber { get; set; }
         string MobilePhoneNumber { get; set; }
         Email Email { get; set; }
-        ShoppingCart ShoppingCart { get; set; }
+        IShoppingCart ShoppingCart { get; set; }
         
-        void MakeOrder(Order order);
+        Order MakeOrder(IShoppingCart shoppingCart);
     }
 }
