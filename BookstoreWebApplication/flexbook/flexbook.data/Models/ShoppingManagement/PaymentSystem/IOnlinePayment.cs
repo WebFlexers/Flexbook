@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Flexbook.Data.Models.ShoppingManagement.PaymentSystem
 {
-    public interface IOnlinePayment : IPayment
+    public interface IOnlinePayment : IPayment, IDisposable
     {
         /// <summary>
         /// Processes the transaction and if it goes through

@@ -4,7 +4,7 @@
     {
         public string Owner { get; set; }
 
-        public CreditCard(string owner, char[] number, DateOnly expirationDate, string cvc)
+        public CreditCard(string owner, char[] number, DateOnly expirationDate, char[] cvc)
         {
             Owner = owner;
             _number = number;
@@ -14,7 +14,7 @@
 
         private char[] _number;
         private DateOnly _expirationDate;
-        private string _cvc;
+        private char[] _cvc;
         private bool _disposedValue;
 
         public decimal Price { get; set; }
