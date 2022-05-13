@@ -15,10 +15,10 @@ namespace Flexbook.Data.Models.UserManagement
 
         [Required]
         [MaxLength(30)]
-        public string Username { get; private set; }
+        public string Username { get; }
         [Required]
         [MaxLength(25)]
-        public char[] Password { get; private set; }
+        protected char[] Password { get; }
 
         public abstract void Login();
         public abstract void Logout();       

@@ -6,7 +6,7 @@
     public interface ILoginManagement
     {
         string Username { get; }
-        char[] Password { get; }
+
         /// <summary>
         /// Logs the user in the system
         /// </summary>

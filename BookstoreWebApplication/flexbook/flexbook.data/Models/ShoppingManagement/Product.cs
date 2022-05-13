@@ -2,7 +2,7 @@
 
 namespace Flexbook.Data.Models.ShoppingManagement
 {
-    public class Product
+    public class Product : IProduct
     {
         public int Id { get; set; }
 
@@ -17,8 +17,5 @@ namespace Flexbook.Data.Models.ShoppingManagement
 
         [MaxLength(250)]
         public string Image { get; set; }
-
-        public List<ProductAttribute> Attributes { get; set; }
-
     }
 }

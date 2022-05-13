@@ -4,7 +4,7 @@ namespace Flexbook.Data.Models.BanManagement
 {
     /// <summary>
     /// Singleton class that represents the 
-    /// currently banned or pardoned users
+    /// currently banned and pardoned users
     /// </summary>
     public class BanList
     {
