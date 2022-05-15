@@ -2,7 +2,7 @@
 
 namespace Flexbook.Data.Models.ShoppingManagement
 {
-    public class Product : IProduct
+    public class Product
     {
         public int Id { get; set; }
 

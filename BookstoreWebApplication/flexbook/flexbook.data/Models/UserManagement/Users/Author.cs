@@ -2,7 +2,7 @@
 
 namespace Flexbook.Data.Models.Users
 {
-    public class Author : UserBase, IAuthor
+    public class Author : UserBase
     {
         public override void Login()
         {

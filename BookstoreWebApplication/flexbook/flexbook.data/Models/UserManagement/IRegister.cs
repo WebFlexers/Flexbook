@@ -2,9 +2,6 @@
 {
     public interface IRegister
     {
-        /// <summary>
-        /// Registers a user
-        /// </summary>
         void Register();
     }
 }

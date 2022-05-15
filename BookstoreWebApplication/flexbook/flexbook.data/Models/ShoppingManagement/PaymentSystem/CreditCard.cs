@@ -1,29 +1,58 @@
-﻿namespace Flexbook.Data.Models.ShoppingManagement.PaymentSystem
+﻿using Flexbook.Data.Models.CustomExceptions;
+using Flexbook.Data.Models.UserManagement;
+
+namespace Flexbook.Data.Models.ShoppingManagement.PaymentSystem
 {
     public class CreditCard : IOnlinePayment, IDisposable
     {
-        public string Owner { get; set; }
-
-        public CreditCard(string owner, char[] number, DateOnly expirationDate, char[] cvc)
+        public CreditCard(char[] number, DateOnly expirationDate, char[] cvc)
         {
-            Owner = owner;
             _number = number;
             _expirationDate = expirationDate;
             _cvc = cvc;
         }
 
+        // Credit card information
         private char[] _number;
         private DateOnly _expirationDate;
         private char[] _cvc;
-        private bool _disposedValue;
 
         public decimal Price { get; set; }
+        public IUser PayingUser { get; set; }
 
         public bool ProcessTransaction()
         {
+            if (IsCreditCardValid(this) == false)
+                throw new InvalidCreditCardException();
+
             return true;
         }
 
+        /// <summary>
+        /// Sample method that checks the validity of the card
+        /// ATTENTION: This method will just check if the card
+        /// information has the correct structure and not if
+        /// it is an actual working card
+        /// </summary>
+        /// <param name="card"></param>
+        /// <returns></returns>
+        public static bool IsCreditCardValid(CreditCard card)
+        {
+            if (card._number.Length != 16)
+                return false;
+
+            if (card._expirationDate <= DateOnly.FromDateTime(DateTime.Now))
+                return false;
+
+            if (card._cvc.Length != 3)
+                return false;
+
+            return true;
+        }
+
+        #region Dispose logic
+
+        private bool _disposedValue;
         protected virtual void Dispose(bool disposing)
         {
             if (!_disposedValue)
@@ -52,5 +81,6 @@
             Dispose(disposing: true);
             GC.SuppressFinalize(this);
         }
+        #endregion
     }
 }

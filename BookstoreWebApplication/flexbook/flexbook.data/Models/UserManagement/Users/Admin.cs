@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Flexbook.Data.Models.Users
 {
-    public class Admin : UserBase, IAdmin
+    public class Admin : UserBase
     {
         [NotMapped]
         public IBanManagement BanManagement { get; set; }
