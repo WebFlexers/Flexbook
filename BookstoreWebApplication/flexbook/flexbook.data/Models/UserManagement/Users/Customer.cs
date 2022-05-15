@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Flexbook.Data.Models.Users
 {
-    public class Customer : UserBase
+    public class Customer : UserBase, IRegister
     {
         [Required]
         public Address Address { get; set; }
@@ -22,7 +22,7 @@ namespace Flexbook.Data.Models.Users
         public Email Email { get; set; }
 
         [NotMapped]
-        public IShoppingCart? ShoppingCart { get; set; }
+        public ShoppingCart? ShoppingCart { get; set; }
 
 
         public override void Login()
@@ -35,9 +35,12 @@ namespace Flexbook.Data.Models.Users
             throw new NotImplementedException();
         }
 
-        public Order MakeOrder(IShoppingCart shoppingCart)
+        public Order MakeOrder(ShoppingCart shoppingCart)
         {
-            return shoppingCart.CreateOrder();
+            if (shoppingCart != null)
+                return shoppingCart.CreateOrder();
+
+            return null;
         }
 
         public void Register()

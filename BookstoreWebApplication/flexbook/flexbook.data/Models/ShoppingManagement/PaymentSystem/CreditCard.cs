@@ -1,5 +1,6 @@
 ﻿using Flexbook.Data.Models.CustomExceptions;
 using Flexbook.Data.Models.UserManagement;
+using System.Diagnostics;
 
 namespace Flexbook.Data.Models.ShoppingManagement.PaymentSystem
 {
@@ -22,30 +23,36 @@ namespace Flexbook.Data.Models.ShoppingManagement.PaymentSystem
 
         public bool ProcessTransaction()
         {
-            if (IsCreditCardValid(this) == false)
-                throw new InvalidCreditCardException();
-
-            return true;
+            try
+            {
+                return IsCreditCardValid(this);
+            }
+            catch (InvalidCreditCardException ex)
+            {
+                Debug.WriteLine(ex.Message);
+                return false;
+            }
         }
 
         /// <summary>
-        /// Sample method that checks the validity of the card
+        /// <para> Sample method that checks the validity of the card </para>
         /// ATTENTION: This method will just check if the card
         /// information has the correct structure and not if
         /// it is an actual working card
         /// </summary>
         /// <param name="card"></param>
+        /// <exception cref="InvalidCreditCardException"></exception>
         /// <returns></returns>
         public static bool IsCreditCardValid(CreditCard card)
         {
             if (card._number.Length != 16)
-                return false;
+                throw new InvalidCreditCardException("The card number is not valid");
 
             if (card._expirationDate <= DateOnly.FromDateTime(DateTime.Now))
-                return false;
+                throw new InvalidCreditCardException("The card is expired");
 
             if (card._cvc.Length != 3)
-                return false;
+                throw new InvalidCreditCardException("The card cvc is not valid");
 
             return true;
         }
