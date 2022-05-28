@@ -1,6 +1,4 @@
-﻿using Flexbook.Data.Models.BanManagement;
-using Flexbook.Data.Models.Users;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace Flexbook.Data.DataAccess
 {

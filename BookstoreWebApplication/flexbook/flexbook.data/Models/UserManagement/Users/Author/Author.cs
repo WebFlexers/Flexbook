@@ -4,6 +4,6 @@ namespace Flexbook.Data.Models
 {
     public class Author : User
     {
-        private List<Book> books_list;
+        private List<Book> Books_List { get; set; }
     }
 }
