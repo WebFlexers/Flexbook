@@ -1,8 +1,8 @@
 ﻿using Flexbook.Data.Models.UserManagement;
 
-namespace Flexbook.Data.Models.Users
+namespace Flexbook.Data.Models
 {
-    public class Author : UserBase, IRegister
+    public class Author : User
     {
         public override void Login()
         {
