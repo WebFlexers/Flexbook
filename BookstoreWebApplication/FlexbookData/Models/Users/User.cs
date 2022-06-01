@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Flexbook.Data.Models
+namespace FlexbookData.Models
 {
     public abstract class User
     {
@@ -12,12 +12,12 @@ namespace Flexbook.Data.Models
         public string Username { get; set; }
         public string Password { get; set; }
         public string Fullname { get; set; }
-        public DateOnly Birthdate { get; set; }
-        public string City { get; set; }
-        public int Postcode { get; set; }
-        public string Local_Phone_Num { get; set; }
-        public string Mobile_Phone_Num { get; set; }
-        public string Email { get; set; }
 
+        /*private DateOnly Birthdate { get; set; }
+        private string City { get; set; }
+        private int Postcode { get; set; }
+        private string Local_Phone_Num { get; set; }
+        private string Mobile_Phone_Num { get; set; }
+        private string Email { get; set; }*/
     }
 }
