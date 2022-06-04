@@ -1,7 +1,8 @@
 @model User
+@using Microsoft.AspNetCore.Http
 
 @{
-    ViewData["Title"] = "Profile";
+    ViewData["Title"] = "Profile";    
 }
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -15,8 +16,8 @@
             </a>
           </div>                      
           <div class="media-body va-m">
-            <h2 class="media-heading">Michael Halls
-              <small> - Profile</small>
+            <h2 class="media-heading">@Context.Session.GetString("_Name");
+              <small> - #@Context.Session.GetString("_ID")</small>
             </h2>
             <p class="lead">Lorem ipsum dolor sit amet ctetur adicing elit, sed do eiusmod tempor incididunt</p>
             <div class="media-links">

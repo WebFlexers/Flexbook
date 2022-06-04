@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using FlexbookData.Models;
 
 namespace FlexbookWeb.Controllers
 {
@@ -14,15 +13,7 @@ namespace FlexbookWeb.Controllers
 
         public ActionResult Index()
         {
-            return View("Login");
-        }
-
-        public ActionResult LoginAuthor(Author author)
-        {
-            if (author.Username.Equals("Lefteris@gmail.com") && author.Password.Equals("12345"))
-                return View("Profile", author);
-            else
-                return Content("Invalid credentials");
+            return View("Profile");
         }
     }
 }
