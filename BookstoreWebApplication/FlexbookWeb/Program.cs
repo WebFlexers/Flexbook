@@ -1,9 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using FlexbookData.DataAccess;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDistributedMemoryCache();
+
+builder.Services.AddDbContext<BookstoreContext>(
+    o => o.UseNpgsql(builder.Configuration.GetConnectionString("BookstoreDB"))
+    ); ;
 
 builder.Services.AddSession(options =>
 {
