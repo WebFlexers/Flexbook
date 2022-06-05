@@ -2,6 +2,7 @@
 using FlexbookData.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -10,9 +11,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FlexbookData.Migrations
 {
     [DbContext(typeof(BookstoreContext))]
-    partial class BookstoreContextModelSnapshot : ModelSnapshot
+    [Migration("20220605155507_TableNamesChangedToAllFloorLetters")]
+    partial class TableNamesChangedToAllFloorLetters
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -23,35 +25,27 @@ namespace FlexbookData.Migrations
 
             modelBuilder.Entity("FlexbookData.Models.Author", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("text");
 
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasMaxLength(254)
-                        .HasColumnType("character varying(254)")
-                        .HasColumnName("email");
+                        .HasColumnType("character varying(254)");
 
                     b.Property<string>("Fullname")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("character varying(50)")
-                        .HasColumnName("fullname");
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("password");
+                        .HasColumnType("text");
 
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("character varying(50)")
-                        .HasColumnName("username");
+                        .HasColumnType("character varying(50)");
 
                     b.HasKey("Id");
 
@@ -62,53 +56,44 @@ namespace FlexbookData.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id");
+                        .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Category")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("character varying(50)")
-                        .HasColumnName("category");
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("description");
+                        .HasColumnType("text");
 
                     b.Property<string>("Genre")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("character varying(50)")
-                        .HasColumnName("genre");
+                        .HasColumnType("character varying(50)");
 
                     b.Property<string>("ISBN")
                         .IsRequired()
                         .HasMaxLength(13)
-                        .HasColumnType("character varying(13)")
-                        .HasColumnName("isbn");
+                        .HasColumnType("character varying(13)");
 
                     b.Property<string>("Image")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("character varying(100)")
-                        .HasColumnName("image");
+                        .HasColumnType("character varying(100)");
 
                     b.Property<int>("Pages")
-                        .HasColumnType("integer")
-                        .HasColumnName("pages");
+                        .HasColumnType("integer");
 
                     b.Property<int>("Price")
-                        .HasColumnType("integer")
-                        .HasColumnName("price");
+                        .HasColumnType("integer");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("character varying(50)")
-                        .HasColumnName("title");
+                        .HasColumnType("character varying(50)");
 
                     b.HasKey("Id");
 
