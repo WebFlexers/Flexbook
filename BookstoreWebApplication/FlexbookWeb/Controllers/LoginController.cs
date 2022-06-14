@@ -20,6 +20,7 @@ namespace FlexbookWeb.Controllers
             return View("Login");
         }
 
+        [HttpPost]
         public ActionResult LoginAuthor(Author author)
         {
             if (author.Username.Equals("Lefteris@gmail.com") && author.Password.Equals("12345"))

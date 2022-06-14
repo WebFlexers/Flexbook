@@ -11,7 +11,6 @@ namespace FlexbookData.DataAccess
     public class BookstoreContext : DbContext
     {
         public BookstoreContext(DbContextOptions options) : base(options) { }
-
         public DbSet<Author> authors { get; set; }
         public DbSet<Book> books { get; set; }
     }
