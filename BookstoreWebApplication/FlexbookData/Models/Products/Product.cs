@@ -19,15 +19,15 @@ namespace FlexbookData.Models
         public string Title { get; set; }
         [Column("description")]
         public string Description { get; set; }
-        [Column("image")]
+        [Required]
+        [Column("image_path")]
         [MaxLength(100)]
-        public string Image { get; set; }
+        public string ImagePath { get; set; }
         [Required]
-        [Column("price")]
-        public int Price { get; set; }
+        [Column("starting_price")]
+        public int Starting_Price { get; set; }
         [Required]
-        [MaxLength(50)]
-        [Column("category")]
-        public string Category { get; set; }
+        [Column("final_price")]
+        public int Final_Price { get; set; }
     }
 }

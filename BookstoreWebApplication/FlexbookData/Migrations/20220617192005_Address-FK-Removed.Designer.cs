@@ -3,6 +3,7 @@ using System;
 using FlexbookData.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FlexbookData.Migrations
 {
     [DbContext(typeof(BookstoreContext))]
-    partial class BookstoreContextModelSnapshot : ModelSnapshot
+    [Migration("20220617192005_Address-FK-Removed")]
+    partial class AddressFKRemoved
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -100,12 +102,7 @@ namespace FlexbookData.Migrations
                         .HasColumnType("character varying(50)")
                         .HasColumnName("username");
 
-                    b.Property<int>("addressId")
-                        .HasColumnType("integer");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("addressId");
 
                     b.ToTable("authors");
                 });
@@ -165,17 +162,6 @@ namespace FlexbookData.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("books");
-                });
-
-            modelBuilder.Entity("FlexbookData.Models.Author", b =>
-                {
-                    b.HasOne("FlexbookData.Models.Address", "Address")
-                        .WithMany()
-                        .HasForeignKey("addressId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Address");
                 });
 #pragma warning restore 612, 618
         }

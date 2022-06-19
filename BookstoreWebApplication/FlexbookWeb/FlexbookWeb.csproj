@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FlexbookData\FlexbookData.csproj" />
+    <ProjectReference Include="..\FlexbookServices\FlexbookServices.csproj" />
   </ItemGroup>
 
 </Project>

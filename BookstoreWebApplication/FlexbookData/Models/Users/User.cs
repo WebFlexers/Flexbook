@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FlexbookData.Models
 {
-    public abstract class User
+    public abstract class User : IUser
     {
         [Required]
         [Column("id")]
@@ -29,11 +29,18 @@ namespace FlexbookData.Models
         [Column("email")]
         [MaxLength(254)]
         public string Email { get; set; }
-
-        /*private DateOnly Birthdate { get; set; }
-        private string City { get; set; }
-        private int Postcode { get; set; }
-        private string Local_Phone_Num { get; set; }
-        private string Mobile_Phone_Num { get; set; }*/
+        [ForeignKey("address_id")]
+        public Address Address { get; set; }
+        [Required]
+        [Column("birthdate")]
+        public DateOnly Birthdate { get; set; }
+        [Required]
+        [Column("phone_num")]
+        [MaxLength(10)]
+        public string PhoneNumber { get; set; }
+        [Required]
+        [Column("image_path")]
+        [MaxLength(100)]
+        public string ImagePath { get; set; }
     }
 }
