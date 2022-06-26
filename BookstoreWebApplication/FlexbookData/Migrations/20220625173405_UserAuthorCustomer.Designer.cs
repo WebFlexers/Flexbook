@@ -3,6 +3,7 @@ using System;
 using FlexbookData.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FlexbookData.Migrations
 {
     [DbContext(typeof(FlexbookContext))]
-    partial class BookstoreContextModelSnapshot : ModelSnapshot
+    [Migration("20220625173405_UserAuthorCustomer")]
+    partial class UserAuthorCustomer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,10 +37,6 @@ namespace FlexbookData.Migrations
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("city");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("boolean")
-                        .HasColumnName("is_active");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -248,9 +246,9 @@ namespace FlexbookData.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Age")
-                        .HasColumnType("integer")
-                        .HasColumnName("age");
+                    b.Property<DateOnly>("Birthdate")
+                        .HasColumnType("date")
+                        .HasColumnName("birthdate");
 
                     b.Property<string>("Email")
                         .IsRequired()

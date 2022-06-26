@@ -3,6 +3,7 @@ using System;
 using FlexbookData.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FlexbookData.Migrations
 {
     [DbContext(typeof(FlexbookContext))]
-    partial class BookstoreContextModelSnapshot : ModelSnapshot
+    [Migration("20220626165707_DateOnlyFix2")]
+    partial class DateOnlyFix2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -248,9 +250,9 @@ namespace FlexbookData.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Age")
-                        .HasColumnType("integer")
-                        .HasColumnName("age");
+                    b.Property<DateTime>("Birthdate")
+                        .HasColumnType("date")
+                        .HasColumnName("birthdate");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -326,7 +328,7 @@ namespace FlexbookData.Migrations
                         .HasColumnType("character varying(13)")
                         .HasColumnName("isbn");
 
-                    b.Property<DateOnly>("Language")
+                    b.Property<DateTime>("Language")
                         .HasMaxLength(50)
                         .HasColumnType("date")
                         .HasColumnName("language");
@@ -335,7 +337,7 @@ namespace FlexbookData.Migrations
                         .HasColumnType("integer")
                         .HasColumnName("pages");
 
-                    b.Property<DateOnly>("Publication_Date")
+                    b.Property<DateTime>("Publication_Date")
                         .HasColumnType("date")
                         .HasColumnName("publication_date");
 

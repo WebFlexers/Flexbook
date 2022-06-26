@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FlexbookData.Models
 {
-    public abstract class User : IUser
+    public abstract class User
     {
         [Required]
         [Column("id")]
@@ -32,8 +32,8 @@ namespace FlexbookData.Models
         [ForeignKey("address_id")]
         public Address Address { get; set; }
         [Required]
-        [Column("birthdate")]
-        public DateOnly Birthdate { get; set; }
+        [Column("age")]
+        public int Age { get; set; }
         [Required]
         [Column("phone_num")]
         [MaxLength(10)]

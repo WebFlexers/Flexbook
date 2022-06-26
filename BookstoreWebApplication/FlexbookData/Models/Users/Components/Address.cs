@@ -26,6 +26,9 @@ namespace FlexbookData.Models
         [Required]
         [Column("postcode")]
         [StringLength(5)]
-        public string PostCode { get; set; } 
+        public string PostCode { get; set; }
+        [Required]
+        [Column("is_active")]
+        public bool IsActive { get; set; }
     }
 }

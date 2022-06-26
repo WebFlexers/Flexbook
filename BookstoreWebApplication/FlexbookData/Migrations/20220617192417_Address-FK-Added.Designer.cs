@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace FlexbookData.Migrations
 {
-    [DbContext(typeof(BookstoreContext))]
+    [DbContext(typeof(FlexbookContext))]
     [Migration("20220617192417_Address-FK-Added")]
     partial class AddressFKAdded
     {

@@ -3,6 +3,7 @@ using System;
 using FlexbookData.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FlexbookData.Migrations
 {
     [DbContext(typeof(FlexbookContext))]
-    partial class BookstoreContextModelSnapshot : ModelSnapshot
+    [Migration("20220625145057_ProductsTable-Deleted")]
+    partial class ProductsTableDeleted
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,10 +37,6 @@ namespace FlexbookData.Migrations
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("city");
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("boolean")
-                        .HasColumnName("is_active");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -214,6 +212,10 @@ namespace FlexbookData.Migrations
                         .HasColumnType("text")
                         .HasColumnName("description");
 
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<int>("Final_Price")
                         .HasColumnType("integer")
                         .HasColumnName("final_price");
@@ -236,7 +238,9 @@ namespace FlexbookData.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("products");
+                    b.ToTable("Product");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Product");
                 });
 
             modelBuilder.Entity("FlexbookData.Models.User", b =>
@@ -248,9 +252,13 @@ namespace FlexbookData.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Age")
-                        .HasColumnType("integer")
-                        .HasColumnName("age");
+                    b.Property<DateOnly>("Birthdate")
+                        .HasColumnType("date")
+                        .HasColumnName("birthdate");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -294,20 +302,16 @@ namespace FlexbookData.Migrations
 
                     b.HasIndex("address_id");
 
-                    b.ToTable("users");
+                    b.ToTable("User");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("User");
                 });
 
             modelBuilder.Entity("FlexbookData.Models.Author", b =>
                 {
                     b.HasBaseType("FlexbookData.Models.User");
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(510)
-                        .HasColumnType("character varying(510)")
-                        .HasColumnName("description");
-
-                    b.ToTable("authors", (string)null);
+                    b.HasDiscriminator().HasValue("Author");
                 });
 
             modelBuilder.Entity("FlexbookData.Models.Book", b =>
@@ -361,20 +365,14 @@ namespace FlexbookData.Migrations
 
                     b.HasIndex("product_id");
 
-                    b.ToTable("books");
+                    b.HasDiscriminator().HasValue("Book");
                 });
 
             modelBuilder.Entity("FlexbookData.Models.Customer", b =>
                 {
                     b.HasBaseType("FlexbookData.Models.User");
 
-                    b.Property<string>("FaxNumber")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)")
-                        .HasColumnName("fax_num");
-
-                    b.ToTable("customer", (string)null);
+                    b.HasDiscriminator().HasValue("Customer");
                 });
 
             modelBuilder.Entity("FlexbookData.Models.Comment", b =>
@@ -456,23 +454,8 @@ namespace FlexbookData.Migrations
                     b.Navigation("Address");
                 });
 
-            modelBuilder.Entity("FlexbookData.Models.Author", b =>
-                {
-                    b.HasOne("FlexbookData.Models.User", null)
-                        .WithOne()
-                        .HasForeignKey("FlexbookData.Models.Author", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("FlexbookData.Models.Book", b =>
                 {
-                    b.HasOne("FlexbookData.Models.Product", null)
-                        .WithOne()
-                        .HasForeignKey("FlexbookData.Models.Book", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("FlexbookData.Models.Author", "author")
                         .WithMany()
                         .HasForeignKey("author_id")
@@ -488,15 +471,6 @@ namespace FlexbookData.Migrations
                     b.Navigation("author");
 
                     b.Navigation("product");
-                });
-
-            modelBuilder.Entity("FlexbookData.Models.Customer", b =>
-                {
-                    b.HasOne("FlexbookData.Models.User", null)
-                        .WithOne()
-                        .HasForeignKey("FlexbookData.Models.Customer", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

@@ -10,7 +10,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace FlexbookData.Migrations
 {
-    [DbContext(typeof(BookstoreContext))]
+    [DbContext(typeof(FlexbookContext))]
     [Migration("20220605150609_InitialDatabase")]
     partial class InitialDatabase
     {

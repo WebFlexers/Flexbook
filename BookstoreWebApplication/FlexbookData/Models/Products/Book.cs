@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FlexbookData.Models
 {
+    [Table("books")]
     public class Book : Product
     {
         [Required]

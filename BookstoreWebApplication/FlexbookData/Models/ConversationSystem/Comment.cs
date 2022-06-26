@@ -18,7 +18,7 @@ namespace FlexbookData.Models
         [MaxLength(100)]
         public string ImagePath { get; set; }
         [Required]
-        [Column("date_written")]
+        [Column("datetime_written")]
         public DateTime DateWritten { get; set; }
         [Required]
         [Column("likes")]

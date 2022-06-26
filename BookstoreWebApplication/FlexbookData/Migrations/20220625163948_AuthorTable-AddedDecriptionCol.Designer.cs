@@ -3,6 +3,7 @@ using System;
 using FlexbookData.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FlexbookData.Migrations
 {
     [DbContext(typeof(FlexbookContext))]
-    partial class BookstoreContextModelSnapshot : ModelSnapshot
+    [Migration("20220625163948_AuthorTable-AddedDecriptionCol")]
+    partial class AuthorTableAddedDecriptionCol
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,10 +38,6 @@ namespace FlexbookData.Migrations
                         .HasColumnType("text")
                         .HasColumnName("city");
 
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("boolean")
-                        .HasColumnName("is_active");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -59,6 +57,70 @@ namespace FlexbookData.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("address");
+                });
+
+            modelBuilder.Entity("FlexbookData.Models.Author", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateOnly>("Birthdate")
+                        .HasColumnType("date")
+                        .HasColumnName("birthdate");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(510)
+                        .HasColumnType("character varying(510)")
+                        .HasColumnName("description");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(254)
+                        .HasColumnType("character varying(254)")
+                        .HasColumnName("email");
+
+                    b.Property<string>("Fullname")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)")
+                        .HasColumnName("fullname");
+
+                    b.Property<string>("ImagePath")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)")
+                        .HasColumnName("image_path");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("password");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)")
+                        .HasColumnName("phone_num");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)")
+                        .HasColumnName("username");
+
+                    b.Property<int>("address_id")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("address_id");
+
+                    b.ToTable("authors", (string)null);
                 });
 
             modelBuilder.Entity("FlexbookData.Models.Comment", b =>
@@ -93,14 +155,9 @@ namespace FlexbookData.Migrations
                     b.Property<int>("conversation_id")
                         .HasColumnType("integer");
 
-                    b.Property<int>("user_id")
-                        .HasColumnType("integer");
-
                     b.HasKey("Id");
 
                     b.HasIndex("conversation_id");
-
-                    b.HasIndex("user_id");
 
                     b.ToTable("comments");
                 });
@@ -114,19 +171,72 @@ namespace FlexbookData.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("host_id")
-                        .HasColumnType("integer");
-
                     b.Property<int>("initial_comment_id")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("host_id");
-
                     b.HasIndex("initial_comment_id");
 
                     b.ToTable("conversations");
+                });
+
+            modelBuilder.Entity("FlexbookData.Models.Customer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateOnly>("Birthdate")
+                        .HasColumnType("date")
+                        .HasColumnName("birthdate");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(254)
+                        .HasColumnType("character varying(254)")
+                        .HasColumnName("email");
+
+                    b.Property<string>("Fullname")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)")
+                        .HasColumnName("fullname");
+
+                    b.Property<string>("ImagePath")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)")
+                        .HasColumnName("image_path");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("password");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)")
+                        .HasColumnName("phone_num");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)")
+                        .HasColumnName("username");
+
+                    b.Property<int>("address_id")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("address_id");
+
+                    b.ToTable("customers", (string)null);
                 });
 
             modelBuilder.Entity("FlexbookData.Models.Order", b =>
@@ -239,77 +349,6 @@ namespace FlexbookData.Migrations
                     b.ToTable("products");
                 });
 
-            modelBuilder.Entity("FlexbookData.Models.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasColumnName("id");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Age")
-                        .HasColumnType("integer")
-                        .HasColumnName("age");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(254)
-                        .HasColumnType("character varying(254)")
-                        .HasColumnName("email");
-
-                    b.Property<string>("Fullname")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)")
-                        .HasColumnName("fullname");
-
-                    b.Property<string>("ImagePath")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)")
-                        .HasColumnName("image_path");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("password");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)")
-                        .HasColumnName("phone_num");
-
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)")
-                        .HasColumnName("username");
-
-                    b.Property<int>("address_id")
-                        .HasColumnType("integer");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("address_id");
-
-                    b.ToTable("users");
-                });
-
-            modelBuilder.Entity("FlexbookData.Models.Author", b =>
-                {
-                    b.HasBaseType("FlexbookData.Models.User");
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(510)
-                        .HasColumnType("character varying(510)")
-                        .HasColumnName("description");
-
-                    b.ToTable("authors", (string)null);
-                });
-
             modelBuilder.Entity("FlexbookData.Models.Book", b =>
                 {
                     b.HasBaseType("FlexbookData.Models.Product");
@@ -364,17 +403,15 @@ namespace FlexbookData.Migrations
                     b.ToTable("books");
                 });
 
-            modelBuilder.Entity("FlexbookData.Models.Customer", b =>
+            modelBuilder.Entity("FlexbookData.Models.Author", b =>
                 {
-                    b.HasBaseType("FlexbookData.Models.User");
+                    b.HasOne("FlexbookData.Models.Address", "Address")
+                        .WithMany()
+                        .HasForeignKey("address_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Property<string>("FaxNumber")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)")
-                        .HasColumnName("fax_num");
-
-                    b.ToTable("customer", (string)null);
+                    b.Navigation("Address");
                 });
 
             modelBuilder.Entity("FlexbookData.Models.Comment", b =>
@@ -385,34 +422,29 @@ namespace FlexbookData.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FlexbookData.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("user_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Conversation");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("FlexbookData.Models.Conversation", b =>
                 {
-                    b.HasOne("FlexbookData.Models.User", "Host")
-                        .WithMany()
-                        .HasForeignKey("host_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("FlexbookData.Models.Comment", "InitialComment")
                         .WithMany()
                         .HasForeignKey("initial_comment_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Host");
-
                     b.Navigation("InitialComment");
+                });
+
+            modelBuilder.Entity("FlexbookData.Models.Customer", b =>
+                {
+                    b.HasOne("FlexbookData.Models.Address", "Address")
+                        .WithMany()
+                        .HasForeignKey("address_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Address");
                 });
 
             modelBuilder.Entity("FlexbookData.Models.Order", b =>
@@ -445,26 +477,6 @@ namespace FlexbookData.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("FlexbookData.Models.User", b =>
-                {
-                    b.HasOne("FlexbookData.Models.Address", "Address")
-                        .WithMany()
-                        .HasForeignKey("address_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Address");
-                });
-
-            modelBuilder.Entity("FlexbookData.Models.Author", b =>
-                {
-                    b.HasOne("FlexbookData.Models.User", null)
-                        .WithOne()
-                        .HasForeignKey("FlexbookData.Models.Author", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("FlexbookData.Models.Book", b =>
                 {
                     b.HasOne("FlexbookData.Models.Product", null)
@@ -488,15 +500,6 @@ namespace FlexbookData.Migrations
                     b.Navigation("author");
 
                     b.Navigation("product");
-                });
-
-            modelBuilder.Entity("FlexbookData.Models.Customer", b =>
-                {
-                    b.HasOne("FlexbookData.Models.User", null)
-                        .WithOne()
-                        .HasForeignKey("FlexbookData.Models.Customer", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

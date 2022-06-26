@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using FlexbookData.DataAccess;
+using FlexbookData.Models;
+using FlexbookServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +10,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDistributedMemoryCache();
 
-builder.Services.AddDbContext<BookstoreContext>(
+builder.Services.AddDbContext<FlexbookContext>(
     o => o.UseNpgsql(builder.Configuration.GetConnectionString("BookstoreDB"))
     ); ;
 
@@ -20,6 +22,8 @@ builder.Services.AddSession(options =>
 });
 
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<IBaseService<Author>, BaseService<Author>>();
 
 var app = builder.Build();
 
