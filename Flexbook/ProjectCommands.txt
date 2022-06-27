@@ -1,14 +1,14 @@
-* GoodBooks solution creation:
+* Flexbook solution creation:
 
-dotnet new sln
-dotnet new webapi -o GoodBooks.Web
-dotnet new classlib -f net6.0 -o GoodBooks.Data
-dotnet new classlib -f net6.0 -o GoodBooks.Services
-dotnet dotnet new xunit -o GoodBooks.Testing
-dotnet sln add GoodBooks.Web
-dotnet sln add GoodBooks.Data
-dotnet sln add GoodBooks.Services
-dotnet sln add GoodBooks.Testing
+dotnet new sln;
+dotnet new webapi -o Flexbook.Web;
+dotnet new classlib -f net6.0 -o Flexbook.Data;
+dotnet new classlib -f net6.0 -o Flexbook.Services;
+dotnet dotnet new xunit -o Flexbook.Testing;
+dotnet sln add Flexbook.Web;
+dotnet sln add Flexbook.Data;
+dotnet sln add Flexbook.Services;
+dotnet sln add Flexbook.Testing;
 
 * Use makefile for migrations
 

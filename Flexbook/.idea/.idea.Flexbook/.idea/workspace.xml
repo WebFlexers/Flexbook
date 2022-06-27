@@ -6,10 +6,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="532a4a97-a58b-4fcc-b470-d4cd19bdbb9e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Flexbook.Data/DataAccess/FlexbookDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ProjectCommands.txt.kate-swp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Flexbook.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Flexbook.Data.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Product.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Flexbook.Web.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Flexbook.Web.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectCommands.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectCommands.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +78,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1656334768725</updated>
-      <workItem from="1656334778096" duration="2578000" />
+      <workItem from="1656334778096" duration="4257000" />
     </task>
     <servers />
   </component>
