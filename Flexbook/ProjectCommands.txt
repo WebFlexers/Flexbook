@@ -1,0 +1,20 @@
+* GoodBooks solution creation:
+
+dotnet new sln
+dotnet new webapi -o GoodBooks.Web
+dotnet new classlib -f net6.0 -o GoodBooks.Data
+dotnet new classlib -f net6.0 -o GoodBooks.Services
+dotnet dotnet new xunit -o GoodBooks.Testing
+dotnet sln add GoodBooks.Web
+dotnet sln add GoodBooks.Data
+dotnet sln add GoodBooks.Services
+dotnet sln add GoodBooks.Testing
+
+* Use makefile for migrations
+
+1) Install the dotnet-ef tool using: dotnet tool install --global dotnet-ef --version 6.0.4
+2) Execute command: make migrations mname=Initial
+
+* Run vue project command
+
+yarn run serve
