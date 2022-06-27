@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Flexbook.Data\Flexbook.Data.csproj" />
+  </ItemGroup>
+
 </Project>

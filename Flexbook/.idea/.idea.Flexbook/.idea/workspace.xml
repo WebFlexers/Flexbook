@@ -6,28 +6,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="532a4a97-a58b-4fcc-b470-d4cd19bdbb9e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.MakeFile.swp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220627160611_Initial.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220627160611_Initial.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/FlexbookDbContextModelSnapshot.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Models/UserInteraction/BookReview.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UML/Knowledge/edu_material_uml.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../UML/Phase1/ClassDiagramV1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Services/Books/BookService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Services/Books/IBookService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Services/CrudService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Services/ICrudService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.MakeFile.swp" beforeDir="false" afterPath="$PROJECT_DIR$/.MakeFile.swp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/DataAccess/FlexbookDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/DataAccess/FlexbookDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/ConversationSystem/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/UserInteraction/Comment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/ConversationSystem/Conversation.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/OrderSystem/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/OrderSystem/Order.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/OrderSystem/OrderItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/OrderSystem/OrderItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Book.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Product.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Users/Author.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Users/Author.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Users/Components/Address.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Users/Components/Address.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Users/Customer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Users/Customer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Users/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Users/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UML_diagrams/Phase1/ClassDiagramV1.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UML_diagrams/UML Knowledge/edu_material_uml.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/UserInteraction/BookReview.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/UserInteraction/BookReview.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Services/Flexbook.Services.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Services/Flexbook.Services.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +83,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1656334768725</updated>
-      <workItem from="1656334778096" duration="10328000" />
+      <workItem from="1656334778096" duration="13195000" />
     </task>
     <servers />
   </component>
