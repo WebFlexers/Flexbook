@@ -14,6 +14,12 @@ namespace Flexbook.Data.Models.Products
         [Column("id")]
         public int Id { get; set; }
         [Required]
+        [Column("created_on")]
+        public DateTime CreatedOn { get; set; }
+        [Required]
+        [Column("updated_on")]
+        public DateTime UpdatedOn { get; set; }
+        [Required]
         [Column("title")]
         [MaxLength(50)]
         public string Title { get; set; }
