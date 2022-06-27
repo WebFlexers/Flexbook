@@ -1,0 +1,6 @@
+#!/bin/bash
+
+tty -s || exec konsole -e $0 "$@"
+
+cd Flexbook.Quasar
+yarn quasar dev
