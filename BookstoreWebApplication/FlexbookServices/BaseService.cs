@@ -16,29 +16,29 @@ namespace FlexbookServices
             _dbContext = dbContext;
         }
 
-        public T GetById(int id)
+        public virtual T GetById(int id)
         {
             return _dbContext.Set<T>().Find(id);
         }
 
-        public IEnumerable<T> GetAll()
+        public virtual IEnumerable<T> GetAll()
         {
             return _dbContext.Set<T>().ToList();
         }
 
-        public void Insert(T entity)
+        public virtual void Insert(T entity)
         {
             _dbContext.Add(entity);
             _dbContext.SaveChanges();
         }
 
-        public void Delete(T entity)
+        public virtual void Delete(T entity)
         {
             _dbContext.Remove(entity);
             _dbContext.SaveChanges();
         }
 
-        public void Update(T entity)
+        public virtual void Update(T entity)
         {
             _dbContext.Update(entity);
             _dbContext.SaveChanges();

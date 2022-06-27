@@ -41,7 +41,7 @@ namespace FlexbookWeb.Controllers
                     IsActive = true
                 },
                 PhoneNumber = "6983701433",
-                ImagePath = "C:/Images/image1.jpg",
+                ImageName = "image1.jpg",
                 Age = 56,
                 Description = "A very talented man!"
             };

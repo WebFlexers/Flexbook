@@ -39,8 +39,8 @@ namespace FlexbookData.Models
         [MaxLength(10)]
         public string PhoneNumber { get; set; }
         [Required]
-        [Column("image_path")]
+        [Column("image_name")]
         [MaxLength(100)]
-        public string ImagePath { get; set; }
+        public string ImageName { get; set; }
     }
 }
