@@ -1,43 +1,52 @@
+<script lang="ts">
+import { defineComponent, ref } from 'vue';
+
+export default defineComponent({
+  name: 'MainLayout',
+
+  setup () {
+    return {
+      search: ref(''),
+      logo_url: ref('logo.png')
+    }
+  }
+});
+</script>
+
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
+    <q-header class="bg-primary-light" elevated>
+      <div class="row q-pa-sm">
+       <q-img
+          :src="logo_url"
+          spinner-color="white"
+          style="max-width: 100px"
+          :fit="'contain'"
         />
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
+        <q-input class="q-mx-lg col" v-model="search" label="Search Books" style="min-width: 80px;">
+          <q-icon class="q-mt-md" name="search" size="26px"/>
+        </q-input>
 
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
+        <q-space />
+
+        <div class="self-center q-gutter-md q-mr-md">
+          <q-btn color="primary" label="Login/Register" />
+          <q-btn color="primary" label="Shopping Cart" />
+        </div>
+
+      </div>
+
+      <q-tabs class="row route-tabs">
+        <q-route-tab class="col" to="/" label="Home" />
+        <q-route-tab class="col" to="/page1" label="Literature" />
+        <q-route-tab class="col" to="/page2" label="Education" />
+        <q-route-tab class="col" to="/page3" label="Children's Books" />
+        <q-route-tab class="col" to="/page3" label="History" />
+        <q-route-tab class="col" to="/page3" label="Sciences" />
+      </q-tabs>
+
     </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
 
     <q-page-container>
       <router-view />
@@ -45,72 +54,15 @@
   </q-layout>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue';
-import EssentialLink from 'components/EssentialLink.vue';
+<style lang="scss">
+  @import "src/css/app.scss";
+  @import "src/css/quasar.variables.scss";
 
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
+  .bg-primary-light {
+    background-color: $primary-light;
   }
-];
 
-export default defineComponent({
-  name: 'MainLayout',
-
-  components: {
-    EssentialLink
-  },
-
-  setup () {
-    const leftDrawerOpen = ref(false)
-
-    return {
-      essentialLinks: linksList,
-      leftDrawerOpen,
-      toggleLeftDrawer () {
-        leftDrawerOpen.value = !leftDrawerOpen.value
-      }
-    }
+  .route-tabs {
+    color: $primary;
   }
-});
-</script>
+</style>

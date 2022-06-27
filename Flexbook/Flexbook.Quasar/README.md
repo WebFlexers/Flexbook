@@ -1,6 +1,6 @@
 # Flexbook (flexbook-quasar)
 
-An eshopt for knowledge
+An eshop for knowledge
 
 ## Install the dependencies
 ```bash
