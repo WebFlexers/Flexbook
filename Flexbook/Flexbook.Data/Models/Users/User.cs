@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 using Flexbook.Data.Models.Users.Components;
 
 namespace Flexbook.Data.Models.Users
@@ -12,35 +6,27 @@ namespace Flexbook.Data.Models.Users
     public abstract class User
     {
         [Required]
-        [Column("id")]
         public int Id { get; set; }
         [Required]
-        [Column("username")]
         [MaxLength(50)]
         public string Username { get; set; }
         [Required]
-        [Column("password")]
         [Range(8, 16)]
-        public string Password { get; set; }
+        public char[] Password { get; set; }
         [Required]
-        [Column("fullname")]
         [MaxLength(50)]
         public string Fullname { get; set; }
         [Required]
-        [Column("email")]
         [MaxLength(254)]
         public string Email { get; set; }
-        [ForeignKey("address_id")]
+        [Required]
         public Address Address { get; set; }
         [Required]
-        [Column("age")]
-        public int Age { get; set; }
+        public DateTime BirthDate { get; set; }
         [Required]
-        [Column("phone_num")]
         [MaxLength(10)]
         public string PhoneNumber { get; set; }
         [Required]
-        [Column("image")]
         [MaxLength(100)]
         public string Image { get; set; }
     }

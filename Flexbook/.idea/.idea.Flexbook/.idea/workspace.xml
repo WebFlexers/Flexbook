@@ -6,17 +6,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="532a4a97-a58b-4fcc-b470-d4cd19bdbb9e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.ProjectCommands.txt.kate-swp" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.MakeFile.swp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220627160611_Initial.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220627160611_Initial.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/FlexbookDbContextModelSnapshot.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Models/UserInteraction/BookReview.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UML/Knowledge/edu_material_uml.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../UML/Phase1/ClassDiagramV1.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Flexbook.Web.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Flexbook.Web.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectCommands.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectCommands.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/DataAccess/FlexbookDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/DataAccess/FlexbookDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/ConversationSystem/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/UserInteraction/Comment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/ConversationSystem/Conversation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/OrderSystem/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/OrderSystem/Order.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/OrderSystem/OrderItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/OrderSystem/OrderItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Book.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Product.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Users/Author.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Users/Author.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Users/Components/Address.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Users/Components/Address.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Users/Customer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Users/Customer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Users/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Users/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UML_diagrams/Phase1/ClassDiagramV1.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UML_diagrams/UML Knowledge/edu_material_uml.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/.nuget/packages/microsoft.net.test.sdk/17.1.0/build/netcoreapp2.1/Microsoft.NET.Test.Sdk.Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -78,7 +97,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1656334768725</updated>
-      <workItem from="1656334778096" duration="4257000" />
+      <workItem from="1656334778096" duration="10328000" />
     </task>
     <servers />
   </component>
