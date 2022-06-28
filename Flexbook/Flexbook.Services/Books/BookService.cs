@@ -9,6 +9,6 @@ public class BookService : CrudService<Book>, IBookService
 
     public List<Book> GetAllBooks()
     {
-        return _dbContext.Book.ToList();
+        return _dbContext.Set<Book>().ToList();
     }
 }

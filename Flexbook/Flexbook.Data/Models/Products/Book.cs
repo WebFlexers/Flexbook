@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using Flexbook.Data.Models.Users;
 
 namespace Flexbook.Data.Models.Products

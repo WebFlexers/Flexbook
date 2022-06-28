@@ -6,14 +6,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="532a4a97-a58b-4fcc-b470-d4cd19bdbb9e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Flexbook.Services/Books/BookService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Services/Books/IBookService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Services/CrudService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Services/ICrudService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.MakeFile.swp" beforeDir="false" afterPath="$PROJECT_DIR$/.MakeFile.swp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/efCoreCommonOptions.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220628093624_MoveToTPT.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220628093624_MoveToTPT.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/UserInteraction/BookReview.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/UserInteraction/BookReview.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Services/Flexbook.Services.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Services/Flexbook.Services.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/DataAccess/FlexbookDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/DataAccess/FlexbookDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Migrations/FlexbookDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/FlexbookDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Book.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Services/Books/BookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Services/Books/BookService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +37,12 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -83,7 +86,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1656334768725</updated>
-      <workItem from="1656334778096" duration="13195000" />
+      <workItem from="1656334778096" duration="13768000" />
+      <workItem from="1656353706085" duration="3280000" />
+      <workItem from="1656405143997" duration="4220000" />
     </task>
     <servers />
   </component>

@@ -12,11 +12,21 @@ public class FlexbookDbContext : DbContext
     public FlexbookDbContext() { }
     public FlexbookDbContext(DbContextOptions options): base(options) { }
     
-    public DbSet<Customer> Customer { get; set; }
-    public DbSet<Author> Author { get; set; }
-    public DbSet<Book> Book { get; set; }
-    public DbSet<Address> Address { get; set; }
-    public DbSet<Order> Order { get; set; }
-    public DbSet<OrderItem> OrderItem { get; set; }
-    public DbSet<Comment> Comment { get; set; }
+    public DbSet<Address> Addresses { get; set; }
+    public DbSet<Order> Orders { get; set; }
+    public DbSet<OrderItem> OrderItems { get; set; }
+    public DbSet<Comment> Comments { get; set; }
+    
+    public DbSet<User> Users { get; set; }
+    public DbSet<Product> Products { get; set; }
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        // Use Table Per Type approach
+        // Users
+        modelBuilder.Entity<Customer>().ToTable("Customers");
+        modelBuilder.Entity<Author>().ToTable("Authors");
+        
+        // Products
+        modelBuilder.Entity<Book>().ToTable("Books");
+    }
 }
