@@ -6,21 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="532a4a97-a58b-4fcc-b470-d4cd19bdbb9e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220628201212_OverallImprovements.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220628201212_OverallImprovements.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Models/PaymentSystem/PaymentMethod.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/BookController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Web/RequestModels/BookRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Migrations/FlexbookDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/FlexbookDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/OrderSystem/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/OrderSystem/Order.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/OrderSystem/OrderItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/OrderSystem/OrderItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Book.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Product.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/UserInteraction/Comment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/UserInteraction/Comment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Users/Components/Address.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Users/Components/Address.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Flexbook.Web.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Flexbook.Web.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +83,7 @@
       <workItem from="1656353706085" duration="3280000" />
       <workItem from="1656405143997" duration="6392000" />
       <workItem from="1656438031524" duration="4816000" />
+      <workItem from="1656450326259" duration="302000" />
     </task>
     <servers />
   </component>
