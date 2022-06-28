@@ -6,14 +6,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="532a4a97-a58b-4fcc-b470-d4cd19bdbb9e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/efCoreCommonOptions.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220628093624_MoveToTPT.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220628093624_MoveToTPT.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthorController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/DataAccess/FlexbookDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/DataAccess/FlexbookDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Migrations/FlexbookDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/FlexbookDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Book.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Services/Books/BookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Services/Books/BookService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Flexbook.Web.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Flexbook.Web.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,18 +29,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Flexbook.Web">
     <configuration name="Flexbook.Web" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Flexbook.Web/Flexbook.Web.csproj" />
@@ -88,7 +83,8 @@
       <updated>1656334768725</updated>
       <workItem from="1656334778096" duration="13768000" />
       <workItem from="1656353706085" duration="3280000" />
-      <workItem from="1656405143997" duration="4220000" />
+      <workItem from="1656405143997" duration="6392000" />
+      <workItem from="1656438031524" duration="676000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,63 @@
+﻿using Flexbook.Data.Models.Users;
+using Flexbook.Data.Models.Users.Components;
+using Flexbook.Services;
+using Microsoft.AspNetCore.Mvc;
+
+namespace Flexbook.Web.Controllers
+{
+    public class AuthorController : Controller
+    {
+        private readonly ILogger<AuthorController> _logger;
+        private ICrudService<Author> _authorService;
+
+        public AuthorController(ILogger<AuthorController> logger, ICrudService<Author> authorService)
+        {
+            _authorService = authorService;
+            _logger = logger;
+        }
+
+        [HttpGet("/authors/{id}")]
+        public IActionResult GetAuthor(int id)
+        {
+            var author = _authorService.GetById(id);
+            return Ok(author);
+        }
+
+        [HttpPost("/authors/register")]
+        public IActionResult AddAuthor()
+        {
+            Author author = new Author()
+            {
+                Username = "jeffKn",
+                Password = new[] { '1','2','3','4','5','6' },
+                Fullname = "Jeff Kinney",
+                Email = "jeffkinney@gmail.com",
+                Address = new Address
+                {
+                    Id = 0,
+                    Name = "K Street NW",
+                    Number = 167,
+                    City = "Ford Washington",
+                    PostCode = "19100",
+                    IsActive = true
+                },
+                PhoneNumber = "6983701433",
+                Image = "author_jeffKn.jpg",
+                BirthDate = new DateTime(2001, 11, 23),
+                Description = "A very talented man!"
+            };
+
+            _authorService.Insert(author);
+
+            return Ok();
+        }
+
+        [HttpPost("/authors/delete/{id}")]
+        public IActionResult RemoveAuthor(int id)
+        {
+            _authorService.Delete(new Author() { Id=id });
+
+            return Ok();
+        }
+    }
+}
