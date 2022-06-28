@@ -4,7 +4,7 @@ using Flexbook.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Flexbook.Web.Controllers;
-public class AuthorController : Controller
+public class AuthorController : ControllerBase
 {
     private readonly ILogger<AuthorController> _logger;
     private ICrudService<Author> _authorService;
