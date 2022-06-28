@@ -9,7 +9,7 @@ namespace Flexbook.Data.Models.OrderSystem
         public int Id { get; set; }
         [Required]
         public int Quantity { get; set; }
-
+        [Required]
         public Product Product { get; set; }
     }
 }

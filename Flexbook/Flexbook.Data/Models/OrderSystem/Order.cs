@@ -8,7 +8,9 @@ namespace Flexbook.Data.Models.OrderSystem
         [Required]
         public int Id { get; set; }
         [Required]
-        public DateTime OrderedTime { get; set; }
+        public DateTime CreatedOn { get; set; }
+        [Required]
+        public DateTime UpdatedOn { get; set; }
         [Required]
         [MaxLength(50)]
         public string PaymentMethod { get; set; }
@@ -18,10 +20,8 @@ namespace Flexbook.Data.Models.OrderSystem
         [MaxLength(50)]
         public string Status { get; set; }
         [Required]
-        public float Discount { get; set; }
+        public double TotalPrice { get; set; }
         [Required]
-        public int TotalPrice { get; set; }
-
         public Customer Customer { get; set; }
     }
 }

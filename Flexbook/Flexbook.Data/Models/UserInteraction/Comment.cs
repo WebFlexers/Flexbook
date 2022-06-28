@@ -16,7 +16,6 @@ namespace Flexbook.Data.Models.UserInteraction
         public DateTime UpdatedOn { get; set; }
         [Required]
         public int LikesCount { get; set; }
-
         [Required]
         public User User { get; set; }
     }

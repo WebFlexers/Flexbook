@@ -8,7 +8,7 @@ namespace Flexbook.Data.Models.Users.Components
         public int Id { get; set; }
         [Required]
         [MaxLength(50)]
-        public string Name { get; set; }
+        public string Street { get; set; }
         public int Number { get; set; }
         [Required]
         public string City { get; set; }

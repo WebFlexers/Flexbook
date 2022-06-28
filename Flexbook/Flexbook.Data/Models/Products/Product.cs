@@ -13,14 +13,14 @@ namespace Flexbook.Data.Models.Products
         [Required]
         [MaxLength(50)]
         public string Title { get; set; }
-
+        
         public string Description { get; set; }
         [Required]
         [MaxLength(100)]
         public string Image { get; set; }
         [Required]
-        public int StartingPrice { get; set; }
+        public double StartingPrice { get; set; }
         [Required]
-        public int FinalPrice { get; set; }
+        public double FinalPrice { get; set; }
     }
 }

@@ -17,12 +17,10 @@ namespace Flexbook.Data.Models.Products
         [MaxLength(50)]
         public string Publisher { get; set; }
         [Required]
-        public DateOnly PublicationDate { get; set; }
-        [Required]
-        public int Pages { get; set; }
+        public int PageCount { get; set; }
         [Required]
         [MaxLength(50)]
-        public DateOnly Language { get; set; }
+        public string Language { get; set; }
         [Required]
         [MaxLength(255)]
         public string Summary { get; set; }

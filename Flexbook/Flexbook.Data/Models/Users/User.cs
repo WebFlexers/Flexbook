@@ -22,7 +22,7 @@ namespace Flexbook.Data.Models.Users
         [Required]
         public Address Address { get; set; }
         [Required]
-        public DateTime BirthDate { get; set; }
+        public DateOnly BirthDate { get; set; }
         [Required]
         [MaxLength(10)]
         public string PhoneNumber { get; set; }
