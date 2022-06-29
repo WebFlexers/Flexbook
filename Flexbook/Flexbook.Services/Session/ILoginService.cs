@@ -1,6 +1,6 @@
 using Flexbook.Data.Models.Users;
 
-namespace Flexbook.Services.SessionServices;
+namespace Flexbook.Services.Session;
 
 public interface ILoginService
 {

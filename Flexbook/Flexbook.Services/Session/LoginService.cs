@@ -1,7 +1,7 @@
 using Flexbook.Data.DataAccess;
 using Flexbook.Data.Models.Users;
 
-namespace Flexbook.Services.SessionServices;
+namespace Flexbook.Services.Session;
 
 public class LoginService : ILoginService
 {
@@ -15,7 +15,7 @@ public class LoginService : ILoginService
     public User? GetUserWithCredentials(string username, string password)
     {
         return _dbContext.Users.FirstOrDefault(o =>
-            o != null && String.Equals(o.Username, username, StringComparison.CurrentCultureIgnoreCase) 
+            o != null && o.Username.ToLower() == username.ToLower() 
                       && o.Password == password) ?? null;
     }
 

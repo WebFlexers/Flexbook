@@ -3,7 +3,7 @@ using System.Net.Security;
 using System.Security.Claims;
 using System.Text;
 using Flexbook.Data.Models.Users;
-using Flexbook.Services.SessionServices;
+using Flexbook.Services.Session;
 using Flexbook.Web.RequestModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

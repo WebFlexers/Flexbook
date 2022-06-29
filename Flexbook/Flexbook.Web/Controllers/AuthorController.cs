@@ -53,8 +53,7 @@ public class AuthorController : ControllerBase
     [HttpPost("/authors/delete/{id}")]
     public IActionResult RemoveAuthor(int id)
     {
-        _authorService.Delete(new Author() { Id=id });
-
+        _authorService.Delete(_authorService.GetById(id));
         return Ok();
     }
 }

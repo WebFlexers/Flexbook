@@ -3,6 +3,8 @@ using Flexbook.Data.DataAccess;
 using Flexbook.Data.Models.Users;
 using Flexbook.Services;
 using Flexbook.Services.Books;
+using Flexbook.Services.Session;
+using Flexbook.Services.Users;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -37,8 +39,10 @@ builder.Services.AddDbContext<FlexbookDbContext>(opts =>
 });
 
 // Inject services
-builder.Services.AddScoped<ICrudService<Author>, CrudService<Author>>();
+builder.Services.AddScoped<ICrudService<Author>, AuthorService>();
 builder.Services.AddScoped<IBookService, BookService>();
+// Authentication
+builder.Services.AddScoped<ILoginService, LoginService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -56,7 +60,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseCors(build => build
-    .WithOrigins("https://localhost:9000")
+    .WithOrigins("https://localhost:9000", "https://localhost:7226")
     .AllowAnyMethod()
     .AllowAnyHeader()
 );

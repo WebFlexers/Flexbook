@@ -56,7 +56,7 @@ namespace Flexbook.Data.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("Flexbook.Data.Models.OrderSystem.OrderItem", b =>
@@ -82,7 +82,7 @@ namespace Flexbook.Data.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItems", (string)null);
                 });
 
             modelBuilder.Entity("Flexbook.Data.Models.Products.Product", b =>
@@ -121,7 +121,7 @@ namespace Flexbook.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("Flexbook.Data.Models.UserInteraction.Comment", b =>
@@ -153,7 +153,7 @@ namespace Flexbook.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Comments");
+                    b.ToTable("Comments", (string)null);
                 });
 
             modelBuilder.Entity("Flexbook.Data.Models.Users.Components.Address", b =>
@@ -186,7 +186,7 @@ namespace Flexbook.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Addresses");
+                    b.ToTable("Addresses", (string)null);
                 });
 
             modelBuilder.Entity("Flexbook.Data.Models.Users.User", b =>
@@ -236,7 +236,7 @@ namespace Flexbook.Data.Migrations
 
                     b.HasIndex("AddressId");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("Flexbook.Data.Models.Products.Book", b =>
