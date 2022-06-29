@@ -6,13 +6,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="532a4a97-a58b-4fcc-b470-d4cd19bdbb9e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Users/UserLogin.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/LoginController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Web/RequestModels/UserLoginRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220629111743_AdaptForLogin.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220629111743_AdaptForLogin.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Services/SessionServices/ILoginService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Services/SessionServices/LoginService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/DataAccess/FlexbookDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/DataAccess/FlexbookDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Migrations/FlexbookDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/FlexbookDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Users/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Users/User.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/LoginController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/LoginController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +93,8 @@
       <workItem from="1656405143997" duration="6392000" />
       <workItem from="1656438031524" duration="4816000" />
       <workItem from="1656450326259" duration="2923000" />
+      <workItem from="1656498189556" duration="3233000" />
+      <workItem from="1656502418151" duration="861000" />
     </task>
     <servers />
   </component>

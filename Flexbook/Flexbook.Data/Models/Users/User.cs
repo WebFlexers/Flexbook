@@ -12,7 +12,7 @@ namespace Flexbook.Data.Models.Users
         public string Username { get; set; }
         [Required]
         [Range(8, 16)]
-        public char[] Password { get; set; }
+        public string Password { get; set; }
         [Required]
         [MaxLength(50)]
         public string Fullname { get; set; }
@@ -22,7 +22,7 @@ namespace Flexbook.Data.Models.Users
         [Required]
         public Address Address { get; set; }
         [Required]
-        public DateOnly BirthDate { get; set; }
+        public DateTime BirthDate { get; set; }
         [Required]
         [MaxLength(10)]
         public string PhoneNumber { get; set; }

@@ -28,7 +28,7 @@ public class AuthorController : ControllerBase
         Author author = new Author()
         {
             Username = "jeffKn",
-            Password = new[] { '1','2','3','4','5','6' },
+            Password = "123456",
             Fullname = "Jeff Kinney",
             Email = "jeffkinney@gmail.com",
             Address = new Address
@@ -41,7 +41,7 @@ public class AuthorController : ControllerBase
             },
             PhoneNumber = "6983701433",
             Image = "author_jeffKn.jpg",
-            BirthDate = new DateOnly(2001, 11, 23),
+            BirthDate = new DateTime(2001, 11, 23).ToUniversalTime(),
             Description = "A very talented man!"
         };
 

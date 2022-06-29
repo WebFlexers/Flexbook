@@ -17,7 +17,7 @@ public class FlexbookDbContext : DbContext
     public DbSet<OrderItem> OrderItems { get; set; }
     public DbSet<Comment> Comments { get; set; }
     
-    public DbSet<User> Users { get; set; }
+    public DbSet<User?> Users { get; set; }
     public DbSet<Product> Products { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
