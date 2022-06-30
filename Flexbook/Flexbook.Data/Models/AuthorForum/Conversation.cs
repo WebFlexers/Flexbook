@@ -8,7 +8,7 @@ namespace Flexbook.Data.Models
         [Required]
         public int Id { get; set; }
         [Required]
-        public Author Author_id { get; set; }
+        public Author Author { get; set; }
         // First comment of list is the initial comment
         // Initialize the property by sorting by CreatedOn date
         [Required]
