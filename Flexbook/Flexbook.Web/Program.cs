@@ -1,6 +1,7 @@
 using System.Text;
 using Flexbook.Data.DataAccess;
 using Flexbook.Data.Models.Users;
+using Flexbook.Data.Models.Products;
 using Flexbook.Services;
 using Flexbook.Services.Books;
 using Flexbook.Services.Session;
@@ -8,6 +9,8 @@ using Flexbook.Services.Users;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Flexbook.Data.Models;
+using Flexbook.Services.AuthorForum;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,7 +43,10 @@ builder.Services.AddDbContext<FlexbookDbContext>(opts =>
 
 // Inject services
 builder.Services.AddScoped<ICrudService<Author>, AuthorService>();
-builder.Services.AddScoped<IBookService, BookService>();
+builder.Services.AddScoped<ICrudService<Customer>, CustomerService>();
+builder.Services.AddScoped<ICrudService<Book>, BookService>();
+builder.Services.AddScoped<ICrudService<Conversation>, ConversationService>();
+builder.Services.AddScoped<ICrudService<Comment>, CommentService>();
 // Authentication
 builder.Services.AddScoped<ILoginService, LoginService>();
 

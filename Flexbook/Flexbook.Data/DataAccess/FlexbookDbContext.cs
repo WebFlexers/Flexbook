@@ -4,6 +4,7 @@ using Flexbook.Data.Models.UserInteraction;
 using Flexbook.Data.Models.Users;
 using Flexbook.Data.Models.Users.Components;
 using Microsoft.EntityFrameworkCore;
+using Flexbook.Data.Models;
 
 namespace Flexbook.Data.DataAccess;
 
@@ -15,6 +16,8 @@ public class FlexbookDbContext : DbContext
     public DbSet<Address> Addresses { get; set; }
     public DbSet<Order> Orders { get; set; }
     public DbSet<OrderItem> OrderItems { get; set; }
+
+    public DbSet<Conversation> Conversations { get; set; }
     public DbSet<Comment> Comments { get; set; }
     
     public DbSet<User?> Users { get; set; }
