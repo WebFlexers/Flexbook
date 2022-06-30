@@ -18,11 +18,7 @@
 
 <script>
 export default {
-  name: 'SalesComponent',
-
-  setup() {
-    const
-  }
+  name: 'SalesComponent'
 }
 </script>
 

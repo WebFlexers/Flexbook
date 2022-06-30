@@ -11,7 +11,7 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace Flexbook.Web.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/session")]
 [ApiController]
 public class LoginController : ControllerBase
 {
@@ -25,7 +25,7 @@ public class LoginController : ControllerBase
     }
 
     [AllowAnonymous]
-    [HttpPost]
+    [HttpPost("login")]
     public IActionResult Login([FromBody] UserLoginRequest userLoginRequest)
     {
         var user = Authenticate(userLoginRequest);

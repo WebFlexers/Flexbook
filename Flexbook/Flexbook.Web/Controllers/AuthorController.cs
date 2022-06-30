@@ -4,6 +4,9 @@ using Flexbook.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Flexbook.Web.Controllers;
+
+[Route("api/authors")]
+[ApiController]
 public class AuthorController : ControllerBase
 {
     private readonly ILogger<AuthorController> _logger;
@@ -15,32 +18,32 @@ public class AuthorController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet("/authors/{id}")]
+    [HttpGet("get/{id}")]
     public IActionResult GetAuthor(int id)
     {
         var author = _authorService.GetById(id);
         return Ok(author);
     }
 
-    [HttpPost("/authors/register")]
+    [HttpPost("register")]
     public IActionResult AddAuthor()
     {
-        Author author = new Author()
+        Author author = new Author
         {
-            Username = "jeffKn",
-            Password = "123456",
-            Fullname = "Jeff Kinney",
-            Email = "jeffkinney@gmail.com",
+            Username = "varoufakis",
+            Password = "1234567",
+            Fullname = "Gianis Varoufaki",
+            Email = "sotirasTisElladas@gmail.com",
             Address = new Address
             {
-                Street = "K Street NW",
-                Number = 167,
-                City = "Ford Washington",
-                PostCode = "19100",
+                Street = "Eyergeton",
+                Number = 13,
+                City = "Paleo Faliro",
+                PostCode = "17565",
                 IsActive = true
             },
-            PhoneNumber = "6983701433",
-            Image = "author_jeffKn.jpg",
+            PhoneNumber = "6936988704",
+            Image = "author_varoufakis.jpg",
             BirthDate = new DateTime(2001, 11, 23).ToUniversalTime(),
             Description = "A very talented man!"
         };
@@ -50,7 +53,7 @@ public class AuthorController : ControllerBase
         return Ok();
     }
 
-    [HttpPost("/authors/delete/{id}")]
+    [HttpPost("delete/{id}")]
     public IActionResult RemoveAuthor(int id)
     {
         _authorService.Delete(_authorService.GetById(id));

@@ -26,8 +26,15 @@ namespace Flexbook.Services
 
         public virtual void Delete(T entity)
         {
-            _dbContext.Remove(entity);
-            _dbContext.SaveChanges();
+            if (entity != null)
+            {
+                _dbContext.Remove(entity);
+                _dbContext.SaveChanges();
+            }
+            else
+            {
+                throw new InvalidOperationException($"Can't delete an entity that doesn't exist!");
+            }
         }
 
         public virtual void Update(T entity)

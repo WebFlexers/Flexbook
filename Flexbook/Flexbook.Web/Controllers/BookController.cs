@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Flexbook.Web.Controllers;
 
+[Route("api/books")]
+[ApiController]
 public class BookController : ControllerBase
 {
     private readonly ILogger<BookController> _logger;
@@ -21,24 +23,25 @@ public class BookController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet("/books/{id}")]
+    [HttpGet("get/{id}")]
     public IActionResult GetBook(int id)
     {
         var book = _bookService.GetById(id);
         return Ok(book);
     }
 
-    [HttpGet("/books/all")]
+    [HttpGet("get_all")]
     public IActionResult GetAllBooks()
     {
         var books = _bookService.GetAllBooks();
         return Ok(books);
     }
 
-    [HttpPost("/books/create")]
+    [HttpPost("create")]
     public IActionResult CreateBook([FromBody] BookRequest bookRequest)
     {
-        var datetimeNow = DateTime.Now;
+        var datetimeNow = DateTime.Now.ToUniversalTime();
+        
         Book book = new Book
         {
             CreatedOn = datetimeNow,
@@ -62,11 +65,10 @@ public class BookController : ControllerBase
         return Ok();
     }
 
-    [HttpPost("/books/delete/{id}")]
+    [HttpPost("delete/{id}")]
     public IActionResult RemoveAuthor(int id)
     {
-        _bookService.Delete(new Book() { Id=id });
-
+        _bookService.Delete(_bookService.GetById(id));
         return Ok();
     }
 }

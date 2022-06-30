@@ -1,18 +1,3 @@
-<script lang="ts">
-import { defineComponent, ref } from 'vue';
-
-export default defineComponent({
-  name: 'MainLayout',
-
-  setup () {
-    return {
-      search: ref(''),
-      logo_url: ref('logo.png')
-    }
-  }
-});
-</script>
-
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header class="bg-primary-light" elevated>
@@ -31,7 +16,7 @@ export default defineComponent({
         <q-space />
 
         <div class="self-center q-gutter-md q-mr-md">
-          <q-btn color="primary" label="Login/Register" />
+          <q-btn color="primary" label="Login/Register" @click="goToLoginPage"/>
           <q-btn color="primary" label="Shopping Cart" />
         </div>
 
@@ -45,14 +30,37 @@ export default defineComponent({
         <q-route-tab class="col" to="/page3" label="History" />
         <q-route-tab class="col" to="/page3" label="Sciences" />
       </q-tabs>
-
     </q-header>
 
     <q-page-container>
       <router-view />
     </q-page-container>
+
   </q-layout>
 </template>
+
+<script lang="ts">
+import { defineComponent, ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+export default defineComponent({
+  name: 'MainLayout',
+
+  setup() {
+    const router = useRouter()
+
+    function goToLoginPage() {
+      router.push('/login')
+    }
+
+    return {
+      search: ref(''),
+      logo_url: ref('logo.png'),
+      goToLoginPage
+    }
+  }
+});
+</script>
 
 <style lang="scss">
   @import "src/css/app.scss";
@@ -64,5 +72,6 @@ export default defineComponent({
 
   .route-tabs {
     color: $primary;
+    background-color: $primary-light;
   }
 </style>

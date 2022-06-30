@@ -12,6 +12,6 @@ public class AuthorService : CrudService<Author>, ICrudService<Author>
     {
         return _dbContext.Set<Author>()
             .Include(author => author.Address)
-            .FirstOrDefault();
+            .FirstOrDefault(author => author.Id == id);
     }
 }
