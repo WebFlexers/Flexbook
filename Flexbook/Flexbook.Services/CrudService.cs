@@ -1,6 +1,7 @@
 ﻿
 
 using Flexbook.Data.DataAccess;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Flexbook.Services
 {
@@ -12,7 +13,12 @@ namespace Flexbook.Services
         {
             _dbContext = dbContext;
         }
+        public CrudService()
+        {
+            _dbContext = new FlexbookDbContext();
+        }
 
+        [return: MaybeNull]
         public virtual T GetById(int id)
         {
             return _dbContext.Set<T>().Find(id);

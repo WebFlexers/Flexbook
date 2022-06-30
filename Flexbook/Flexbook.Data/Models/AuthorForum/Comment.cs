@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Flexbook.Data.Models.Users;
 
-namespace Flexbook.Data.Models.UserInteraction
+namespace Flexbook.Data.Models
 {
     public class Comment
     {
