@@ -29,5 +29,7 @@ namespace Flexbook.Data.Models.Users
         [Required]
         [MaxLength(100)]
         public string Image { get; set; }
+        [Required]
+        public string Role { get; set; }
     }
 }

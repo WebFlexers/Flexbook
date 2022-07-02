@@ -6,8 +6,8 @@ namespace Flexbook.Web.Controllers;
 [ApiController]
 public class ForumController : Controller
 {
-    public IActionResult Index()
-    {
-        return View();
-    }
+    // public IActionResult Index()
+    // {
+    //     return View();
+    // }
 }

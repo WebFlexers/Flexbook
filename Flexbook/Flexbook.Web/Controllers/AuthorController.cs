@@ -45,7 +45,8 @@ public class AuthorController : ControllerBase
             PhoneNumber = "6936988704",
             Image = "author_varoufakis.jpg",
             BirthDate = new DateTime(2001, 11, 23).ToUniversalTime(),
-            Description = "A very talented man!"
+            Description = "A very talented man!",
+            Role = "Author"
         };
 
         _authorService.Insert(author);

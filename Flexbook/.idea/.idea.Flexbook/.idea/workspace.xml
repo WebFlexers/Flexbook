@@ -6,20 +6,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="532a4a97-a58b-4fcc-b470-d4cd19bdbb9e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/data/auth_header.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/CustomerProfile.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/store-flag.d.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220702100038_AddConversationAndUserRole.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220702100038_AddConversationAndUserRole.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/quasar.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/quasar.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/boot/axios.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/boot/axios.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/layouts/MainLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/layouts/MainLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/LoginPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/LoginPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/services/LoginService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/services/LoginService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Migrations/FlexbookDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/FlexbookDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Users/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Users/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Users/UserLogin.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/CustomerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/CustomerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/ForumController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/ForumController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/LoginController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/LoginController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/RequestModels/UserLoginRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/RequestModels/UserLoginRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/appsettings.Development.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +103,7 @@
       <workItem from="1656597533577" duration="359000" />
       <workItem from="1656705948085" duration="967000" />
       <workItem from="1656751956486" duration="1000" />
+      <workItem from="1656754902277" duration="3048000" />
     </task>
     <servers />
   </component>
@@ -125,24 +125,5 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Flexbook.Web/Controllers/AuthorController.cs</url>
-          <line>23</line>
-          <properties documentPath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthorController.cs" initialLine="20" containingFunctionPresentation="method 'GetAuthor'">
-            <startOffsets>
-              <option value="628" />
-            </startOffsets>
-            <endOffsets>
-              <option value="668" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

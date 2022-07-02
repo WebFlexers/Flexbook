@@ -46,6 +46,7 @@ public class CustomerController : Controller
             PhoneNumber = "6983701433",
             Image = "default.jpg",
             BirthDate = new DateTime(2001, 1, 25).ToUniversalTime(),
+            Role = "Customer"
         };
 
         _customerService.Insert(customer);

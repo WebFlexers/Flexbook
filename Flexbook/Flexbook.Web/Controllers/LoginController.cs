@@ -55,7 +55,6 @@ public class LoginController : ControllerBase
         {
             new Claim(ClaimTypes.NameIdentifier, user.Username),
             new Claim(ClaimTypes.Email, user.Email),
-            new Claim(ClaimTypes.GivenName, user.Fullname),
             new Claim(ClaimTypes.Role, role)
         };
 
@@ -66,5 +65,19 @@ public class LoginController : ControllerBase
             signingCredentials: credentials);
 
         return new JwtSecurityTokenHandler().WriteToken(token);
+    }
+
+    public UserLoginRequest GetCurrentUserLoginRequest()
+    {
+        if (HttpContext.User.Identity is not ClaimsIdentity identity) return null;
+        
+        var userClaims = identity.Claims;
+        return new UserLoginRequest
+        {
+            Username = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.NameIdentifier)?.Value,
+            Email = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.Email)?.Value,
+            Role = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.Role)?.Value
+        };
+
     }
 }
