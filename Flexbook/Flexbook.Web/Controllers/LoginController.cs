@@ -67,6 +67,7 @@ public class LoginController : ControllerBase
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
 
+    [HttpGet("current_user")]
     public UserLoginRequest GetCurrentUserLoginRequest()
     {
         if (HttpContext.User.Identity is not ClaimsIdentity identity) return null;
@@ -78,6 +79,5 @@ public class LoginController : ControllerBase
             Email = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.Email)?.Value,
             Role = userClaims.FirstOrDefault(o => o.Type == ClaimTypes.Role)?.Value
         };
-
     }
 }
