@@ -5,7 +5,6 @@ using Flexbook.Data.Models.Products;
 using Flexbook.Services;
 using Flexbook.Services.Books;
 using Flexbook.Services.Session;
-using Flexbook.Services.Users;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;

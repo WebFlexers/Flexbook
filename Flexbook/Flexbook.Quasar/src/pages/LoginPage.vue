@@ -57,6 +57,7 @@ export default {
 
     const username = ref('')
     const password = ref('')
+    let authToken = ''
 
     return {
       username,
@@ -71,8 +72,16 @@ export default {
 
         const userLogin = new UserLogin(username.value, password.value)
         const loginService = new LoginService()
-        let result = loginService.Login(userLogin)
-        console.log(result)
+        try {
+          authToken = loginService.Login(userLogin).then(() => {
+            console.log(authToken)
+          })
+        } catch (e) {
+          console.log('User could not be authenticated!')
+        }
+
+
+
       },
 
       onReset () {

@@ -6,22 +6,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="532a4a97-a58b-4fcc-b470-d4cd19bdbb9e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/LoginPage.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/services/LoginService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/UserLogin.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/data/auth_header.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/CustomerProfile.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/store-flag.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/quasar.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/quasar.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/components/SalesComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/components/SalesComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/css/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/css/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/boot/axios.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/boot/axios.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/layouts/MainLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/layouts/MainLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/router/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/router/routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Services/Books/BookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Services/Books/BookService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Services/CrudService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Services/CrudService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Services/Users/AuthorService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Services/Users/AuthorService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/BookController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/LoginController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/LoginController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/LoginPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/LoginPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/services/LoginService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/services/LoginService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,6 +102,8 @@
       <workItem from="1656505681177" duration="1216000" />
       <workItem from="1656524475033" duration="3046000" />
       <workItem from="1656597533577" duration="359000" />
+      <workItem from="1656705948085" duration="967000" />
+      <workItem from="1656751956486" duration="1000" />
     </task>
     <servers />
   </component>
