@@ -41,7 +41,6 @@ public class CustomerController : Controller
                 Number = 370,   
                 City = "Megara",
                 PostCode = "19100",
-                IsActive = true
             },
             PhoneNumber = "6983701433",
             Image = "default.jpg",

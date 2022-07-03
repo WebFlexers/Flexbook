@@ -1,5 +1,6 @@
 using Flexbook.Data.DataAccess;
 using Flexbook.Data.Models.Users;
+using Flexbook.Data.Models.Users.Components;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.CodeAnalysis;
 

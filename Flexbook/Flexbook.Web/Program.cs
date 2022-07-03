@@ -44,7 +44,6 @@ builder.Services.AddDbContext<FlexbookDbContext>(opts =>
 builder.Services.AddScoped<ICrudService<Author>, AuthorService>();
 builder.Services.AddScoped<ICrudService<Customer>, CustomerService>();
 builder.Services.AddScoped<ICrudService<Book>, BookService>();
-builder.Services.AddScoped<ICrudService<Conversation>, ConversationService>();
 builder.Services.AddScoped<ICrudService<Comment>, CommentService>();
 // Authentication
 builder.Services.AddScoped<ILoginService, LoginService>();

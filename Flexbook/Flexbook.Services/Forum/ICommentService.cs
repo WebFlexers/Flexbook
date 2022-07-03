@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Flexbook.Data.Models;
 
-namespace Flexbook.Services.AuthorForum
+namespace Flexbook.Services.AuthorForum;
+
+public interface ICommentService
 {
-    public interface ICommentService
-    {
-
-    }
+    public IEnumerable<Comment> GetAllCommentsByAuthor(int author_id);
 }

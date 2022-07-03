@@ -7,6 +7,7 @@
         public DateTime CreatedOn { get; set; }
         public DateTime UpdatedOn { get; set; }
         public int LikesCount { get; set; }
-        public int User_Id { get; set; }
+        public int UserId { get; set; }
+        public int AuthorHostId { get; set; }
     }
 }

@@ -13,9 +13,7 @@ namespace Flexbook.Data.Models.Users.Components
         [Required]
         public string City { get; set; }
         [Required]
-        [StringLength(5)]
+        [StringLength(5)]       
         public string PostCode { get; set; }
-        [Required]
-        public bool IsActive { get; set; }
     }
 }

@@ -18,5 +18,7 @@ namespace Flexbook.Data.Models
         public int LikesCount { get; set; }
         [Required]
         public User User { get; set; }
+        [Required]
+        public Author AuthorHost { get; set; }
     }
 }

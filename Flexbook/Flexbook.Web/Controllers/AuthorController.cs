@@ -1,6 +1,7 @@
 ﻿using Flexbook.Data.Models.Users;
 using Flexbook.Data.Models.Users.Components;
 using Flexbook.Services;
+using Flexbook.Web.RequestModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Flexbook.Web.Controllers;
@@ -26,30 +27,30 @@ public class AuthorController : ControllerBase
     }
 
     [HttpPost("register")]
-    public IActionResult AddAuthor()
+    public IActionResult AddAuthor([FromBody] AuthorRequest authorRequest)
     {
         Author author = new Author
         {
-            Username = "varoufakis",
-            Password = "1234567",
-            Fullname = "Gianis Varoufaki",
-            Email = "sotirasTisElladas@gmail.com",
+            Username = authorRequest.Username,
+            Password = authorRequest.Password,
+            Fullname = authorRequest.Fullname,
+            Email = authorRequest.Email,
             Address = new Address
             {
-                Street = "Eyergeton",
-                Number = 13,
-                City = "Paleo Faliro",
-                PostCode = "17565",
-                IsActive = true
+                Street = authorRequest.Street,
+                Number = authorRequest.Number,
+                City = authorRequest.City,
+                PostCode = authorRequest.PostCode,
             },
-            PhoneNumber = "6936988704",
-            Image = "author_varoufakis.jpg",
-            BirthDate = new DateTime(2001, 11, 23).ToUniversalTime(),
-            Description = "A very talented man!",
-            Role = "Author"
+            PhoneNumber = authorRequest.PhoneNumber,
+            Image = authorRequest.Image,
+            BirthDate = authorRequest.BirthDate,
+            Description = authorRequest.Description,
+            Role = authorRequest.Role
         };
 
-        _authorService.Insert(author);
+        if(ModelState.IsValid)
+            _authorService.Insert(author);
 
         return Ok();
     }
