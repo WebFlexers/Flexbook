@@ -6,19 +6,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="532a4a97-a58b-4fcc-b470-d4cd19bdbb9e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220702100038_AddConversationAndUserRole.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220702100038_AddConversationAndUserRole.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/alert.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/auth.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/AddressDTO.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Auth/Login.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Auth/RegisterCustomer.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Auth/TokenDTO.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/BookDTO.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Responses/DataResponse.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Responses/ErrorResponse.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Responses/SuccessResponse.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Services/Users/User/IUserService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Services/Users/User/UserService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Migrations/FlexbookDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/FlexbookDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Users/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Users/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Users/UserLogin.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/layouts/MainLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/layouts/MainLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/LoginPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/LoginPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/router/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/router/routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/services/LoginService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/services/LoginService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/auth.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/types/IBook.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/types/UserLogin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/UserDTO.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Services/Users/Author/AuthorService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Services/Users/Author/AuthorService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/CustomerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/CustomerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/ForumController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/ForumController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/LoginController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/LoginController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/LoginController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Flexbook.Web/RequestModels/UserLoginRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/RequestModels/UserLoginRequest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/appsettings.Development.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +38,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3b113fb47d5fe36ed688b56c465cfe2738fca0ea3df9ed5a9683d7b49836b7/SwaggerUIMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3b6e6a47179af0cc67d5434bad6aca4c7b77f9b7ba6b4a67bed78c8d3b9e80/AuthorizationMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/44b1161d866765c6ec11ee821b79d9bff8660b65aef1d48c273eb26a29d4a/ResourceInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6f2c3a317ee06bc1b0766b94d4e6a045ea25c9a3da49cb9075bcee751250d4/ControllerActionInvoker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/71a968c46ba430dbe5e14b270739d338788e9ae6252461c5e5c6f6df8851f6/EndpointMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7262732eee179af215faab36a7f3c3cfac93ba12af52a3888d839fe7e53420/ActionMethodExecutor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/80fad1abc6a0b19dbe738ff7fdc6d92da5bf128839240743dd9c1d3e274cf/SwaggerMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e25cb5688c76195fbf252f7d6d239b394e684c210df3339f933d8143c35a7fd/DeveloperExceptionPageMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/fb2eefa9cc87ffd546c5a17fd8488c24ebf2edd1c657dcaf7f4c5f68b67838/HttpHeaders.Generated.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/.nuget/packages/microsoft.net.test.sdk/17.1.0/build/netcoreapp2.1/Microsoft.NET.Test.Sdk.Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -103,7 +124,10 @@
       <workItem from="1656597533577" duration="359000" />
       <workItem from="1656705948085" duration="967000" />
       <workItem from="1656751956486" duration="1000" />
-      <workItem from="1656754902277" duration="3048000" />
+      <workItem from="1656754902277" duration="3735000" />
+      <workItem from="1656771532437" duration="853000" />
+      <workItem from="1656841021141" duration="3357000" />
+      <workItem from="1656848162889" duration="2065000" />
     </task>
     <servers />
   </component>

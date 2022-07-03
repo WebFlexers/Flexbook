@@ -41,22 +41,39 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
+import { useAuthStore } from 'src/stores/auth';
 
 export default defineComponent({
   name: 'MainLayout',
 
   setup() {
-    const router = useRouter()
+    const router = useRouter();
+    const authStore = useAuthStore();
+    const loggedIn = computed(() => {
+      return authStore.getLoggedIn;
+    });
+
+    const authenticatedUser = computed(() => {
+      return authStore.getUser;
+    });
+
+    function logout() {
+      authStore.logout();
+      goToLoginPage();
+    }
 
     function goToLoginPage() {
-      router.push('/login')
+      router.push('/auth')
     }
 
     return {
       search: ref(''),
       logo_url: ref('logo.png'),
+      loggedIn,
+      authenticatedUser,
+      logout,
       goToLoginPage
     }
   }

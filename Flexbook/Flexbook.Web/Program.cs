@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Flexbook.Data.Models;
 using Flexbook.Services.AuthorForum;
+using Flexbook.Services.Users.User;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -41,8 +42,9 @@ builder.Services.AddDbContext<FlexbookDbContext>(opts =>
 });
 
 // Inject services
-builder.Services.AddScoped<ICrudService<Author>, AuthorService>();
-builder.Services.AddScoped<ICrudService<Customer>, CustomerService>();
+builder.Services.AddScoped<IAuthorService, AuthorService>();
+builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICrudService<Book>, BookService>();
 builder.Services.AddScoped<ICrudService<Conversation>, ConversationService>();
 builder.Services.AddScoped<ICrudService<Comment>, CommentService>();
@@ -65,7 +67,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseCors(build => build
-    .WithOrigins("https://localhost:9000", "http://localhost:9000", "https://localhost:7226")
+    .WithOrigins("https://localhost:9000", "https://localhost:7226")
     .AllowAnyMethod()
     .AllowAnyHeader()
 );

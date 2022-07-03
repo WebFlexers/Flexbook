@@ -48,8 +48,6 @@
 <script>
 import { useQuasar } from 'quasar'
 import { ref } from 'vue'
-import LoginService from '../services/LoginService';
-import UserLogin from '../types/UserLogin';
 
 export default {
   setup () {
@@ -69,19 +67,6 @@ export default {
         console.log(`Login form submitted with creds:
         username: ${username.value}
         password: ${password.value}`)
-
-        const userLogin = new UserLogin(username.value, password.value)
-        const loginService = new LoginService()
-        try {
-          authToken = loginService.Login(userLogin).then(() => {
-            console.log(authToken)
-          })
-        } catch (e) {
-          console.log('User could not be authenticated!')
-        }
-
-
-
       },
 
       onReset () {

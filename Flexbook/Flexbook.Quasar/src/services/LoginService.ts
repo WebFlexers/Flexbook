@@ -1,11 +1,11 @@
 import axios, {AxiosError, AxiosResponse} from 'axios'
-import UserLogin from 'src/types/UserLogin';
+import UserDTO from 'src/types/UserDTO';
 
 
 export default class LoginService {
   jwtToken = '';
 
-  public async Login(user: UserLogin): Promise<AxiosResponse<string> | void> {
+  public async Login(user: UserDTO): Promise<AxiosResponse<string> | void> {
       const result = await axios.post(`${process.env.API_URL}/session/login`, {
         username: user.username,
         password: user.password,

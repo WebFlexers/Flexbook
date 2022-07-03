@@ -32,7 +32,7 @@ public class AuthorController : ControllerBase
         {
             Username = "varoufakis",
             Password = "1234567",
-            Fullname = "Gianis Varoufaki",
+            Fullname = "Gianis Varoufakis",
             Email = "sotirasTisElladas@gmail.com",
             Address = new Address
             {
