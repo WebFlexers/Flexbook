@@ -5,33 +5,7 @@
     <projectFile profileName="IIS Express">Flexbook.Web/Flexbook.Web.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="532a4a97-a58b-4fcc-b470-d4cd19bdbb9e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/alert.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/auth.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/AddressDTO.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Auth/Login.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Auth/RegisterCustomer.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Auth/TokenDTO.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/BookDTO.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Responses/DataResponse.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Responses/ErrorResponse.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Responses/SuccessResponse.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Services/Users/User/IUserService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Services/Users/User/UserService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/layouts/MainLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/layouts/MainLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/LoginPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/LoginPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/router/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/router/routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/services/LoginService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/services/LoginService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/auth.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/types/IBook.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/types/UserLogin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/UserDTO.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Services/Users/Author/AuthorService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Services/Users/Author/AuthorService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/LoginController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/RequestModels/UserLoginRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/RequestModels/UserLoginRequest.cs" afterDir="false" />
-    </list>
+    <list default="true" id="532a4a97-a58b-4fcc-b470-d4cd19bdbb9e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,7 +101,7 @@
       <workItem from="1656754902277" duration="3735000" />
       <workItem from="1656771532437" duration="853000" />
       <workItem from="1656841021141" duration="3357000" />
-      <workItem from="1656848162889" duration="2065000" />
+      <workItem from="1656848162889" duration="2596000" />
     </task>
     <servers />
   </component>

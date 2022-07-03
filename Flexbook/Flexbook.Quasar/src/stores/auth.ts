@@ -39,16 +39,16 @@ export const useAuthStore = defineStore({
   actions: {
     async login(loginCredentials: Login) {
       return await api
-        .post<DataResponse<TokenDTO>>('auth/login', loginCredentials)
+        .post('auth/login', loginCredentials)
         .then(async (response) => {
-          if (response.data.success) {
-            localStorage.setItem('accessToken', response.data.data.accessToken);
+            localStorage.setItem('accessToken', response.data);
             await this.getAuthenticatedUser();
-            return response.data.success;
-          }
+            alert('data is ' + response.data)
+            return response.data;
         })
         .catch((error: AxiosError) => {
           if (error.response && error.response.data) {
+            alert('error')
             const errorResponse = error.response.data as ErrorResponse;
             const alertStore = useAlertStore();
             alertStore.setErrors(errorResponse.errors);
@@ -82,9 +82,11 @@ export const useAuthStore = defineStore({
     },
 
     async getAuthenticatedUser() {
-      await api.get<DataResponse<UserDTO>>('auth/user').then((response) => {
-        this.user = response.data.data;
-        this.loggedIn = true;
+      await api.get<UserDTO>('auth/user', { headers: { token: localStorage.getItem('accessToken') }
+      })
+        .then((response) => {
+          this.user = response.data;
+          this.loggedIn = true;
       });
     },
 

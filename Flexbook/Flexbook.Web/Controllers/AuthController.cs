@@ -41,7 +41,6 @@ public class AuthController : ControllerBase
         return NotFound("User not found");
     }
     
-    [Authorize]
     [HttpGet("user")]
     public User GetUserByToken()
     {

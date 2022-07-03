@@ -17,13 +17,13 @@
 
       <q-input
         filled
-        v-model="username"
+        v-model="loginCredentials.username"
         label="Username *"
         lazy-rules
         :rules="[ val => val && val.length > 0 || 'Your username can\'t be empty!']"
       />
       <q-input
-        v-model="password"
+        v-model="loginCredentials.password"
         label="Password *"
         filled :type="isPwd ? 'password' : 'text'"
         :rules="[ val => val && val.length > 0 || 'Your password can\'t be empty!']">
@@ -45,33 +45,43 @@
   </div>
 </template>
 
-<script>
-import { useQuasar } from 'quasar'
-import { ref } from 'vue'
+<script lang="ts">
+import { useAuthStore } from 'src/stores/auth';
+import { reactive, ref } from 'vue'
+import { Login } from 'src/types/Auth/Login';
+import { useRouter } from 'vue-router';
 
 export default {
-  setup () {
-    const $q = useQuasar()
+  setup() {
+    const authStore = useAuthStore()
+    const router = useRouter();
+    const loginCredentials = reactive<Login>({} as Login)
 
-    const username = ref('')
-    const password = ref('')
-    let authToken = ''
+    async function login() {
+      console.log(`Login form submitted with creds:
+        username: ${ loginCredentials.username }
+        password: ${ loginCredentials.password }`)
+
+      authStore.login(loginCredentials).then(() => {
+        if (localStorage.getItem("accessToken")) {
+          router.push('/');
+        }
+      })
+
+    }
 
     return {
-      username,
-      password,
       isPwd: ref(true),
       logo_url: ref('logo.png'),
+      loginCredentials,
 
       onSubmit () {
-        console.log(`Login form submitted with creds:
-        username: ${username.value}
-        password: ${password.value}`)
+        login()
       },
 
       onReset () {
-        username.value = null
-        password.value = null
+        loginCredentials.username = ''
+        loginCredentials.password = ''
       }
     }
   }

@@ -16,8 +16,8 @@
         <q-space />
 
         <div class="self-center q-gutter-md q-mr-md">
-          <q-btn color="primary" label="Login/Register" @click="goToLoginPage"/>
-          <q-btn color="primary" label="Shopping Cart" />
+          <q-btn v-if="!loggedIn" color="primary" label="Login/Register" @click="goToLoginPage"/>
+          <q-btn v-if="loggedIn" color="primary" label="Shopping Cart" />
         </div>
 
       </div>
@@ -64,6 +64,10 @@ export default defineComponent({
       goToLoginPage();
     }
 
+    function test() {
+      alert(loggedIn.value)
+    }
+
     function goToLoginPage() {
       router.push('/auth')
     }
@@ -72,6 +76,7 @@ export default defineComponent({
       search: ref(''),
       logo_url: ref('logo.png'),
       loggedIn,
+      test,
       authenticatedUser,
       logout,
       goToLoginPage
