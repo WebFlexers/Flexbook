@@ -9,7 +9,7 @@ namespace Flexbook.Web.RequestModels
         public string Fullname { get; set; }
         public string Email { get; set; }
         
-        public Address Address { get; set; }
+        public AddressRequest Address { get; set; }
         public DateTime BirthDate { get; set; }
         public string PhoneNumber { get; set; }
         public string Image { get; set; }
