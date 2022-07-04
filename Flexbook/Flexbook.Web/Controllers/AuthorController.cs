@@ -37,10 +37,10 @@ public class AuthorController : ControllerBase
             Email = authorRequest.Email,
             Address = new Address
             {
-                Street = authorRequest.Street,
-                Number = authorRequest.Number,
-                City = authorRequest.City,
-                PostCode = authorRequest.PostCode,
+                Street = authorRequest.Address.Street,
+                Number = authorRequest.Address.Number,
+                City = authorRequest.Address.City,
+                PostCode = authorRequest.Address.PostCode,
             },
             PhoneNumber = authorRequest.PhoneNumber,
             Image = authorRequest.Image,

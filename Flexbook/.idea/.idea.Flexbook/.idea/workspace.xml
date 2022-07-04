@@ -6,8 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="532a4a97-a58b-4fcc-b470-d4cd19bdbb9e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Flexbook.Web/RequestModels/AddressRequest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/types/AddressDTO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/AddressDTO.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/RequestModels/UserRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/RequestModels/UserRequest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +107,7 @@
       <workItem from="1656771532437" duration="853000" />
       <workItem from="1656841021141" duration="3357000" />
       <workItem from="1656848162889" duration="2596000" />
-      <workItem from="1656924643645" duration="1480000" />
+      <workItem from="1656924643645" duration="1964000" />
     </task>
     <servers />
   </component>
