@@ -1,7 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 using Flexbook.Data.Models.Products;
+using Flexbook.Data.Models.Users;
 
-namespace Flexbook.Data.Models.UserInteraction;
+namespace Flexbook.Data.Models;
 
 
 public class BookReview
@@ -12,7 +13,9 @@ public class BookReview
     public int Rating { get; set; }
     [Required]
     [MaxLength(255)]
-    public string Comment { get; set; }
+    public string Content { get; set; }
     [Required]
     public Book Book { get; set; }
+    [Required]
+    public User User { get; set; }
 }

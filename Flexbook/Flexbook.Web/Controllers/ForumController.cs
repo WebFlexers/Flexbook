@@ -11,12 +11,16 @@ namespace Flexbook.Web.Controllers;
 [ApiController]
 public class ForumController : Controller
 {
+    private readonly ILogger<CustomerController> _logger;
+
     private ICommentService _commentService;
     private ICustomerService _customerService;
     private IAuthorService _authorService;
 
-    public ForumController(ICommentService commentService, ICustomerService customerService, IAuthorService authorService)
+    public ForumController(ILogger<CustomerController> logger, ICommentService commentService, ICustomerService customerService, IAuthorService authorService)
     {
+        _logger = logger;
+
         _commentService = commentService;
         _customerService = customerService;
         _authorService = authorService;

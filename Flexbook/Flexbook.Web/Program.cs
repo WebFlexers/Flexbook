@@ -49,6 +49,7 @@ builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICommentService, CommentService>();
+builder.Services.AddScoped<IBookReviewService, BookReviewService>();
 // Authentication
 builder.Services.AddScoped<ILoginService, LoginService>();
 

@@ -38,7 +38,7 @@ public class BookController : ControllerBase
         return Ok(books);
     }
 
-    [HttpPost("create")]
+    [HttpPost("add_book")]
     public IActionResult CreateBook([FromBody] BookRequest bookRequest)
     {
         var datetimeNow = DateTime.Now.ToUniversalTime();
