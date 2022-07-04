@@ -11,9 +11,9 @@ namespace Flexbook.Web.Controllers;
 public class CustomerController : Controller
 {
     private readonly ILogger<CustomerController> _logger;
-    private ICrudService<Customer> _customerService;
+    private ICustomerService _customerService;
 
-    public CustomerController(ILogger<CustomerController> logger, ICrudService<Customer> customerService)
+    public CustomerController(ILogger<CustomerController> logger, ICustomerService customerService)
     {
         _customerService = customerService;
         _logger = logger;

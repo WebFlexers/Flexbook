@@ -1,6 +1,4 @@
-﻿using Flexbook.Data.Models.Users.Components;
-
-namespace Flexbook.Web.RequestModels
+﻿namespace Flexbook.Web.RequestModels
 {
     public class UserRequest
     {

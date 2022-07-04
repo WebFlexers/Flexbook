@@ -11,9 +11,9 @@ namespace Flexbook.Web.Controllers;
 public class AuthorController : ControllerBase
 {
     private readonly ILogger<AuthorController> _logger;
-    private ICrudService<Author> _authorService;
+    private IAuthorService _authorService;
 
-    public AuthorController(ILogger<AuthorController> logger, ICrudService<Author> authorService)
+    public AuthorController(ILogger<AuthorController> logger, IAuthorService authorService)
     {
         _authorService = authorService;
         _logger = logger;
@@ -49,7 +49,7 @@ public class AuthorController : ControllerBase
             Role = authorRequest.Role
         };
 
-        if(ModelState.IsValid)
+        if (ModelState.IsValid)
             _authorService.Insert(author);
 
         return Ok();

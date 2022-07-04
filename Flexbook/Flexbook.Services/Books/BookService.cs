@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.CodeAnalysis;
 
 namespace Flexbook.Services.Books;
-
 public class BookService : CrudService<Book>, IBookService
 {
     public BookService(FlexbookDbContext dbContext) : base(dbContext) { }

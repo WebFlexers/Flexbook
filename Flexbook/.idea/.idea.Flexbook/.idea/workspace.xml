@@ -6,9 +6,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="532a4a97-a58b-4fcc-b470-d4cd19bdbb9e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Flexbook.Web/RequestModels/AddressRequest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/books/default_book.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/layouts/MainLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/layouts/MainLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Services/Books/BookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Services/Books/BookService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/BookController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/CustomerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/CustomerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Flexbook.Web/RequestModels/UserRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/RequestModels/UserRequest.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +112,9 @@
       <workItem from="1656771532437" duration="853000" />
       <workItem from="1656841021141" duration="3357000" />
       <workItem from="1656848162889" duration="2596000" />
-      <workItem from="1656924643645" duration="1964000" />
+      <workItem from="1656924643645" duration="2651000" />
+      <workItem from="1656928921434" duration="1000000" />
+      <workItem from="1656932217043" duration="4228000" />
     </task>
     <servers />
   </component>
