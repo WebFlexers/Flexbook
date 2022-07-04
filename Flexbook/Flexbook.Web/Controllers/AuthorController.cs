@@ -11,12 +11,12 @@ namespace Flexbook.Web.Controllers;
 public class AuthorController : ControllerBase
 {
     private readonly ILogger<AuthorController> _logger;
-    private ICrudService<Author> _authorService;
+    private IAuthorService _authorService;
 
-    public AuthorController(ILogger<AuthorController> logger, ICrudService<Author> authorService)
+    public AuthorController(ILogger<AuthorController> logger, IAuthorService authorService)
     {
-        _authorService = authorService;
         _logger = logger;
+        _authorService = authorService;
     }
 
     [HttpGet("get/{id}")]

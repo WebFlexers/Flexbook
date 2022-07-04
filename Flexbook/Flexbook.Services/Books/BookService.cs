@@ -21,4 +21,9 @@ public class BookService : CrudService<Book>, IBookService
             .Include(book => book.Author)
             .FirstOrDefault(book => book.Id == id);
     }
+
+    public void SayHi()
+    {
+        Console.WriteLine("HII!");
+    }
 }

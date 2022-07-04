@@ -42,11 +42,12 @@ builder.Services.AddDbContext<FlexbookDbContext>(opts =>
 });
 
 // Inject services
+// Generic
+// NonGeneric
 builder.Services.AddScoped<IAuthorService, AuthorService>();
+builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<ICrudService<Book>, BookService>();
-builder.Services.AddScoped<ICrudService<Comment>, CommentService>();
 // Authentication
 builder.Services.AddScoped<ILoginService, LoginService>();
 

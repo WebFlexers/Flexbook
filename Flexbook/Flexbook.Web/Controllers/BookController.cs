@@ -14,13 +14,14 @@ public class BookController : ControllerBase
 {
     private readonly ILogger<BookController> _logger;
     private IBookService _bookService;
-    private ICrudService<Author> _authorService;
+    private IAuthorService _authorService;
 
-    public BookController(ILogger<BookController> logger, IBookService bookService, ICrudService<Author> authorService)
+
+    public BookController(ILogger<BookController> logger, IBookService bookService, IAuthorService authorService)
     {
+        _logger = logger;
         _bookService = bookService;
         _authorService = authorService;
-        _logger = logger;
     }
 
     [HttpGet("get/{id}")]
@@ -34,6 +35,7 @@ public class BookController : ControllerBase
     public IActionResult GetAllBooks()
     {
         var books = _bookService.GetAllBooks();
+        _bookService.SayHi();
         return Ok(books);
     }
 
