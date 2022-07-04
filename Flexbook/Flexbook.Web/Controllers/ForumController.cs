@@ -4,6 +4,7 @@ using Flexbook.Services;
 using Flexbook.Web.RequestModels;
 using Microsoft.AspNetCore.Mvc;
 using Flexbook.Services.AuthorForum;
+using Flexbook.Services.Users.User;
 
 namespace Flexbook.Web.Controllers;
 
@@ -14,15 +15,15 @@ public class ForumController : Controller
     private readonly ILogger<CustomerController> _logger;
 
     private ICommentService _commentService;
-    private ICustomerService _customerService;
+    private IUserService _userService;
     private IAuthorService _authorService;
 
-    public ForumController(ILogger<CustomerController> logger, ICommentService commentService, ICustomerService customerService, IAuthorService authorService)
+    public ForumController(ILogger<CustomerController> logger, ICommentService commentService, IUserService userService, IAuthorService authorService)
     {
         _logger = logger;
 
         _commentService = commentService;
-        _customerService = customerService;
+        _userService = userService;
         _authorService = authorService;
     }
 
@@ -43,7 +44,7 @@ public class ForumController : Controller
             CreatedOn = commentRequest.CreatedOn,
             UpdatedOn = commentRequest.UpdatedOn,
             LikesCount = 0,
-            User = _customerService.GetById(commentRequest.UserId),
+            User = _userService.GetById(commentRequest.UserId),
             AuthorHost = _authorService.GetById(commentRequest.AuthorHostId),
         };
 
