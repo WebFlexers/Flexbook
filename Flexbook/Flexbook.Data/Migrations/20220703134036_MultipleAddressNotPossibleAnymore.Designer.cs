@@ -3,6 +3,7 @@ using System;
 using Flexbook.Data.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Flexbook.Data.Migrations
 {
     [DbContext(typeof(FlexbookDbContext))]
-    partial class FlexbookDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220703134036_MultipleAddressNotPossibleAnymore")]
+    partial class MultipleAddressNotPossibleAnymore
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -240,12 +242,6 @@ namespace Flexbook.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasAlternateKey("Email");
-
-                    b.HasAlternateKey("PhoneNumber");
-
-                    b.HasAlternateKey("Username");
-
                     b.HasIndex("AddressId");
 
                     b.ToTable("Users");
@@ -287,9 +283,6 @@ namespace Flexbook.Data.Migrations
                         .HasColumnType("character varying(255)");
 
                     b.HasIndex("AuthorId");
-
-                    b.HasIndex("ISBN")
-                        .IsUnique();
 
                     b.ToTable("Books", (string)null);
                 });

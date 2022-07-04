@@ -46,7 +46,6 @@ builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICrudService<Book>, BookService>();
-builder.Services.AddScoped<ICrudService<Conversation>, ConversationService>();
 builder.Services.AddScoped<ICrudService<Comment>, CommentService>();
 // Authentication
 builder.Services.AddScoped<ILoginService, LoginService>();

@@ -17,7 +17,6 @@ public class FlexbookDbContext : DbContext
     public DbSet<Order> Orders { get; set; }
     public DbSet<OrderItem> OrderItems { get; set; }
 
-    public DbSet<Conversation> Conversations { get; set; }
     public DbSet<Comment> Comments { get; set; }
     
     public DbSet<User?> Users { get; set; }
@@ -31,5 +30,19 @@ public class FlexbookDbContext : DbContext
         
         // Products
         modelBuilder.Entity<Book>().ToTable("Books");
+
+        // Unique Constraints
+        // User
+        modelBuilder.Entity<User>()
+           .HasAlternateKey(user => user.Username);
+        modelBuilder.Entity<User>()
+           .HasAlternateKey(user => user.Email);
+        modelBuilder.Entity<User>()
+           .HasAlternateKey(user => user.PhoneNumber);
+        // Book
+        modelBuilder.Entity<Book>()
+            .HasIndex(book => book.ISBN)
+            .IsUnique();
     }
+    
 }

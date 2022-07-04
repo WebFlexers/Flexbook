@@ -3,6 +3,7 @@ using System;
 using Flexbook.Data.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Flexbook.Data.Migrations
 {
     [DbContext(typeof(FlexbookDbContext))]
-    partial class FlexbookDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220702151609_ForumAdded")]
+    partial class ForumAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,13 +32,13 @@ namespace Flexbook.Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AuthorHostId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("character varying(255)");
+
+                    b.Property<int?>("ConversationId")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("timestamp with time zone");
@@ -52,11 +54,29 @@ namespace Flexbook.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AuthorHostId");
+                    b.HasIndex("ConversationId");
 
                     b.HasIndex("UserId");
 
                     b.ToTable("Comments");
+                });
+
+            modelBuilder.Entity("Flexbook.Data.Models.Conversation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AuthorId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AuthorId");
+
+                    b.ToTable("Conversations");
                 });
 
             modelBuilder.Entity("Flexbook.Data.Models.OrderSystem.Order", b =>
@@ -173,6 +193,9 @@ namespace Flexbook.Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
                     b.Property<int>("Number")
                         .HasColumnType("integer");
 
@@ -240,12 +263,6 @@ namespace Flexbook.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasAlternateKey("Email");
-
-                    b.HasAlternateKey("PhoneNumber");
-
-                    b.HasAlternateKey("Username");
-
                     b.HasIndex("AddressId");
 
                     b.ToTable("Users");
@@ -288,9 +305,6 @@ namespace Flexbook.Data.Migrations
 
                     b.HasIndex("AuthorId");
 
-                    b.HasIndex("ISBN")
-                        .IsUnique();
-
                     b.ToTable("Books", (string)null);
                 });
 
@@ -315,11 +329,9 @@ namespace Flexbook.Data.Migrations
 
             modelBuilder.Entity("Flexbook.Data.Models.Comment", b =>
                 {
-                    b.HasOne("Flexbook.Data.Models.Users.Author", "AuthorHost")
-                        .WithMany()
-                        .HasForeignKey("AuthorHostId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("Flexbook.Data.Models.Conversation", null)
+                        .WithMany("Comments")
+                        .HasForeignKey("ConversationId");
 
                     b.HasOne("Flexbook.Data.Models.Users.User", "User")
                         .WithMany()
@@ -327,9 +339,18 @@ namespace Flexbook.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("AuthorHost");
-
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Flexbook.Data.Models.Conversation", b =>
+                {
+                    b.HasOne("Flexbook.Data.Models.Users.Author", "Author")
+                        .WithMany()
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Author");
                 });
 
             modelBuilder.Entity("Flexbook.Data.Models.OrderSystem.Order", b =>
@@ -402,6 +423,11 @@ namespace Flexbook.Data.Migrations
                         .HasForeignKey("Flexbook.Data.Models.Users.Customer", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Flexbook.Data.Models.Conversation", b =>
+                {
+                    b.Navigation("Comments");
                 });
 
             modelBuilder.Entity("Flexbook.Data.Models.OrderSystem.Order", b =>
