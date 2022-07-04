@@ -35,7 +35,6 @@ public class BookController : ControllerBase
     public IActionResult GetAllBooks()
     {
         var books = _bookService.GetAllBooks();
-        _bookService.SayHi();
         return Ok(books);
     }
 

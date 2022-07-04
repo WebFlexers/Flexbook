@@ -3,24 +3,31 @@ using Flexbook.Data.Models;
 using Flexbook.Services;
 using Flexbook.Web.RequestModels;
 using Microsoft.AspNetCore.Mvc;
+using Flexbook.Services.AuthorForum;
 
 namespace Flexbook.Web.Controllers;
 
-[Route("api/author/{username}/forum")]
+[Route("api/author/forum")]
 [ApiController]
 public class ForumController : Controller
 {
-    private string username = "default";
+    private ICommentService _commentService;
+    private ICustomerService _customerService;
+    private IAuthorService _authorService;
 
-    private CrudService<Customer> _customerService;
-    private CrudService<Author> _authorService;
-    private CrudService<Comment> _commentService;
-
-    public ForumController()
+    public ForumController(ICommentService commentService, ICustomerService customerService, IAuthorService authorService)
     {
-        _customerService = new CrudService<Customer>();
-        _authorService = new CrudService<Author>();
-        _commentService = new CrudService<Comment>();
+        _commentService = commentService;
+        _customerService = customerService;
+        _authorService = authorService;
+    }
+
+    [HttpGet("get_comment")]
+    public IActionResult GetComment(int comment_id)
+    {
+        var comment = _commentService.GetById(comment_id);
+
+        return Ok(comment);
     }
 
     [HttpPost("add_comment")]
@@ -29,23 +36,41 @@ public class ForumController : Controller
         Comment comment = new Comment
         {
             Content = commentRequest.Content,
-            CreatedOn = DateTime.Now,
-            UpdatedOn = DateTime.Now,
+            CreatedOn = commentRequest.CreatedOn,
+            UpdatedOn = commentRequest.UpdatedOn,
             LikesCount = 0,
             User = _customerService.GetById(commentRequest.UserId),
             AuthorHost = _authorService.GetById(commentRequest.AuthorHostId),
         };
 
-        _commentService.Insert(comment);
+        if (ModelState.IsValid)
+            _commentService.Insert(comment);
 
         return Ok();
     }
 
-    [HttpPost("edit_comment")]
-    public IActionResult ShowAllComments(int author_id)
+    [HttpPost("all_comments")]
+    public IActionResult ShowAllCommentsByAuthor(int author_id)
     {
-
+        var all_comments = _commentService.GetAllCommentsByAuthor(author_id);
         
+        return Ok(all_comments);
+    }
+
+    [HttpPost("like")]
+    public IActionResult LikeComment(int comment_id)
+    {
+        _commentService.AddLikeToComment(comment_id);
+
+        return Ok();
+    }
+
+    [HttpPost("remove_comment")]
+    public IActionResult removeComment(int comment_id)
+    {
+        var comment = _commentService.GetById(comment_id);
+        _commentService.Delete(comment);
+
         return Ok();
     }
 }
