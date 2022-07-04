@@ -15,8 +15,8 @@ public class AuthorController : ControllerBase
 
     public AuthorController(ILogger<AuthorController> logger, IAuthorService authorService)
     {
-        _authorService = authorService;
         _logger = logger;
+        _authorService = authorService;
     }
 
     [HttpGet("get/{id}")]

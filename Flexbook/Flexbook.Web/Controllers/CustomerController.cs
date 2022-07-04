@@ -1,8 +1,8 @@
 ﻿using Flexbook.Data.Models.Users;
 using Flexbook.Data.Models.Users.Components;
 using Flexbook.Services;
+using Flexbook.Web.RequestModels;
 using Microsoft.AspNetCore.Mvc;
-
 
 namespace Flexbook.Web.Controllers;
 
@@ -15,8 +15,8 @@ public class CustomerController : Controller
 
     public CustomerController(ILogger<CustomerController> logger, ICustomerService customerService)
     {
-        _customerService = customerService;
         _logger = logger;
+        _customerService = customerService;
     }
 
     [HttpGet("get/{id}")]
@@ -27,28 +27,29 @@ public class CustomerController : Controller
     }
 
     [HttpPost("register")]
-    public IActionResult AddCustomer()
+    public IActionResult AddCustomer([FromBody] CustomerRequest customerRequest)
     {
         Customer customer = new Customer
         {
-            Username = "lefterisk25",
-            Password = "252525",
-            Fullname = "Lefteris Kontouris",
-            Email = "lefterisk00725@gmail.com",
+            Username = customerRequest.Username,
+            Password = customerRequest.Password,
+            Fullname = customerRequest.Fullname,
+            Email = customerRequest.Email,
             Address = new Address
             {
-                Street = "Gymnastiriou O.T.",
-                Number = 370,   
-                City = "Megara",
-                PostCode = "19100",
+                Street = customerRequest.Address.Street,
+                Number = customerRequest.Address.Number,
+                City = customerRequest.Address.City,
+                PostCode = customerRequest.Address.PostCode,
             },
-            PhoneNumber = "6983701433",
-            Image = "default.jpg",
-            BirthDate = new DateTime(2001, 1, 25).ToUniversalTime(),
-            Role = "Customer"
+            PhoneNumber = customerRequest.PhoneNumber,
+            Image = customerRequest.Image,
+            BirthDate = customerRequest.BirthDate,
+            Role = customerRequest.Role
         };
 
-        _customerService.Insert(customer);
+        if (ModelState.IsValid)
+            _customerService.Insert(customer);
 
         return Ok();
     }

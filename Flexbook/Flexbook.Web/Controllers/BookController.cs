@@ -18,9 +18,9 @@ public class BookController : ControllerBase
 
     public BookController(ILogger<BookController> logger, IBookService bookService, IAuthorService authorService)
     {
+        _logger = logger;
         _bookService = bookService;
         _authorService = authorService;
-        _logger = logger;
     }
 
     [HttpGet("get/{id}")]
