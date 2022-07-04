@@ -17,7 +17,36 @@
 
         <div class="self-center q-gutter-md q-mr-md">
           <q-btn v-if="!loggedIn" color="primary" label="Login/Register" @click="goToLoginPage"/>
-          <q-btn v-if="loggedIn" color="primary" label="Shopping Cart" />
+
+          <q-btn v-if="loggedIn" color="purple" label="Account Settings">
+            <q-menu>
+              <div class="row no-wrap q-pa-md">
+                <div class="column">
+                  <div class="text-h6 q-mb-md">Settings</div>
+
+                </div>
+
+                <q-separator vertical inset class="q-mx-lg" />
+
+                <div class="column items-center">
+                  <q-avatar size="72px">
+                    <img src="/customers/customer_kostas.png" alt="customer_image">
+                  </q-avatar>
+
+                  <div class="text-subtitle1 q-mt-md q-mb-xs"> {{ authenticatedUser.birthDate }} </div>
+
+                  <q-btn
+                    color="primary"
+                    label="Logout"
+                    push
+                    size="sm"
+                    @click="logout"
+                    v-close-popup
+                  />
+                </div>
+              </div>
+            </q-menu>
+          </q-btn>
         </div>
 
       </div>

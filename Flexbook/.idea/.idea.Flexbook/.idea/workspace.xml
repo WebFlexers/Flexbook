@@ -5,7 +5,15 @@
     <projectFile profileName="IIS Express">Flexbook.Web/Flexbook.Web.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="532a4a97-a58b-4fcc-b470-d4cd19bdbb9e" name="Changes" comment="" />
+    <list default="true" id="532a4a97-a58b-4fcc-b470-d4cd19bdbb9e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/authors/author_tolkien.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/books/thinking_fast_and_slow_book.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/customers/customer_kostas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/layouts/MainLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/layouts/MainLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Services/Books/BookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Services/Books/BookService.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,6 +110,7 @@
       <workItem from="1656771532437" duration="853000" />
       <workItem from="1656841021141" duration="3357000" />
       <workItem from="1656848162889" duration="2596000" />
+      <workItem from="1656924643645" duration="720000" />
     </task>
     <servers />
   </component>
