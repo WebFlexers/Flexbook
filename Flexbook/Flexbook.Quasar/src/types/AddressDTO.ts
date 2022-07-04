@@ -4,5 +4,4 @@ export interface AddressDTO {
   number: number,
   city: string,
   postCode: string,
-  isActive: boolean
 }
