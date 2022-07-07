@@ -33,7 +33,7 @@ public class BookReviewController : Controller
         return Ok(bookReview);
     }
 
-    [HttpGet("add_review")]
+    [HttpPost("add_review")]
     public ActionResult AddReviewToBook([FromBody] BookReviewRequest bookReviewRequest)
     {
         BookReview bookReview = new BookReview()
@@ -48,5 +48,12 @@ public class BookReviewController : Controller
             _bookReviewService.Insert(bookReview);
 
         return Ok();
+    }
+
+    [HttpGet("all_reviews/{book_id}")]
+    public ActionResult ShowAllReviewsOfBook(int book_id)
+    {
+        var all_reviews = _bookReviewService.GetAllReviewsByBook(book_id);
+        return Ok(all_reviews);
     }
 }

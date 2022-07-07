@@ -15,4 +15,10 @@ public class BookReviewService : CrudService<BookReview>, IBookReviewService
             .Include(review => review.User)
             .FirstOrDefault(review => review.Id == id);
     }
+
+    public IEnumerable<BookReview> GetAllReviewsByBook(int book_id)
+    {
+        return _dbContext.Set<BookReview>().Where(review => review.Book.Id == book_id)
+            .Include(review => review.Book).Include(review => review.User).ToList();
+    }
 }
