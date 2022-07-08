@@ -19,7 +19,7 @@ namespace Flexbook.Services
         }
 
         [return: MaybeNull]
-        public virtual T GetById(int id)
+        public virtual T? GetById(int id)
         {
             return _dbContext.Set<T>().Find(id);
         }

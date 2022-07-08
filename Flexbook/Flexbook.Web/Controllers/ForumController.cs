@@ -73,8 +73,7 @@ public class ForumController : Controller
     [HttpPost("remove_comment")]
     public IActionResult RemoveComment(int comment_id)
     {
-        var comment = _commentService.GetById(comment_id);
-        _commentService.Delete(comment);
+        _commentService.Delete(_commentService.GetById(comment_id));
 
         return Ok();
     }

@@ -11,6 +11,7 @@ using Microsoft.IdentityModel.Tokens;
 using Flexbook.Data.Models;
 using Flexbook.Services.AuthorForum;
 using Flexbook.Services.Users.User;
+using Flexbook.Services.Order;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -50,6 +51,8 @@ builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICommentService, CommentService>();
 builder.Services.AddScoped<IBookReviewService, BookReviewService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IOrderItemService, OrderItemService>();
 // Authentication
 builder.Services.AddScoped<ILoginService, LoginService>();
 

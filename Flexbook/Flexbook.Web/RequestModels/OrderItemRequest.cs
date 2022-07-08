@@ -3,6 +3,6 @@
     public class OrderItemRequest
     {
         public int Quantity { get; set; }
-        public BookRequest Product { get; set; }
+        public int ProductId { get; set; }
     }
 }
