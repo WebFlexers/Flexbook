@@ -314,8 +314,7 @@ namespace Flexbook.Data.Migrations
 
                     b.Property<string>("Summary")
                         .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("character varying(255)");
+                        .HasColumnType("text");
 
                     b.HasIndex("AuthorId");
 

@@ -6,6 +6,6 @@ namespace Flexbook.Services
 {
     public interface IAuthorService : ICrudService<Author>
     {
-        
+        public List<Author> GetAllAuthors();
     }
 }

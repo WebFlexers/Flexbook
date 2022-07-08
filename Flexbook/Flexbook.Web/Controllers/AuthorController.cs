@@ -26,6 +26,13 @@ public class AuthorController : ControllerBase
         return Ok(author);
     }
 
+    [HttpGet("get_all")]
+    public IActionResult GetAllAuthors()
+    {
+        var authors = _authorService.GetAllAuthors();
+        return Ok(authors);
+    }
+
     [HttpPost("register")]
     public IActionResult AddAuthor([FromBody] AuthorRequest authorRequest)
     {

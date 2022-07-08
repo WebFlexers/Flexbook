@@ -1,0 +1,89 @@
+{
+  "username": "andre_aciman",
+  "password": "supersecureauthor",
+  "fullname": "André Aciman",
+  "email": "andre_aciman@gmail.com",
+  "address": {
+    "street": "Ocean Park Ave",
+    "number": 210,
+    "city": "New Jersey",
+    "postCode": "07720"
+  },
+  "birthDate": "1951-01-02T00:00:00.828Z",
+  "phoneNumber": "7349019838",
+  "image": "andre_aciman.jpg",
+  "role": "Author",
+  "description": "An Italian-American writer. Born and raised in Alexandria, Egypt, he is currently a distinguished professor at the Graduate Center of City University of New York"
+}
+
+{
+  "username": "fotis_papanastasiou",
+  "password": "supersecureauthor",
+  "fullname": "Fotis Papanastasiou",
+  "email": "fotis_papanastasiou@hotmail.com",
+  "address": {
+    "street": "Agias Barbaras",
+    "number": 231,
+    "city": "Paleo Faliro",
+    "postCode": "17563"
+  },
+  "birthDate": "1981-02-06T00:00:00.828Z",
+  "phoneNumber": "6945873422",
+  "image": "fotis_papanastasiou.jpg",
+  "role": "Author",
+  "description": "Ο Φώτης Παπαναστασίου είναι Ειδικός Παιδαγωγός, αριστούχος απόφοιτος του Πανεπιστημίου Θεσσαλίας, με μεταπτυχιακό στη Σχολική Ψυχολογία."
+}
+
+{
+  "username": "evgenios_trivizas",
+  "password": "supersecureauthor",
+  "fullname": "Evgenios Trivizas",
+  "email": "evgenios_trivizas@gmail.com",
+  "address": {
+    "street": "Agoniston",
+    "number": 12,
+    "city": "Paleo Faliro",
+    "postCode": "17563"
+  },
+  "birthDate": "1946-10-08T00:00:00.828Z",
+  "phoneNumber": "6965262213",
+  "image": "evgenios_trivizas.jpg",
+  "role": "Author",
+  "description": "Ο Ευγένιος Τριβιζάς είναι δικηγόρος, πτυχιούχος της Νομικής και των Πολιτικών και Οικονομικών Επιστημών του Πανεπιστημίου Αθηνών, κάτοχος πτυχίου Master of Laws (University College London) και διδάκτωρ Νομικής του Πανεπιστημίου του Λονδίνου (London School of Economics and Political Science). Επίσης Senior Research Fellow του Πανεπιστημίου Λονδίνου."
+}
+
+{
+  "username": "sarantos_kargakos",
+  "password": "supersecureauthor",
+  "fullname": "Sarantos Kargakos",
+  "email": "sarantos_kargakos@hotmail.com",
+  "address": {
+    "street": "Likourgou",
+    "number": 24,
+    "city": "Alimos",
+    "postCode": "19363"
+  },
+  "birthDate": "1937-07-16T00:00:00.828Z",
+  "phoneNumber": "6933465346",
+  "image": "sarantos_kargakos.jpg",
+  "role": "Author",
+  "description": "Ο Σαράντος Καργάκος γεννήθηκε στο Γύθειο Λακωνίας, σπούδασε φιλολογία στο Πανεπιστήμιο Αθηνών και υπήρξε συνεργάτης πολλών μεγάλων φροντιστηρίων στην Αθήνα."
+}
+
+{
+  "username": "giannis_garoutsos",
+  "password": "supersecureauthor",
+  "fullname": "Giannis Garoutsos",
+  "email": "giannis_garoutsos@gamil.com",
+  "address": {
+    "street": "Likourgou",
+    "number": 27,
+    "city": "Alimos",
+    "postCode": "19363"
+  },
+  "birthDate": "1963-03-12T00:00:00.828Z",
+  "phoneNumber": "6936473386",
+  "image": "giannis_garoutsos.jpg",
+  "role": "Author",
+  "description": "Από μικρό παιδί ήταν φαινόμενο, σε ηλικία πέντε ετών γνώριζε όλη την προπαίδεια, ως μαθητής του Δημοτικού σχολείου μελετούσε από μόνος του βιβλία κβαντικής φυσικής όταν έβοσκε τα πρόβατα στα βουνά της Οκτωνιάς."
+}

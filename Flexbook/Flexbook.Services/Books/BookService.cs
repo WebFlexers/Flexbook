@@ -9,7 +9,9 @@ public class BookService : CrudService<Book>, IBookService
 
     public List<Book> GetAllBooks()
     {
-        return _dbContext.Set<Book>().ToList();
+        return _dbContext.Set<Book>()
+            .Include(book => book.Author)
+            .ToList();
     }
 
     public override Book? GetById(int id)

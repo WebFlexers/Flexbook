@@ -1,6 +1,5 @@
 using Flexbook.Data.DataAccess;
 using Flexbook.Data.Models.Users;
-using Flexbook.Data.Models.Users.Components;
 using Microsoft.EntityFrameworkCore;
 
 namespace Flexbook.Services;
@@ -14,5 +13,12 @@ public class AuthorService : CrudService<Author>, IAuthorService
         return _dbContext.Set<Author>()
             .Include(author => author.Address)
             .FirstOrDefault(author => author.Id == id);
+    }
+    
+    public List<Author> GetAllAuthors()
+    {
+        return _dbContext.Set<Author>()
+            .Include(author => author.Address)
+            .ToList();
     }
 }

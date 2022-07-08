@@ -6,8 +6,6 @@ namespace Flexbook.Data.Models.Products
     public class Book : Product
     {
         [Required]
-        public int Id { get; set; }
-        [Required]
         [StringLength(13)]
         public string ISBN { get; set; }
         [Required]
@@ -22,7 +20,6 @@ namespace Flexbook.Data.Models.Products
         [MaxLength(50)]
         public string Language { get; set; }
         [Required]
-        [MaxLength(255)]
         public string Summary { get; set; }
         [Required]
         public Author Author { get; set; }
