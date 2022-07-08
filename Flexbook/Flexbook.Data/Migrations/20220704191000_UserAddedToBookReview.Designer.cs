@@ -3,6 +3,7 @@ using System;
 using Flexbook.Data.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Flexbook.Data.Migrations
 {
     [DbContext(typeof(FlexbookDbContext))]
-    partial class FlexbookDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220704191000_UserAddedToBookReview")]
+    partial class UserAddedToBookReview
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,7 +35,7 @@ namespace Flexbook.Data.Migrations
                     b.Property<int>("BookId")
                         .HasColumnType("integer");
 
-                    b.Property<string>("Content")
+                    b.Property<string>("Comment")
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("character varying(255)");

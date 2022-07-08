@@ -1,6 +1,5 @@
 using Flexbook.Data.Models.OrderSystem;
 using Flexbook.Data.Models.Products;
-using Flexbook.Data.Models.UserInteraction;
 using Flexbook.Data.Models.Users;
 using Flexbook.Data.Models.Users.Components;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +20,8 @@ public class FlexbookDbContext : DbContext
     
     public DbSet<User?> Users { get; set; }
     public DbSet<Product> Products { get; set; }
+    public DbSet<BookReview> BookReviews { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         // Use Table Per Type approach

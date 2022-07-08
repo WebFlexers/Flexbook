@@ -9,6 +9,14 @@ public class CommentService : CrudService<Comment>, ICommentService
 {
     public CommentService(FlexbookDbContext dbContext) : base(dbContext) { }
 
+    public override Comment? GetById(int id)
+    {
+        return _dbContext.Set<Comment>()
+            .Include(comment => comment.User)
+            .Include(comment => comment.AuthorHost)
+            .FirstOrDefault(comment => comment.Id == id);
+    }
+
     public IEnumerable<Comment> GetAllCommentsByAuthor(int author_id)
     {
         return _dbContext.Set<Comment>().Where(comment => comment.AuthorHost.Id == author_id)

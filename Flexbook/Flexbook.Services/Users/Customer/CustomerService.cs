@@ -9,8 +9,7 @@ public class CustomerService : CrudService<Customer>, ICustomerService
 {
     public CustomerService(FlexbookDbContext dbContext) : base(dbContext) { }
 
-    [return: MaybeNull]
-    public override Customer GetById(int id)
+    public override Customer? GetById(int id)
     {
         return _dbContext.Set<Customer>()
             .Include(customer => customer.Address)
