@@ -33,10 +33,17 @@ public class BookController : ControllerBase
     [HttpGet("get_all")]
     public IActionResult GetAllBooks()
     {
-        var books = _bookService.GetAllBooks();
+        var books = _bookService.GetAll();
         return Ok(books);
     }
 
+    [HttpGet("get_by_genre/{genre}")]
+    public IActionResult GetAllBooks(string genre)
+    {
+        var books = _bookService.GetByGenre(genre);
+        return Ok(books);
+    }
+    
     [HttpPost("add_book")]
     public IActionResult CreateBook([FromBody] BookRequest bookRequest)
     {

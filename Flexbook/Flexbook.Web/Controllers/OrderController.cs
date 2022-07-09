@@ -56,10 +56,11 @@ public class OrderController : Controller
             tempOrderItemsList.Add(orderItem);
         }
 
+        var now = DateTime.Now.ToUniversalTime();
         Order order = new Order()
         {
-            CreatedOn = orderRequest.CreatedOn,
-            UpdatedOn = orderRequest.UpdatedOn,
+            CreatedOn = now,
+            UpdatedOn = now,
             PaymentMethod = orderRequest.PaymentMethod,
             Items = tempOrderItemsList,
             Status = "Pending",

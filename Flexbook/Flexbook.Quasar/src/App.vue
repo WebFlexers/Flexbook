@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
+import { defineComponent } from 'vue';
 
 
 export default defineComponent({
@@ -17,7 +17,7 @@ export default defineComponent({
 });
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity .2s, transform .2s;

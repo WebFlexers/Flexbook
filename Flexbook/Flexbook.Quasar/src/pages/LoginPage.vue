@@ -40,6 +40,10 @@
         <q-btn label="Login" type="submit" color="primary"/>
         <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
       </div>
+
+      <div class="q-ma-lg">
+        <p> Don't have an account yet? <router-link to="/register"> Click here </router-link> to create a new one</p>
+      </div>
     </q-form>
 
   </div>
@@ -47,6 +51,7 @@
 
 <script lang="ts">
 import { useAuthStore } from 'src/stores/auth';
+import { useQuasar } from 'quasar'
 import { reactive, ref } from 'vue'
 import { Login } from 'src/types/Auth/Login';
 import { useRouter } from 'vue-router';
@@ -56,6 +61,14 @@ export default {
     const authStore = useAuthStore()
     const router = useRouter();
     const loginCredentials = reactive<Login>({} as Login)
+    const $q = useQuasar()
+
+    function triggerNotFoundMessage () {
+      $q.notify({
+        type: 'negative',
+        message: 'User not found'
+      })
+    }
 
     async function login() {
       console.log(`Login form submitted with creds:
@@ -63,11 +76,13 @@ export default {
         password: ${ loginCredentials.password }`)
 
       authStore.login(loginCredentials).then(() => {
-        if (localStorage.getItem("accessToken")) {
-          router.push('/');
+        if (localStorage.getItem('accessToken')) {
+          router.push('/')
+        }
+        else {
+          triggerNotFoundMessage()
         }
       })
-
     }
 
     return {

@@ -6,34 +6,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="532a4a97-a58b-4fcc-b470-d4cd19bdbb9e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220708211204_RemoveLimitationOnBookSummaryLength.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220708211204_RemoveLimitationOnBookSummaryLength.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220708213606_FixBookIdAlways0Error.Designer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220708213606_FixBookIdAlways0Error.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/authors/andre_aciman.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/authors/evgenios_trivizas.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/authors/fotis_papanastasiou.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/authors/giannis_garoutsos.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/authors/sarantos_kargakos.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/books/call_me_by_your_name.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/books/depyrazei_praktikos_odigos_gia_goneis_kai_ekpaideftikous.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/books/eisagogi_sti_michaniki_ton_reyston.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/books/find_me.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/books/frikantela_i_magissa_pou_misouse_ta_kalanta.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/books/gine_thetikos_anthropos_se_365_meres.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/books/i_elliniki_epanastasi_tou_1821_tomos_a.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/books/megas_alexandros.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/books/olokliromata.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/books/ta_tria_mikra_likakia.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220709082845_SetHigherProductTitleLimit.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/20220709082845_SetHigherProductTitleLimit.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/components/BookForSale.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/BookGenres/ChildrenBooksPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/BookGenres/EducationBooksPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/BookGenres/HistoryBooksPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/BookGenres/LiteratureBooksPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/BookGenres/ScienceBooksPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/RegisterPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/services/BookService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Orders/OrderDTO.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Orders/OrderItemDTO.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Users/AuthorDTO.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Users/UserRegisterDTO.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Flexbook.Data/Migrations/FlexbookDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Migrations/FlexbookDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Book.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/public/authors/author_tolkien.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/public/books/thinking_fast_and_slow_book.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Product.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Data/Models/Products/Product.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/public/authors/andre_aciman.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/authors/andre_aciman.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/public/authors/evgenios_trivizas.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/authors/evgenios_trivizas.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/public/authors/fotis_papanastasiou.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/authors/fotis_papanastasiou.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/public/authors/sarantos_kargakos.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/public/authors/sarantos_kargakos.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/components/SalesComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/layouts/MainLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/layouts/MainLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/CustomerProfile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/CustomerProfilePage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/ErrorNotFound.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/ErrorNotFoundPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/IndexPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/IndexPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/LoginPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/LoginPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/router/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/router/routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/services/LoginService.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/alert.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/alert.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/auth.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/auth.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Auth/RegisterCustomer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/types/BookDTO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/BookDTO.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/types/UserDTO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Users/UserDTO.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Flexbook.Services/Books/BookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Services/Books/BookService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Services/Users/Author/AuthorService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Services/Users/Author/AuthorService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Services/Users/Author/IAuthorService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Services/Users/Author/IAuthorService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/AuthorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Services/Books/IBookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Services/Books/IBookService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/BookController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/OrderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/OrderController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/RequestModels/OrderRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/RequestModels/OrderRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sample Data/Books.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Sample Data/Books.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,6 +150,9 @@
       <workItem from="1657298997932" duration="717000" />
       <workItem from="1657304357764" duration="1216000" />
       <workItem from="1657313782582" duration="2758000" />
+      <workItem from="1657354569519" duration="1669000" />
+      <workItem from="1657387142928" duration="334000" />
+      <workItem from="1657395467408" duration="3303000" />
     </task>
     <servers />
   </component>

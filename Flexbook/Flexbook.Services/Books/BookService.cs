@@ -7,13 +7,21 @@ public class BookService : CrudService<Book>, IBookService
 {
     public BookService(FlexbookDbContext dbContext) : base(dbContext) { }
 
-    public List<Book> GetAllBooks()
+    public List<Book> GetAll()
     {
         return _dbContext.Set<Book>()
             .Include(book => book.Author)
             .ToList();
     }
 
+    public List<Book> GetByGenre(string genre)
+    {
+        return _dbContext.Set<Book>()
+            .Where(book => book.Genre == genre)
+            .Include(book => book.Author)
+            .ToList();
+    }
+    
     public override Book? GetById(int id)
     {
         return _dbContext.Set<Book>()

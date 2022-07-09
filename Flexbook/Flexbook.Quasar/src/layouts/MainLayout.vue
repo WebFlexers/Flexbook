@@ -20,7 +20,7 @@
 
           <q-btn v-if="loggedIn" round>
             <q-avatar size="72px">
-              <img src="/customers/customer_kostas.png" alt="customer_image">
+              <img :src="`${profileImage}`" alt="customer_image">
             </q-avatar>
             <q-menu>
               <div class="row no-wrap q-pa-md">
@@ -32,7 +32,7 @@
 
                 <div class="column items-center">
                   <q-avatar size="72px">
-                    <img src="/customers/customer_kostas.png" alt="customer_image">
+                    <img :src="`${profileImage}`" alt="user_image">
                   </q-avatar>
 
                   <div class="text-subtitle1 q-mt-md q-mb-xs"> {{ authenticatedUser.fullname }} </div>
@@ -58,11 +58,11 @@
 
       <q-tabs class="row route-tabs">
         <q-route-tab class="col" to="/" label="Home" />
-        <q-route-tab class="col" to="/page1" label="Literature" />
-        <q-route-tab class="col" to="/page2" label="Education" />
-        <q-route-tab class="col" to="/page3" label="Children's Books" />
-        <q-route-tab class="col" to="/page3" label="History" />
-        <q-route-tab class="col" to="/page3" label="Sciences" />
+        <q-route-tab class="col" to="/literature_books" label="Literature" />
+        <q-route-tab class="col" to="/education_books" label="Education" />
+        <q-route-tab class="col" to="/children_books" label="Children's Books" />
+        <q-route-tab class="col" to="/history_books" label="History" />
+        <q-route-tab class="col" to="/science_books" label="Sciences" />
       </q-tabs>
     </q-header>
 
@@ -93,13 +93,17 @@ export default defineComponent({
       return authStore.getUser;
     });
 
+    const profileImage = computed(() => {
+      if (authenticatedUser.value) {
+        return `${authenticatedUser.value.role.toLowerCase()}s/${authenticatedUser.value.image}`
+      }
+
+      return undefined
+    });
+
     function logout() {
       authStore.logout();
       goToLoginPage();
-    }
-
-    function test() {
-      alert(loggedIn.value)
     }
 
     function goToLoginPage() {
@@ -110,8 +114,8 @@ export default defineComponent({
       search: ref(''),
       logo_url: ref('logo.png'),
       loggedIn,
-      test,
       authenticatedUser,
+      profileImage,
       logout,
       goToLoginPage
     }

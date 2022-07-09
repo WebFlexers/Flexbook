@@ -4,5 +4,6 @@ namespace Flexbook.Services.Books;
 
 public interface IBookService : ICrudService<Book>
 {
-    public List<Book> GetAllBooks();
+    public List<Book> GetAll();
+    public List<Book> GetByGenre(string genre);
 }

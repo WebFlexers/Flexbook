@@ -7,7 +7,7 @@ export interface UserDTO {
   fullname: string,
   email: string,
   address: AddressDTO,
-  birthDate: Date,
+  birthDate: string,
   phoneNumber: string,
   image: string,
   role: string

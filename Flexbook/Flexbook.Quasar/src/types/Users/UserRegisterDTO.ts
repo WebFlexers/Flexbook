@@ -1,14 +1,12 @@
 import {AddressDTO} from 'src/types/AddressDTO';
 
-export interface RegisterCustomer {
-  id: number,
+export interface UserRegisterDTO {
   username: string,
   password: string,
-  confirmPassword: string
   fullname: string,
   email: string,
   address: AddressDTO,
-  birthDate: Date,
+  birthDate: string,
   phoneNumber: string,
   image: string,
   role: string

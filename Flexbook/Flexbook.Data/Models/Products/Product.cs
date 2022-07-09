@@ -11,7 +11,7 @@ namespace Flexbook.Data.Models.Products
         [Required]
         public DateTime UpdatedOn { get; set; }
         [Required]
-        [MaxLength(50)]
+        [MaxLength(254)]
         public string Title { get; set; }
         
         public string Description { get; set; }
