@@ -38,11 +38,13 @@ public class ForumController : Controller
     [HttpPost("add_comment")]
     public IActionResult AddComment([FromBody] CommentRequest commentRequest)
     {
+        var dateTimeNow = DateTime.Now.ToUniversalTime();
+
         Comment comment = new Comment
         {
             Content = commentRequest.Content,
-            CreatedOn = commentRequest.CreatedOn,
-            UpdatedOn = commentRequest.UpdatedOn,
+            CreatedOn = dateTimeNow,
+            UpdatedOn = dateTimeNow,
             LikesCount = 0,
             User = _userService.GetById(commentRequest.UserId),
             AuthorHost = _authorService.GetById(commentRequest.AuthorHostId),

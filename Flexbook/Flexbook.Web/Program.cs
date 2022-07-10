@@ -12,6 +12,7 @@ using Flexbook.Data.Models;
 using Flexbook.Services.AuthorForum;
 using Flexbook.Services.Users.User;
 using Flexbook.Services.Order;
+using Flexbook.Services.Statistics;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -53,6 +54,7 @@ builder.Services.AddScoped<ICommentService, CommentService>();
 builder.Services.AddScoped<IBookReviewService, BookReviewService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IOrderItemService, OrderItemService>();
+builder.Services.AddScoped<IStatisticsService, StatisticsService>();
 // Authentication
 builder.Services.AddScoped<ILoginService, LoginService>();
 
