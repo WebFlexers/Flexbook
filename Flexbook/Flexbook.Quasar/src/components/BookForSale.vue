@@ -1,23 +1,30 @@
 <template>
-  <q-card class="bookContainer row q-pa-md">
-    <q-img :src="bookImage" alt="book_image" fit="scale-down" style="max-height: 200px"/>
+  <q-card class="bookCard q-pa-md q-pt-lg">
+    <q-img :src="bookImage" alt="book_image" class="row cursor-pointer" fit="scale-down" style="max-height: 200px"
+           @click="goToBookPage"/>
 
-    <q-card-section>
-      <div class="text-h6"> {{ book.title }} </div>
-      <div class="text-subtitle2"> by {{ book.author.fullname }}</div>
+    <q-card-section class="underline cursor-pointer" @click="goToBookPage">
+      <div class="row text-h6 crop-text-2">
+        {{ book.title }}
+        <q-tooltip :delay="500" :offset="[0, 5]">
+          {{ book.title }}
+        </q-tooltip>
+      </div>
+      <div class="row text-subtitle2 crop-text-2"> by {{ book.author.fullname }}</div>
     </q-card-section>
 
-    <q-card-section class="bookDescription q-pt-none">
-      <p>
+    <q-card-section class="row cursor-text q-pt-sm">
+      <p class="crop-text-3">
         {{ book.description }}
       </p>
     </q-card-section>
 
-    <q-card-actions>
-      <div class="self-center text-center">
-        <q-btn class="q-mt-md" color="primary" align="center"> Add to Cart </q-btn>
-      </div>
-    </q-card-actions>
+    <q-card-section class="row q-ml-md q-mb-md cursor-text absolute-bottom" style="color: grey; ">
+        <q-btn style="max-height: 40px" color="primary"> Add to Cart </q-btn>
+        <p class="q-ml-xl q-mt-sm">
+          Price: <span style="color: black; font-weight: bold"> {{ book.startingPrice }}€ </span>
+        </p>
+    </q-card-section>
   </q-card>
 </template>
 
@@ -39,15 +46,26 @@ const bookImage = computed(() => {
 
   return undefined
 });
+
+function goToBookPage() {
+  alert('To the moon')
+}
 </script>
 
 <style scoped lang="scss">
 @import "src/css/app.scss";
 @import "src/css/quasar.variables.scss";
 
-.bookContainer {
-  width: 290px;
+.bookCard {
+  min-width: 340px;
+  max-width: 340px;
   height: 530px;
+}
+
+.bookCard:hover {
+  border-style: solid;
+  border-color: $primary;
+  border-width: 1px;
 }
 
 .bookDescription {

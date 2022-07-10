@@ -1,11 +1,16 @@
 <template>
-  <div v-if="books.length" class="q-ma-lg q-gutter-lg row justify-start"
-       style="margin-left: 20em; margin-right: 20em">
-    <div v-for="(bookElement) in books" :key="bookElement">
-      <BookForSale class="bg-primary-light col" :book="bookElement"></BookForSale>
-    </div>
+  <div class="row justify-center items-center">
+    <q-page style="max-width: 1500px">
+      <div v-if="books.length" class="row justify-start q-pa-lg q-gutter-lg">
+        <BookForSale v-for="(bookElement) in books" :key="bookElement" :book="bookElement"
+                     class="col-md bg-primary-light">
+        </BookForSale>
+      </div>
+      <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
+        <q-btn fab icon="keyboard_arrow_up" color="secondary" />
+      </q-page-scroller>
+    </q-page>
   </div>
-
 </template>
 
 <script setup lang="ts">

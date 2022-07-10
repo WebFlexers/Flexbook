@@ -4,6 +4,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
+    meta: { transition: 'none' },
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') },
       { path: 'literature_books', component: () => import('pages/BookGenres/LiteratureBooksPage.vue') },

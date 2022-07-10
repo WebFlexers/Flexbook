@@ -2,3 +2,31 @@
 $primary-light : #f0ede7;
 $secondary-light : #798fb7;
 $secondary-light2 : #94a7c6;
+
+.underline {
+
+}
+
+.underline:hover {
+  text-decoration: underline;
+}
+
+.cursor-text {
+  cursor: text;
+}
+
+.crop-text-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.crop-text-3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}

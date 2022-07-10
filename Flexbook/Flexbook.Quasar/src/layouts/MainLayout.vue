@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header class="bg-primary-light" elevated>
-      <div class="row q-pa-sm">
+      <div class="row q-pa-sm q-gutter-md">
        <q-img
           :src="logo_url"
           spinner-color="white"
@@ -57,12 +57,12 @@
       </div>
 
       <q-tabs class="row route-tabs">
-        <q-route-tab class="col" to="/" label="Home" />
-        <q-route-tab class="col" to="/literature_books" label="Literature" />
-        <q-route-tab class="col" to="/education_books" label="Education" />
-        <q-route-tab class="col" to="/children_books" label="Children's Books" />
-        <q-route-tab class="col" to="/history_books" label="History" />
-        <q-route-tab class="col" to="/science_books" label="Sciences" />
+        <q-route-tab class="col-4 col-md" to="/" label="Home" />
+        <q-route-tab class="col-4 col-md" to="/literature_books" label="Literature" />
+        <q-route-tab class="col-4 col-md" to="/education_books" label="Education" />
+        <q-route-tab class="col-4 col-md" to="/children_books" label="Children's Books" />
+        <q-route-tab class="col-4 col-md" to="/history_books" label="History" />
+        <q-route-tab class="col-4 col-md" to="/science_books" label="Sciences" />
       </q-tabs>
     </q-header>
 

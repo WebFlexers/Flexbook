@@ -11,15 +11,17 @@ import { SuccessResponse } from 'src/types/Responses/SuccessResponse';
 import {UserRegisterDTO} from 'src/types/Users/UserRegisterDTO';
 
 interface AuthStore {
-  user: UserDTO;
-  loggedIn: boolean;
+  user: UserDTO
+  loggedIn: boolean
+  registerSuccessful: boolean
 }
 
 export const useAuthStore = defineStore({
   id: 'auth',
   state: (): AuthStore => ({
     user: JSON.parse(localStorage.getItem('currentUser') || '{}'),
-    loggedIn: localStorage.getItem('userLoggedIn') == 'true'
+    loggedIn: localStorage.getItem('userLoggedIn') == 'true',
+    registerSuccessful: false
   }),
 
   getters: {
@@ -28,6 +30,9 @@ export const useAuthStore = defineStore({
     },
     getUser(): UserDTO {
       return this.user
+    },
+    getRegisterSuccessful(): boolean {
+      return this.registerSuccessful
     },
   },
 
@@ -62,23 +67,19 @@ export const useAuthStore = defineStore({
 
     async register(registerCredentials: UserRegisterDTO) {
       await api
-        .post<SuccessResponse>('customer/register', registerCredentials)
+        .post('customer/register', registerCredentials)
         .then((response) => {
-          if (response.data.success) {
             const alertStore = useAlertStore();
             alertStore.setMessage(response.data.message);
-          }
-          else {
-            console.log(JSON.stringify(response.data))
-          }
+            this.registerSuccessful = true
         })
         .catch((error: AxiosError) => {
-          if (error.response && error.response.data) {
-            const alertStore = useAlertStore();
-            alertStore.clearAlert();
-            const errorResponse = error.response.data as ErrorResponse;
-            alertStore.setErrors(errorResponse.errors);
-          }
+            if (error.response && error.response.data) {
+              const alertStore = useAlertStore();
+              alertStore.clearAlert();
+              const errorResponse = error.response.data as ErrorResponse;
+              alertStore.setErrors(errorResponse.errors);
+            }
         });
     },
 

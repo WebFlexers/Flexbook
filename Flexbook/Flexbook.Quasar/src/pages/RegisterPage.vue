@@ -193,7 +193,7 @@ async function register(userToRegister: UserRegisterDTO) {
 
   if (user.password == confirmPassword.value) {
     await authStore.register(userToRegister).then(() => {
-      console.log(`${JSON.stringify(userToRegister)}`)
+      console.log('Register successful from inside register function: ' + authStore.getRegisterSuccessful)
     }).catch(error => {
       console.log('An error occurred during customer register')
       console.log(error)
@@ -208,7 +208,29 @@ async function register(userToRegister: UserRegisterDTO) {
 }
 
 function onSubmit() {
-  register(user)
+  register(user).then(() => {
+    console.log('Register successful after register function: ' + authStore.getRegisterSuccessful)
+    if (authStore.getRegisterSuccessful) {
+      $q.notify({
+        type: 'positive',
+        message: 'Successfully registered! Redirecting to login page in 3 seconds...'
+      })
+
+      // Reset the register state
+      authStore.registerSuccessful = false
+
+      // Get back on the login page after 3 seconds
+      setTimeout(() => {
+        router.push('/auth')
+      }, 3000)
+    }
+    else {
+      $q.notify({
+        type: 'negative',
+        message: 'Registration failed. Please try again'
+      })
+    }
+  })
 }
 
 function onReset() {
