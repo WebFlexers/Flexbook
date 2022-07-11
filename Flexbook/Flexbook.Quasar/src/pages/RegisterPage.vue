@@ -126,6 +126,7 @@
 
           <q-input
             filled
+            type="tel"
             v-model="user.phoneNumber"
             label="Phone Number *"
             lazy-rules

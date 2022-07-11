@@ -1,50 +1,57 @@
 <template>
-  <div class="q-pa-xl row justify-center items-center">
+  <div>
+    <div class="q-pa-xl row justify-center items-center">
+      <q-form
+        @submit="onSubmit"
+        @reset="onReset"
+        class="q-pa-lg q-gutter-sm bg-primary-light col-12 text-center self-center"
+        style="border-radius: 15px; max-width: 600px"
+      >
+        <q-img
+          class="q-mb-xl"
+          :src="logo_url"
+          spinner-color="white"
+          style="max-width: 150px"
+          :fit="'contain'"
+        />
 
-    <q-form
-      @submit="onSubmit"
-      @reset="onReset"
-      class="q-pa-lg q-gutter-sm bg-primary-light col-12 text-center self-center"
-      style="border-radius: 15px; max-width: 600px"
-    >
-      <q-img
-        class="q-mb-xl"
-        :src="logo_url"
-        spinner-color="white"
-        style="max-width: 150px"
-        :fit="'contain'"
-      />
+        <q-input
+          filled
+          v-model="loginCredentials.username"
+          label="Username *"
+          lazy-rules
+          :rules="[ val => val && val.length > 0 || 'Your username can\'t be empty!']"
+        />
+        <q-input
+          v-model="loginCredentials.password"
+          label="Password *"
+          filled :type="isPwd ? 'password' : 'text'"
+          :rules="[ val => val && val.length > 0 || 'Your password can\'t be empty!']">
+          <template v-slot:append>
+            <q-icon
+              :name="isPwd ? 'visibility_off' : 'visibility'"
+              class="cursor-pointer"
+              @click="isPwd = !isPwd"
+            />
+          </template>
+        </q-input>
 
-      <q-input
-        filled
-        v-model="loginCredentials.username"
-        label="Username *"
-        lazy-rules
-        :rules="[ val => val && val.length > 0 || 'Your username can\'t be empty!']"
-      />
-      <q-input
-        v-model="loginCredentials.password"
-        label="Password *"
-        filled :type="isPwd ? 'password' : 'text'"
-        :rules="[ val => val && val.length > 0 || 'Your password can\'t be empty!']">
-        <template v-slot:append>
-          <q-icon
-            :name="isPwd ? 'visibility_off' : 'visibility'"
-            class="cursor-pointer"
-            @click="isPwd = !isPwd"
-          />
-        </template>
-      </q-input>
+        <div>
+          <q-btn label="Login" type="submit" color="primary"/>
+          <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
+        </div>
 
-      <div>
-        <q-btn label="Login" type="submit" color="primary"/>
-        <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
-      </div>
+        <div class="q-ma-lg">
+          <p> Don't have an account yet? <router-link to="/register"> Click here </router-link> to create a new one</p>
+        </div>
+      </q-form>
 
-      <div class="q-ma-lg">
-        <p> Don't have an account yet? <router-link to="/register"> Click here </router-link> to create a new one</p>
-      </div>
-    </q-form>
+    </div>
+
+<!--    Loading indicator-->
+    <div v-if="loggingIn"  class="row justify-center items-center">
+      <q-spinner-dots size="5em" color="secondary" />
+    </div>
 
   </div>
 </template>
@@ -70,16 +77,22 @@ export default {
       })
     }
 
+
+    const loggingIn = ref(false)
     async function login() {
+      loggingIn.value = true
+
       console.log(`Login form submitted with creds:
         username: ${ loginCredentials.username }
         password: ${ loginCredentials.password }`)
 
       authStore.login(loginCredentials).then(() => {
         if (localStorage.getItem('accessToken')) {
+          loggingIn.value = false
           router.push('/')
         }
         else {
+          loggingIn.value = false
           triggerNotFoundMessage()
         }
       })
@@ -89,6 +102,7 @@ export default {
       isPwd: ref(true),
       logo_url: ref('logo.png'),
       loginCredentials,
+      loggingIn,
 
       onSubmit () {
         login()

@@ -24,33 +24,50 @@
             </q-avatar>
             <q-menu>
               <div class="row no-wrap q-pa-md">
-                <div class="column">
-                  <div class="text-h6 q-mb-md">Settings</div>
-                </div>
-
-                <q-separator vertical inset class="q-mx-lg" />
-
                 <div class="column items-center">
-                  <q-avatar size="72px">
-                    <img :src="`${profileImage}`" alt="user_image">
-                  </q-avatar>
+                  <div class="text-bold q-mb-xs" style="font-size: 1.3em"> {{ authenticatedUser.fullname }} </div>
+                    <q-btn
+                      class="q-mb-sm"
+                      color="primary"
+                      label="Profile"
+                      push
+                      size="md"
+                      v-close-popup
+                    />
 
-                  <div class="text-subtitle1 q-mt-md q-mb-xs"> {{ authenticatedUser.fullname }} </div>
-
-                  <q-btn
-                    color="primary"
-                    label="Logout"
-                    push
-                    size="sm"
-                    @click="logout"
-                    v-close-popup
-                  />
+                    <q-btn
+                      color="primary"
+                      label="Logout"
+                      push
+                      size="md"
+                      @click="logout"
+                      v-close-popup
+                    />
                 </div>
               </div>
             </q-menu>
           </q-btn>
 
-          <q-btn v-if="loggedIn" color="primary" label="Shopping Cart" />
+<!--          Shopping Cart-->
+          <q-btn-dropdown v-if="loggedIn" align="around" icon="shopping_cart" color="primary" label="Shopping Cart" >
+            <q-list>
+              <q-item class="row flex-center q-pt-lg" v-if="shoppingCartStore.getShoppingCartItems.length <= 0">
+                <p style="font-weight: bold"> Your cart is empty! </p>
+              </q-item>
+              <q-item v-for="(cartItem) in shoppingCart" :key="cartItem">
+                <BookInCart  :shoppingCartBook="cartItem"/>
+              </q-item>
+              <q-item class="row flex-center q-py-lg" v-if="shoppingCartStore.getShoppingCartItems.length >= 1">
+                <q-btn label="Checkout" color="primary" @click="goToCheckout"/>
+              </q-item>
+            </q-list>
+          </q-btn-dropdown>
+
+          <q-badge v-if="shoppingCartStore.getShoppingCartItems.length >= 1"
+            rounded color="red"> {{ shoppingCartStore.getShoppingCartItems.length }}
+          </q-badge>
+
+
 
         </div>
 
@@ -79,6 +96,10 @@ import { ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from 'src/stores/auth';
 import { useSearchStore } from 'stores/search';
+import {BookDTO} from 'src/types/BookDTO';
+import {ShoppingCartBook} from 'src/types/Orders/ShoppingCartBook';
+import {useShoppingCartStore} from 'stores/shopping-cart';
+import BookInCart from 'components/BookInCart.vue';
 
 const searchStore = useSearchStore()
 const logo_url = ref('logo.png')
@@ -113,6 +134,15 @@ function logout() {
 function goToLoginPage() {
   router.push('/auth')
 }
+
+function goToCheckout() {
+  router.push('/checkout')
+}
+
+const shoppingCartStore = useShoppingCartStore()
+const shoppingCart = computed(() => {
+  return shoppingCartStore.shoppingCartItems
+})
 </script>
 
 <style lang="scss">

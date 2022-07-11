@@ -1,6 +1,7 @@
 import {AuthorDTO} from 'src/types/Users/AuthorDTO';
 
 export interface BookDTO {
+  id: number,
   title: string,
   description: string,
   image: string,

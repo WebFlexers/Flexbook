@@ -20,7 +20,7 @@
     </q-card-section>
 
     <q-card-section class="row q-ml-md q-mb-md cursor-text absolute-bottom" style="color: grey; ">
-        <q-btn style="max-height: 40px" color="primary"> Add to Cart </q-btn>
+        <q-btn style="max-height: 40px" color="primary" @click="addToCart"> Add to Cart </q-btn>
         <p class="q-ml-xl q-mt-sm">
           Price: <span style="color: black; font-weight: bold"> {{ book.startingPrice }}€ </span>
         </p>
@@ -29,8 +29,12 @@
 </template>
 
 <script setup lang="ts">
-import {computed, defineProps, PropType} from 'vue';
+import {computed, defineProps, PropType, ref} from 'vue';
 import { BookDTO } from 'src/types/BookDTO';
+import {useShoppingCartStore} from 'stores/shopping-cart';
+import {useQuasar} from 'quasar';
+
+const $q = useQuasar()
 
 const props = defineProps( {
   book: {
@@ -48,7 +52,43 @@ const bookImage = computed(() => {
 });
 
 function goToBookPage() {
-  alert('To the moon')
+  alert('Shopping cart store items quantity: ' + shoppingCartStore.getShoppingCartItems[0].quantity + ', '
+    + shoppingCartStore.getShoppingCartItems[1].quantity )
+}
+
+// Add book to shopping cart
+const shoppingCartStore = useShoppingCartStore()
+
+function addToCart() {
+  // Check if the book is already in the cart
+  const bookInCart = shoppingCartStore.shoppingCartItems.find(item => item.book.id == props.book.id)
+  if (bookInCart) {
+    bookInCart.quantity++
+
+    $q.notify({
+      type: 'positive',
+      message: `Successfully added another "${props.book.title}" to cart!`,
+      timeout: 200
+    })
+
+    return
+  }
+
+  if (shoppingCartStore.addBookToCart({book: props.book, quantity: 1})) {
+    $q.notify({
+      type: 'positive',
+      message: `Successfully added "${props.book.title}" to cart!`,
+      timeout: 200
+    })
+    console.log('Successfully added "${props.book.title}" to cart!')
+    console.log('Quantity ' + shoppingCartStore.shoppingCartItems[0].quantity)
+  }
+  else {
+    $q.notify({
+      type: 'negative',
+      message: 'Failed to add book to cart...'
+    })
+  }
 }
 </script>
 

@@ -1,14 +1,10 @@
-import { DataResponse } from 'src/types/Responses/DataResponse';
-import { useAlertStore } from 'src/stores/alert';
-import { ErrorResponse } from 'src/types/Responses/ErrorResponse';
-import { TokenDTO } from 'src/types/Auth/TokenDTO';
 import { Login } from 'src/types/Auth/Login';
 import { UserDTO } from 'src/types/Users/UserDTO';
 import { api } from 'boot/axios';
 import { defineStore } from 'pinia';
 import { AxiosError } from 'axios';
-import { SuccessResponse } from 'src/types/Responses/SuccessResponse';
 import {UserRegisterDTO} from 'src/types/Users/UserRegisterDTO';
+import {LoadingBar} from 'quasar';
 
 interface AuthStore {
   user: UserDTO
@@ -38,6 +34,8 @@ export const useAuthStore = defineStore({
 
   actions: {
     async login(loginCredentials: Login) {
+      LoadingBar.start()
+
       return await api
         .post('auth/login', loginCredentials)
         .then(async (response) => {
@@ -45,14 +43,14 @@ export const useAuthStore = defineStore({
             localStorage.setItem('userLoggedIn', 'true')
 
             await this.getAuthenticatedUser()
-            console.log('data is ' + response.data)
+            //console.log('data is ' + response.data)
+            LoadingBar.stop()
             return response.data
         })
         .catch((error: AxiosError) => {
           if (error.response && error.response.data) {
-            const errorResponse = error.response.data as ErrorResponse;
-            const alertStore = useAlertStore();
-            alertStore.setErrors(errorResponse.errors);
+            console.error(error.response)
+            console.error(error.response.data)
           }
         });
     },
@@ -69,16 +67,12 @@ export const useAuthStore = defineStore({
       await api
         .post('customer/register', registerCredentials)
         .then((response) => {
-            const alertStore = useAlertStore();
-            alertStore.setMessage(response.data.message);
             this.registerSuccessful = true
         })
         .catch((error: AxiosError) => {
             if (error.response && error.response.data) {
-              const alertStore = useAlertStore();
-              alertStore.clearAlert();
-              const errorResponse = error.response.data as ErrorResponse;
-              alertStore.setErrors(errorResponse.errors);
+              console.error(error.response)
+              console.error(error.response.data)
             }
         });
     },
