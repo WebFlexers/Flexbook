@@ -9,11 +9,11 @@
           :fit="'contain'"
         />
 
-        <q-input class="q-mx-lg col" v-model="search" label="Search Books" style="min-width: 80px;">
+        <q-input class="q-mx-lg col" v-model="searchStore.userSearch" label="Search Books" style="min-width: 80px;">
           <q-icon class="q-mt-md" name="search" size="26px"/>
         </q-input>
 
-        <q-space />
+        <q-select class="col-1" v-model="searchStore.searchType" :options="searchOptions" label="Search By" />
 
         <div class="self-center q-gutter-md q-mr-md">
           <q-btn v-if="!loggedIn" color="primary" label="Login/Register" @click="goToLoginPage"/>
@@ -74,53 +74,45 @@
   </q-layout>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref, computed } from 'vue';
+<script lang="ts" setup>
+import { ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
 import { useAuthStore } from 'src/stores/auth';
+import { useSearchStore } from 'stores/search';
 
-export default defineComponent({
-  name: 'MainLayout',
+const searchStore = useSearchStore()
+const logo_url = ref('logo.png')
 
-  setup() {
-    const router = useRouter();
-    const authStore = useAuthStore();
-    const loggedIn = computed(() => {
-      return authStore.getLoggedIn;
-    });
+const searchOptions = ref([
+  'Title', 'Publisher', 'Author', 'Language'
+])
 
-    const authenticatedUser = computed(() => {
-      return authStore.getUser;
-    });
-
-    const profileImage = computed(() => {
-      if (authenticatedUser.value) {
-        return `${authenticatedUser.value.role.toLowerCase()}s/${authenticatedUser.value.image}`
-      }
-
-      return undefined
-    });
-
-    function logout() {
-      authStore.logout();
-      goToLoginPage();
-    }
-
-    function goToLoginPage() {
-      router.push('/auth')
-    }
-
-    return {
-      search: ref(''),
-      logo_url: ref('logo.png'),
-      loggedIn,
-      authenticatedUser,
-      profileImage,
-      logout,
-      goToLoginPage
-    }
-  }
+const router = useRouter();
+const authStore = useAuthStore();
+const loggedIn = computed(() => {
+  return authStore.getLoggedIn;
 });
+
+const authenticatedUser = computed(() => {
+  return authStore.getUser;
+});
+
+const profileImage = computed(() => {
+  if (authenticatedUser.value) {
+    return `${authenticatedUser.value.role.toLowerCase()}s/${authenticatedUser.value.image}`
+  }
+
+  return undefined
+});
+
+function logout() {
+  authStore.logout();
+  goToLoginPage();
+}
+
+function goToLoginPage() {
+  router.push('/auth')
+}
 </script>
 
 <style lang="scss">
