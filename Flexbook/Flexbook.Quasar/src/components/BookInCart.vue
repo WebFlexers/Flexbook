@@ -2,6 +2,7 @@
   <div class="row justify-start q-pa-lg" style="width: 400px; max-height: 300px">
     <div class="col-6 row justify-center">
       <q-img :src="bookImage" alt="book_image" class="row cursor-pointer" fit="scale-down" style="height: 150px"/>
+      <p class="q-pt-sm"> Price: {{ shoppingCartBook.book.startingPrice }}€ </p>
     </div>
 
     <div class="col-6 q-pl-md">

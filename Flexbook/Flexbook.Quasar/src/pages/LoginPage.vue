@@ -77,7 +77,6 @@ export default {
       })
     }
 
-
     const loggingIn = ref(false)
     async function login() {
       loggingIn.value = true

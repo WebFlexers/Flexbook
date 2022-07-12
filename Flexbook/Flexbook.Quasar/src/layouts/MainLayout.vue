@@ -57,9 +57,14 @@
               <q-item v-for="(cartItem) in shoppingCart" :key="cartItem">
                 <BookInCart  :shoppingCartBook="cartItem"/>
               </q-item>
-              <q-item class="row flex-center q-py-lg" v-if="shoppingCartStore.getShoppingCartItems.length >= 1">
-                <q-btn label="Checkout" color="primary" @click="goToCheckout"/>
-              </q-item>
+              <div v-if="shoppingCartStore.getShoppingCartItems.length >= 1">
+                <q-item class="row flex-center q-pt-lg">
+                  <p style="font-size: 1.3em; font-weight: 500"> Total Price: {{ totalPrice }}€ </p>
+                </q-item>
+                <q-item class="row flex-center q-pb-md">
+                  <q-btn label="Checkout" color="primary" @click="goToCheckout"/>
+                </q-item>
+              </div>
             </q-list>
           </q-btn-dropdown>
 
@@ -127,8 +132,9 @@ const profileImage = computed(() => {
 });
 
 function logout() {
-  authStore.logout();
-  goToLoginPage();
+  shoppingCartStore.clearCart()
+  authStore.logout()
+  goToLoginPage()
 }
 
 function goToLoginPage() {
@@ -142,6 +148,9 @@ function goToCheckout() {
 const shoppingCartStore = useShoppingCartStore()
 const shoppingCart = computed(() => {
   return shoppingCartStore.shoppingCartItems
+})
+const totalPrice = computed(() => {
+  return shoppingCartStore.calculateTotalPrice()
 })
 </script>
 

@@ -36,6 +36,18 @@ export const useShoppingCartStore = defineStore({
 
       console.error('Failed to delete book from shopping cart!')
       return false
+    },
+
+    clearCart() {
+      this.shoppingCartItems = []
+    },
+
+    calculateTotalPrice() {
+      let sum = 0
+      this.shoppingCartItems.forEach((item) => {
+        sum += item.book.startingPrice
+      })
+      return sum
     }
   }
 })

@@ -21,6 +21,14 @@ public class BookService : CrudService<Book>, IBookService
             .Include(book => book.Author)
             .ToList();
     }
+
+    public Book? GetByTitle(string title)
+    {
+        var formattedString = title.Replace("-", " ");
+        return _dbContext.Set<Book>()
+            .Include(book => book.Author)
+            .FirstOrDefault(book => book.Title.ToLower() == formattedString.ToLower());
+    }
     
     public override Book? GetById(int id)
     {

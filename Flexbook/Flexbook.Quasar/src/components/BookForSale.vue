@@ -33,9 +33,13 @@ import {computed, defineProps, PropType, ref} from 'vue';
 import { BookDTO } from 'src/types/BookDTO';
 import {useShoppingCartStore} from 'stores/shopping-cart';
 import {useQuasar} from 'quasar';
+import {useCurrentBookStore} from 'stores/current-book';
+import {useRouter} from 'vue-router';
+import {useAuthStore} from 'stores/auth';
 
 const $q = useQuasar()
 
+// Get a BookDTO as prop
 const props = defineProps( {
   book: {
     type: Object as PropType<BookDTO>,
@@ -51,42 +55,67 @@ const bookImage = computed(() => {
   return undefined
 });
 
+const router = useRouter();
+// Set this book as the current book in Current Book Store
+// and go to the book page
 function goToBookPage() {
-  alert('Shopping cart store items quantity: ' + shoppingCartStore.getShoppingCartItems[0].quantity + ', '
-    + shoppingCartStore.getShoppingCartItems[1].quantity )
+  let currentBookStore = useCurrentBookStore()
+  currentBookStore.book = props.book
+
+  router.push(`/book/${props.book.title.replaceAll(' ', '-')}`)
 }
 
-// Add book to shopping cart
+// Add book to shopping cart store
 const shoppingCartStore = useShoppingCartStore()
+const authStore = useAuthStore()
 
 function addToCart() {
-  // Check if the book is already in the cart
-  const bookInCart = shoppingCartStore.shoppingCartItems.find(item => item.book.id == props.book.id)
-  if (bookInCart) {
-    bookInCart.quantity++
+  if (authStore.loggedIn) {
+    if (authStore.user.role == 'Customer') {
+      // Check if the book is already in the cart and if so increment its quantity by 1
+      const bookInCart = shoppingCartStore.shoppingCartItems.find(item => item.book.id == props.book.id)
+      if (bookInCart) {
+        bookInCart.quantity++
 
-    $q.notify({
-      type: 'positive',
-      message: `Successfully added another "${props.book.title}" to cart!`,
-      timeout: 200
-    })
+        $q.notify({
+          type: 'positive',
+          message: `Successfully added another "${props.book.title}" to cart!`,
+          timeout: 400
+        })
 
-    return
-  }
+        return
+      }
 
-  if (shoppingCartStore.addBookToCart({book: props.book, quantity: 1})) {
-    $q.notify({
-      type: 'positive',
-      message: `Successfully added "${props.book.title}" to cart!`,
-      timeout: 200
-    })
-    console.log('Successfully added "${props.book.title}" to cart!')
-    console.log('Quantity ' + shoppingCartStore.shoppingCartItems[0].quantity)
+      // Add the book to the Shopping Cart Store
+      if (shoppingCartStore.addBookToCart({book: props.book, quantity: 1})) {
+        $q.notify({
+          type: 'positive',
+          message: `Successfully added "${props.book.title}" to cart!`,
+          timeout: 400
+        })
+        console.log('Successfully added "${props.book.title}" to cart!')
+        console.log('Quantity ' + shoppingCartStore.shoppingCartItems[0].quantity)
+      }
+      else {
+        $q.notify({
+          type: 'negative',
+          message: 'Failed to add book to cart...'
+        })
+      }
+    }
+    else {
+      $q.notify({
+        type: 'negative',
+        message: 'Only customers can make orders!',
+        timeout: 1500
+      })
+    }
   }
   else {
     $q.notify({
       type: 'negative',
-      message: 'Failed to add book to cart...'
+      message: 'Please login in order to add items to your cart!',
+      timeout: 1500
     })
   }
 }

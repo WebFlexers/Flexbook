@@ -53,7 +53,7 @@ public class BookReviewController : Controller
     [HttpGet("all_reviews/{book_id}")]
     public ActionResult ShowAllReviewsOfBook(int book_id)
     {
-        var all_reviews = _bookReviewService.GetAllReviewsByBook(book_id);
-        return Ok(all_reviews);
+        var allReviews = _bookReviewService.GetAllReviewsByBook(book_id);
+        return Ok(allReviews);
     }
 }

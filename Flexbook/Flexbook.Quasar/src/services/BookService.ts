@@ -8,6 +8,12 @@ export default class BookService {
     return result.data;
   }
 
+  public async getBookByName(name: string): Promise<BookDTO> {
+    const result = await api.get(`books/get_by_title/${name}`)
+    console.log(result.data);
+    return result.data;
+  }
+
   public async getBooksByGenre(genre: string): Promise<BookDTO[]> {
     const result = await api.get(`books/get_by_genre/${genre}`);
     console.log(result.data);

@@ -37,6 +37,13 @@ public class BookController : ControllerBase
         return Ok(books);
     }
 
+    [HttpGet("get_by_title/{title}")]
+    public IActionResult GetByTitle(string title)
+    {
+        var book = _bookService.GetByTitle(title);
+        return Ok(book);
+    }
+
     [HttpGet("get_by_genre/{genre}")]
     public IActionResult GetBooksByGenre(string genre)
     {
