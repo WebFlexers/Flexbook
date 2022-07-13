@@ -1,11 +1,6 @@
 ﻿using Flexbook.Data.DataAccess;
 using Flexbook.Data.Models.Products;
 using Flexbook.Services.Order;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Flexbook.Services.Statistics;
 

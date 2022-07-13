@@ -12,13 +12,13 @@ namespace Flexbook.Web.Controllers;
 [ApiController]
 public class ForumController : Controller
 {
-    private readonly ILogger<CustomerController> _logger;
+    private readonly ILogger<ForumController> _logger;
 
     private ICommentService _commentService;
     private IUserService _userService;
     private IAuthorService _authorService;
 
-    public ForumController(ILogger<CustomerController> logger, ICommentService commentService, IUserService userService, IAuthorService authorService)
+    public ForumController(ILogger<ForumController> logger, ICommentService commentService, IUserService userService, IAuthorService authorService)
     {
         _logger = logger;
 
@@ -28,21 +28,22 @@ public class ForumController : Controller
     }
 
     [HttpGet("get_comment")]
-    public IActionResult GetComment(int comment_id)
+    public IActionResult GetComment(int commentId)
     {
-        var comment = _commentService.GetById(comment_id);
-
+        var comment = _commentService.GetById(commentId);
         return Ok(comment);
     }
 
     [HttpPost("add_comment")]
     public IActionResult AddComment([FromBody] CommentRequest commentRequest)
     {
+        var now = DateTime.Now.ToUniversalTime();
+        
         Comment comment = new Comment
         {
             Content = commentRequest.Content,
-            CreatedOn = commentRequest.CreatedOn,
-            UpdatedOn = commentRequest.UpdatedOn,
+            CreatedOn = now,
+            UpdatedOn = now,
             LikesCount = 0,
             User = _userService.GetById(commentRequest.UserId),
             AuthorHost = _authorService.GetById(commentRequest.AuthorHostId),
@@ -55,25 +56,24 @@ public class ForumController : Controller
     }
 
     [HttpPost("all_comments")]
-    public IActionResult ShowAllCommentsByAuthor(int author_id)
+    public IActionResult GetAllCommentsByAuthor(int authorId)
     {
-        var all_comments = _commentService.GetAllCommentsByAuthor(author_id);
-        
-        return Ok(all_comments);
+        var allComments = _commentService.GetAllCommentsByAuthor(authorId);
+        return Ok(allComments);
     }
 
     [HttpPost("like")]
-    public IActionResult LikeComment(int comment_id)
+    public IActionResult LikeComment(int commentId)
     {
-        _commentService.AddLikeToComment(comment_id);
+        _commentService.AddLikeToComment(commentId);
 
         return Ok();
     }
 
     [HttpPost("remove_comment")]
-    public IActionResult RemoveComment(int comment_id)
+    public IActionResult RemoveComment(int commentId)
     {
-        _commentService.Delete(_commentService.GetById(comment_id));
+        _commentService.Delete(_commentService.GetById(commentId));
 
         return Ok();
     }
