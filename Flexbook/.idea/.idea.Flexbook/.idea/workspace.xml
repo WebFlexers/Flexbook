@@ -6,20 +6,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="532a4a97-a58b-4fcc-b470-d4cd19bdbb9e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/current-book.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/CheckoutPage.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/services/OrderService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/components/BookForSale.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/components/BookForSale.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/components/BookInCart.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/components/BookInCart.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/layouts/MainLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/layouts/MainLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/CustomerProfilePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/BookPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/LoginPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/LoginPage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/router/routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/router/routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/services/BookService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/services/BookService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/shopping-cart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/shopping-cart.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Services/Books/BookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Services/Books/BookService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Services/Books/IBookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Services/Books/IBookService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/BookController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/BookReviewController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/BookReviewController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/OrderController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/OrderController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +128,7 @@
       <workItem from="1657528674856" duration="136000" />
       <workItem from="1657645187011" duration="1718000" />
       <workItem from="1657660102624" duration="778000" />
+      <workItem from="1657702846762" duration="827000" />
     </task>
     <servers />
   </component>

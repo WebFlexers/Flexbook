@@ -51,7 +51,7 @@ public class OrderController : Controller
                 Product = _bookService.GetById(itemRequest.ProductId)
             };
 
-            tempTotalPrice += (double) orderItem.Quantity * orderItem.Product.FinalPrice;
+            tempTotalPrice += (double) orderItem.Quantity * orderItem.Product.StartingPrice;
 
             tempOrderItemsList.Add(orderItem);
         }

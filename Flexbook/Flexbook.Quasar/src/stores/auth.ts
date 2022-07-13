@@ -5,6 +5,7 @@ import { defineStore } from 'pinia';
 import { AxiosError } from 'axios';
 import {UserRegisterDTO} from 'src/types/Users/UserRegisterDTO';
 import {LoadingBar} from 'quasar';
+import {useShoppingCartStore} from 'stores/shopping-cart';
 
 interface AuthStore {
   user: UserDTO
@@ -59,6 +60,10 @@ export const useAuthStore = defineStore({
       localStorage.removeItem('accessToken')
       localStorage.removeItem('userLoggedIn')
       localStorage.removeItem('currentUser')
+
+      const shoppingCartStore = useShoppingCartStore()
+      shoppingCartStore.clearCart()
+
       this.user = {} as UserDTO;
       this.loggedIn = false;
     },

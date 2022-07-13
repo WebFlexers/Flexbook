@@ -1,5 +1,6 @@
 import {defineStore} from 'pinia';
 import {ShoppingCartBook} from 'src/types/Orders/ShoppingCartBook';
+import {OrderItemDTO} from 'src/types/Orders/OrderItemDTO';
 
 interface ShoppingCartStore {
   shoppingCartItems: ShoppingCartBook[]
@@ -14,6 +15,18 @@ export const useShoppingCartStore = defineStore({
   getters: {
     getShoppingCartItems(): ShoppingCartBook[] {
       return this.shoppingCartItems
+    },
+
+    getItemsAsOrderItemDTOs(): OrderItemDTO[] {
+      const orderItemDTOs: OrderItemDTO[] = []
+
+      this.shoppingCartItems.forEach((item) => {
+        const quantity = item.quantity
+        const productId = item.book.id
+        orderItemDTOs.push({quantity, productId} as OrderItemDTO)
+      })
+
+      return orderItemDTOs
     }
   },
 

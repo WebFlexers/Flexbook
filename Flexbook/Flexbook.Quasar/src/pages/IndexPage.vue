@@ -1,11 +1,20 @@
 <template>
   <div class="row justify-center items-center">
     <q-page style="max-width: 1500px">
+      <div class="row justify-center">
+        <h3> Available Books </h3>
+      </div>
+
       <div v-if="books.length" class="row justify-start q-pa-lg q-gutter-lg">
           <BookForSale v-for="(bookElement) in filteredBooks" :key="bookElement" :book="bookElement"
                        class="col-md bg-primary-light">
           </BookForSale>
       </div>
+
+      <div class="row justify-center">
+        <h3> Available Authors </h3>
+      </div>
+
       <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
         <q-btn fab icon="keyboard_arrow_up" color="secondary" />
       </q-page-scroller>
