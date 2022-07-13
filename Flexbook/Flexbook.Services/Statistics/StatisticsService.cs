@@ -19,7 +19,8 @@ public class StatisticsService : IStatisticsService
 
     public List<Data.Models.OrderSystem.Order> GetAllOrdersByAuthorId(int author_id)
     {
-        return _orderService.GetAllOrdersByAuhorId(author_id);
+        // return _orderService.GetAllOrdersByAuhorId(author_id);
+        throw new NotImplementedException();
     }
 
     public Book GetBestSellerBookOfAuthor(int author_id)

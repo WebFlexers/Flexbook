@@ -6,9 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="532a4a97-a58b-4fcc-b470-d4cd19bdbb9e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Flexbook.Services/Statistics/StatisticsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Services/Statistics/StatisticsService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/ForumController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/ForumController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +125,7 @@
       <workItem from="1657660102624" duration="778000" />
       <workItem from="1657702846762" duration="827000" />
       <workItem from="1657710718763" duration="1878000" />
-      <workItem from="1657725486847" duration="995000" />
+      <workItem from="1657725486847" duration="1364000" />
     </task>
     <servers />
   </component>
