@@ -8,7 +8,9 @@ export default class AuthorService {
     return result.data;
   }
 
-  public async getAuthorByEmail(): Promise<AuthorDTO> {
-    const result
+  public async getAuthorByName(fullname: string): Promise<AuthorDTO> {
+    const result = await api.get(`authors/get_by_name/${fullname}`)
+    console.log(result.data)
+    return result.data
   }
 }

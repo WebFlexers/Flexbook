@@ -58,9 +58,12 @@ export const useShoppingCartStore = defineStore({
     calculateTotalPrice() {
       let sum = 0
       this.shoppingCartItems.forEach((item) => {
-        sum += item.book.startingPrice
+        if (item.quantity > 0) {
+          sum += item.book.startingPrice * item.quantity
+        }
       })
-      return sum
+      // Round to 2 decimal places
+      return Math.round(sum * 100) / 100
     }
   }
 })

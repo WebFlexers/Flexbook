@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1> Hello from the other side! </h1>
+    <h1> {{ author.fullname }} </h1>
   </div>
 </template>
 
@@ -8,31 +8,31 @@
 import {ref} from 'vue';
 import {AuthorDTO} from 'src/types/Users/AuthorDTO';
 import {useCurrentAuthorStore} from 'stores/current-author';
-import BookService from 'src/services/BookService';
 import {useRoute, useRouter} from 'vue-router';
+import AuthorService from 'src/services/AuthorService';
 
 const author = ref({} as AuthorDTO)
 
 const route = useRoute()
 const router = useRouter()
 const currentAuthorStore = useCurrentAuthorStore()
+
 // Get the author from the store if it exists
 if (currentAuthorStore.author.fullname) {
   author.value = currentAuthorStore.getAuthor
+  console.log('Authors full name is ' + author.value.fullname)
 }
 else {
   // Try to get the author from the api using the page url
-  const bookService = new BookService()
-  bookService.getAuthorByEmail(route.params.title.toString()).then((foundBook) => {
-    if (foundBook) {
-      book.value = foundBook
+  const authorService = new AuthorService()
+  authorService.getAuthorByName(route.params.fullname.toString()).then((foundAuthor) => {
+    if (foundAuthor) {
+      author.value = foundAuthor
     }
     else {
       router.push('/error-not-found-page')
       return
     }
-
-    fetchBookReviews()
 
   }).catch((error) => {
     console.error(error)

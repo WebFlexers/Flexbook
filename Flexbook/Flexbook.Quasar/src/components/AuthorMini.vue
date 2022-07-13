@@ -18,6 +18,7 @@
 import {computed, defineProps, PropType} from 'vue';
 import {AuthorDTO} from 'src/types/Users/AuthorDTO';
 import {useRouter} from 'vue-router';
+import {useCurrentAuthorStore} from 'stores/current-author';
 
 // Get an AuthorDTO as prop
 const props = defineProps( {
@@ -36,7 +37,9 @@ const authorImage = computed(() => {
 });
 
 const router = useRouter()
+const currentAuthorStore = useCurrentAuthorStore()
 function goToAuthorPage() {
+  currentAuthorStore.author = props.author
   router.push(`/author/${props.author.fullname.replaceAll(' ', '-')}`)
 }
 </script>
