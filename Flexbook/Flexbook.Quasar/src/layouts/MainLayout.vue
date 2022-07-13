@@ -34,6 +34,7 @@
                       push
                       size="md"
                       v-close-popup
+                      @click="goToAuthorPage"
                     />
 
                     <q-btn
@@ -141,6 +142,10 @@ function goToLoginPage() {
   router.push('/auth')
 }
 
+function goToAuthorPage() {
+  router.push(`/author/${authStore.user.fullname.replaceAll(' ', '-')}`)
+}
+
 function goToCheckout() {
   router.push('/checkout')
 }
@@ -152,6 +157,7 @@ const shoppingCart = computed(() => {
 const totalPrice = computed(() => {
   return shoppingCartStore.calculateTotalPrice()
 })
+
 </script>
 
 <style lang="scss">

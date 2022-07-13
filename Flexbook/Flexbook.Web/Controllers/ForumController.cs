@@ -27,7 +27,7 @@ public class ForumController : Controller
         _authorService = authorService;
     }
 
-    [HttpGet("get_comment")]
+    [HttpGet("get_comment/{commentId}")]
     public IActionResult GetComment(int commentId)
     {
         var comment = _commentService.GetById(commentId);
@@ -55,14 +55,14 @@ public class ForumController : Controller
         return Ok();
     }
 
-    [HttpPost("all_comments")]
+    [HttpGet("all_comments/{authorId}")]
     public IActionResult GetAllCommentsByAuthor(int authorId)
     {
         var allComments = _commentService.GetAllCommentsByAuthor(authorId);
         return Ok(allComments);
     }
 
-    [HttpPost("like")]
+    [HttpPost("like/{commentId}")]
     public IActionResult LikeComment(int commentId)
     {
         _commentService.AddLikeToComment(commentId);
@@ -70,7 +70,7 @@ public class ForumController : Controller
         return Ok();
     }
 
-    [HttpPost("remove_comment")]
+    [HttpPost("remove_comment/{commentId}")]
     public IActionResult RemoveComment(int commentId)
     {
         _commentService.Delete(_commentService.GetById(commentId));

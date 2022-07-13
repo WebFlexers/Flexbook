@@ -6,7 +6,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="532a4a97-a58b-4fcc-b470-d4cd19bdbb9e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Flexbook.Services/Statistics/StatisticsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Services/Statistics/StatisticsService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/services/ForumService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Forum/CommentDTO.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Forum/CreateCommentDTO.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Flexbook/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/components/BookForSale.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/components/BookForSale.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/components/BookReview.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/components/BookReview.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/AuthorPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/AuthorPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/BookGenres/ChildrenBooksPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/BookGenres/ChildrenBooksPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/BookGenres/EducationBooksPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/BookGenres/EducationBooksPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/BookGenres/HistoryBooksPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/BookGenres/HistoryBooksPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/BookGenres/LiteratureBooksPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/BookGenres/LiteratureBooksPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/BookGenres/ScienceBooksPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/BookGenres/ScienceBooksPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/BookPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/BookPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/IndexPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/pages/IndexPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/services/BookReviewService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/services/BookReviewService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/services/BookService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/services/BookService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/current-book.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/stores/current-book.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/types/AddBookReviewDTO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Books/AddBookReviewDTO.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/types/BookDTO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Books/BookDTO.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/types/BookReviewDTO.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Books/BookReviewDTO.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Orders/ShoppingCartBook.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Quasar/src/types/Orders/ShoppingCartBook.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Services/Forum/ICommentService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Services/Forum/ICommentService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Flexbook.Web/Controllers/ForumController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Flexbook.Web/Controllers/ForumController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +147,8 @@
       <workItem from="1657660102624" duration="778000" />
       <workItem from="1657702846762" duration="827000" />
       <workItem from="1657710718763" duration="1878000" />
-      <workItem from="1657725486847" duration="1364000" />
+      <workItem from="1657725486847" duration="1658000" />
+      <workItem from="1657729649546" duration="1578000" />
     </task>
     <servers />
   </component>

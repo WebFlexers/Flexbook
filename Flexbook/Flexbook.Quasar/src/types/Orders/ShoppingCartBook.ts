@@ -1,4 +1,4 @@
-import {BookDTO} from 'src/types/BookDTO';
+import {BookDTO} from 'src/types/Books/BookDTO';
 
 export interface ShoppingCartBook {
   book: BookDTO

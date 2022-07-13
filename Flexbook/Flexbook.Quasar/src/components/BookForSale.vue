@@ -30,7 +30,7 @@
 
 <script setup lang="ts">
 import {computed, defineProps, PropType, ref} from 'vue';
-import { BookDTO } from 'src/types/BookDTO';
+import { BookDTO } from 'src/types/Books/BookDTO';
 import {useShoppingCartStore} from 'stores/shopping-cart';
 import {useQuasar} from 'quasar';
 import {useCurrentBookStore} from 'stores/current-book';

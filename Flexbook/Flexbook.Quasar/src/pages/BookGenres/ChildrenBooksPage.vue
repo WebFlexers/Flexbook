@@ -16,7 +16,7 @@
 <script setup lang="ts">
 import BookForSale from 'components/BookForSale.vue';
 import BookService from 'src/services/BookService';
-import {BookDTO} from 'src/types/BookDTO';
+import {BookDTO} from 'src/types/Books/BookDTO';
 import {computed, ref} from 'vue';
 import {useSearchStore} from 'stores/search';
 

@@ -1,4 +1,4 @@
-import {BookDTO} from 'src/types/BookDTO';
+import {BookDTO} from 'src/types/Books/BookDTO';
 import {UserDTO} from 'src/types/Users/UserDTO';
 
 export interface BookReviewDTO {

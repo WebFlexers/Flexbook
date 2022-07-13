@@ -75,17 +75,17 @@
 
 <script setup lang="ts">
 import {computed, ref} from 'vue';
-import {BookDTO} from 'src/types/BookDTO';
+import {BookDTO} from 'src/types/Books/BookDTO';
 import {useCurrentBookStore} from 'stores/current-book';
 import BookService from 'src/services/BookService';
 import {useRoute, useRouter} from 'vue-router';
 import {useShoppingCartStore} from 'stores/shopping-cart';
 import {useAuthStore} from 'stores/auth';
 import {useQuasar} from 'quasar';
-import {BookReviewDTO} from 'src/types/BookReviewDTO';
+import {BookReviewDTO} from 'src/types/Books/BookReviewDTO';
 import BookReviewService from 'src/services/BookReviewService';
 import BookReview from 'components/BookReview.vue';
-import {AddBookReviewDTO} from 'src/types/AddBookReviewDTO';
+import {AddBookReviewDTO} from 'src/types/Books/AddBookReviewDTO';
 
 const $q = useQuasar()
 const book = ref({} as BookDTO)

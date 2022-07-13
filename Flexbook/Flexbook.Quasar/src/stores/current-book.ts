@@ -1,5 +1,5 @@
 import {defineStore} from 'pinia';
-import {BookDTO} from 'src/types/BookDTO';
+import {BookDTO} from 'src/types/Books/BookDTO';
 
 interface CurrentBookStore {
   book: BookDTO

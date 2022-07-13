@@ -1,6 +1,6 @@
 import {api} from 'boot/axios';
-import {BookReviewDTO} from 'src/types/BookReviewDTO';
-import {AddBookReviewDTO} from 'src/types/AddBookReviewDTO';
+import {BookReviewDTO} from 'src/types/Books/BookReviewDTO';
+import {AddBookReviewDTO} from 'src/types/Books/AddBookReviewDTO';
 
 export default class BookReviewService {
   public async getAllReviewsOfBook(bookId: number): Promise<BookReviewDTO[]> {

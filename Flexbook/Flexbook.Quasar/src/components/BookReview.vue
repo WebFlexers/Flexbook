@@ -27,7 +27,7 @@
 
 <script setup lang="ts">
 import {computed, defineProps, PropType} from 'vue';
-import {BookReviewDTO} from 'src/types/BookReviewDTO';
+import {BookReviewDTO} from 'src/types/Books/BookReviewDTO';
 
 // Get a BookDTO as prop
 const props = defineProps( {

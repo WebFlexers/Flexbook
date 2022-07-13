@@ -1,4 +1,4 @@
-import {BookDTO} from 'src/types/BookDTO';
+import {BookDTO} from 'src/types/Books/BookDTO';
 import { api } from 'boot/axios';
 
 export default class BookService {

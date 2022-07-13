@@ -32,7 +32,7 @@
 import BookForSale from 'components/BookForSale.vue';
 import { useSearchStore } from 'src/stores/search';
 import BookService from 'src/services/BookService';
-import {BookDTO} from 'src/types/BookDTO';
+import {BookDTO} from 'src/types/Books/BookDTO';
 import {computed, ref} from 'vue';
 import AuthorService from 'src/services/AuthorService';
 import {AuthorDTO} from 'src/types/Users/AuthorDTO';
