@@ -27,38 +27,46 @@
         </div>
       </div>
 
-      <div class="row justify-center q-mt-xl">
+      <div v-if="bookReviews.length >= 1">
+        <div class="row justify-center q-mt-xl">
           <p class="text-semi-bold" style="font-size: 1.7em"> Reviews: </p>
-      </div>
+        </div>
 
-      <div class="row justify-center">
-        <div class="row justify-start q-gutter-md" style="max-width: 1000px">
-          <div class="q-px-xl" v-for="(review) in bookReviews" :key="review">
-            <BookReview :bookReview="review"/>
+        <div class="row justify-center">
+          <div class="row justify-start q-gutter-md" style="max-width: 1000px">
+            <div class="q-px-xl" v-for="(review) in bookReviews" :key="review">
+              <BookReview :bookReview="review"/>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="row justify-center q-mt-xl">
-        <p class="text-semi-bold q-mt-lg" style="font-size: 1.7em"> Write your own review: </p>
+      <div class="row justify-center q-mt-xl" v-if="bookReviews.length <= 0">
+        <h5> This book doesn't have any reviews yet! </h5>
       </div>
 
-      <div class="row justify-center">
-        <q-editor v-model="userReview.content" min-height="5rem" />
-      </div>
+      <div v-if="authStore.user.role === 'Customer'">
+        <div class="row justify-center q-mt-xl">
+          <p class="text-semi-bold q-mt-lg" style="font-size: 1.7em"> Write your own review: </p>
+        </div>
 
-      <div class="row justify-center q-mt-sm">
-        <p class="text-semi-bold q-mt-lg" style="font-size: 1.4em"> Your rating: </p>
-      </div>
-      <div class="row justify-center">
-        <q-rating
-          v-model="userReview.rating"
-          size="2em"
-        />
-      </div>
+        <div class="row justify-center">
+          <q-editor v-model="userReview.content" min-height="5rem" />
+        </div>
 
-      <div class="row justify-center q-mt-xl">
-        <q-btn color="primary" style="width: 200px" @click="submitReview"> Submit review </q-btn>
+        <div class="row justify-center q-mt-sm">
+          <p class="text-semi-bold q-mt-lg" style="font-size: 1.4em"> Your rating: </p>
+        </div>
+        <div class="row justify-center">
+          <q-rating
+            v-model="userReview.rating"
+            size="2em"
+          />
+        </div>
+
+        <div class="row justify-center q-mt-xl">
+          <q-btn color="primary" style="width: 200px" @click="submitReview"> Submit review </q-btn>
+        </div>
       </div>
 
     </div>

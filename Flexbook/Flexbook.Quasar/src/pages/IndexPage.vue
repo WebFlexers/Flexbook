@@ -15,6 +15,12 @@
         <h3> Available Authors </h3>
       </div>
 
+      <div v-if="authors.length" class="row justify-start q-pa-lg q-gutter-lg">
+        <AuthorMini v-for="(authorElement) in authors" :key="authorElement" :author="authorElement"
+                     class="col-md bg-primary-light">
+        </AuthorMini>
+      </div>
+
       <q-page-scroller position="bottom-right" :scroll-offset="150" :offset="[18, 18]">
         <q-btn fab icon="keyboard_arrow_up" color="secondary" />
       </q-page-scroller>
@@ -28,6 +34,9 @@ import { useSearchStore } from 'src/stores/search';
 import BookService from 'src/services/BookService';
 import {BookDTO} from 'src/types/BookDTO';
 import {computed, ref} from 'vue';
+import AuthorService from 'src/services/AuthorService';
+import {AuthorDTO} from 'src/types/Users/AuthorDTO';
+import AuthorMini from 'components/AuthorMini.vue';
 
 let books = ref<Array<BookDTO>>([])
 
@@ -82,6 +91,15 @@ const filteredBooks = computed(() => {
   else {
     return books.value
   }
+})
+
+let authors = ref<Array<AuthorDTO>>([])
+// Get books from api
+const authorService = new AuthorService()
+authorService.getAllAuthors().then(allAuthors => {
+  authors.value = allAuthors
+}).catch((error) => {
+  console.log(error)
 })
 
 </script>

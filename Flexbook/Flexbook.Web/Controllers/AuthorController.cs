@@ -26,6 +26,20 @@ public class AuthorController : ControllerBase
         return Ok(author);
     }
 
+    [HttpGet("get_by_name/{fullname}")]
+    public IActionResult GetAuthorByName(string fullname)
+    {
+        var author = _authorService.GetAuthorByName(fullname);
+        return Ok(author);
+    }
+    
+    [HttpGet("get_by_email/{email}")]
+    public IActionResult GetAuthorByEmail(string email)
+    {
+        var author = _authorService.GetAuthorByEmail(email);
+        return Ok(author);
+    }
+
     [HttpGet("get_all")]
     public IActionResult GetAllAuthors()
     {

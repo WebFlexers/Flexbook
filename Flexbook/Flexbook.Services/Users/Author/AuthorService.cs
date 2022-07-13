@@ -21,4 +21,19 @@ public class AuthorService : CrudService<Author>, IAuthorService
             .Include(author => author.Address)
             .ToList();
     }
+
+    public Author? GetAuthorByEmail(string email)
+    {
+        return _dbContext.Set<Author>()
+            .Include(author => author.Address)
+            .FirstOrDefault(author => author.Email == email);
+    }
+
+    public Author? GetAuthorByName(string name)
+    {
+        var formattedString = name.Replace("-", " ");
+        return _dbContext.Set<Author>()
+            .Include(author => author.Address)
+            .FirstOrDefault(author => author.Fullname.ToLower() == formattedString.ToLower());
+    }
 }
