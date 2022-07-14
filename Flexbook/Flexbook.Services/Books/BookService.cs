@@ -22,6 +22,14 @@ public class BookService : CrudService<Book>, IBookService
             .ToList();
     }
 
+    public List<Book> GetAllByAuthor(int authorId)
+    {
+        return _dbContext.Set<Book>()
+            .Where(book => book.Author.Id == authorId)
+            .Include(book => book.Author)
+            .ToList();
+    }
+
     public Book? GetByTitle(string title)
     {
         var formattedString = title.Replace("-", " ");

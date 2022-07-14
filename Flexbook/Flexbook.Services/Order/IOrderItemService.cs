@@ -9,6 +9,6 @@ namespace Flexbook.Services.Order
 {
     public interface IOrderItemService : ICrudService<OrderItem>
     {
-
+        public List<OrderItem> GetAllOrderItems();
     }
 }

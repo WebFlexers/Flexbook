@@ -7,23 +7,20 @@ namespace Flexbook.Web.Controllers;
 [ApiController]
 public class StatisticsController : Controller
 {
-    private readonly ILogger<CustomerController> _logger;
+    private readonly ILogger<StatisticsController> _logger;
 
     private IStatisticsService _statisticsService;
 
-    public StatisticsController(ILogger<CustomerController> logger, IStatisticsService statisticsService)
+    public StatisticsController(ILogger<StatisticsController> logger, IStatisticsService statisticsService)
     {
         _logger = logger;
-
         _statisticsService = statisticsService;
     }
 
-    [HttpGet("get_all_orders")]
-    public IActionResult GetAllOrdersByAuthor(int author_id)
+    [HttpGet("get_book_sales/{authorId}")]
+    public IActionResult GetBooksSalesByAuthorId(int authorId)
     {
-        var tempOrders = _statisticsService.GetAllOrdersByAuthorId(author_id);
-
-        return Ok(tempOrders);
+        var booksSales = _statisticsService.GetBooksSalesOfAuthor(authorId);
+        return Ok(booksSales);
     }
-
 }

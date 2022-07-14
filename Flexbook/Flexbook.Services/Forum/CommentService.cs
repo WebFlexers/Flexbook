@@ -17,15 +17,15 @@ public class CommentService : CrudService<Comment>, ICommentService
             .FirstOrDefault(comment => comment.Id == id);
     }
 
-    public IEnumerable<Comment> GetAllCommentsByAuthor(int author_id)
+    public IEnumerable<Comment> GetAllCommentsByAuthor(int authorId)
     {
-        return _dbContext.Set<Comment>().Where(comment => comment.AuthorHost.Id == author_id)
+        return _dbContext.Set<Comment>().Where(comment => comment.AuthorHost.Id == authorId)
             .Include(comment => comment.User).Include(comment => comment.AuthorHost).ToList();
     }
 
-    public void AddLikeToComment(int comment_id)
+    public void AddLikeToComment(int commentId)
     {
-        var result = _dbContext.Set<Comment>().SingleOrDefault(c => c.Id == comment_id);
+        var result = _dbContext.Set<Comment>().SingleOrDefault(c => c.Id == commentId);
         if (result != null)
         {
             result.LikesCount++;

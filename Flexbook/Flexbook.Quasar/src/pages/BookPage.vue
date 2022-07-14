@@ -86,6 +86,8 @@ import {BookReviewDTO} from 'src/types/Books/BookReviewDTO';
 import BookReviewService from 'src/services/BookReviewService';
 import BookReview from 'components/BookReview.vue';
 import {AddBookReviewDTO} from 'src/types/Books/AddBookReviewDTO';
+import {BookSalesDTO} from 'src/types/BookSalesDTO';
+import {StatisticsService} from 'src/services/StatisticsService';
 
 const $q = useQuasar()
 const book = ref({} as BookDTO)
@@ -223,6 +225,7 @@ function addToCart() {
     })
   }
 }
+
 </script>
 
 <style lang="scss">

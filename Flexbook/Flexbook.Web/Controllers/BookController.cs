@@ -37,6 +37,13 @@ public class BookController : ControllerBase
         return Ok(books);
     }
 
+    [HttpGet("get_all_by_author/{authorId}")]
+    public IActionResult GetAllByAuthor(int authorId)
+    {
+        var books = _bookService.GetAllByAuthor(authorId);
+        return Ok(books);
+    }
+
     [HttpGet("get_by_title/{title}")]
     public IActionResult GetByTitle(string title)
     {
@@ -50,7 +57,7 @@ public class BookController : ControllerBase
         var books = _bookService.GetByGenre(genre);
         return Ok(books);
     }
-    
+
     [HttpPost("add_book")]
     public IActionResult CreateBook([FromBody] BookRequest bookRequest)
     {

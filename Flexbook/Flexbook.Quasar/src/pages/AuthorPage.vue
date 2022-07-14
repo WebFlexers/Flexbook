@@ -46,6 +46,20 @@
         <div class="row justify-center">
           <q-btn color="primary q-mt-md" @click="submitComment"> Submit </q-btn>
         </div>
+
+
+        <!-- Statistics: only show to the author if he is logged in -->
+        <div v-if="authStore.user.id === author.id" class="q-mt-xl">
+          <div class="row justify-center">
+            <p class="text-semi-bold q-mt-lg" style="font-size: 1.7em"> Book statistics: </p>
+          </div>
+
+          <div class="row justify-center q-mt-sm q-gutter-md">
+            <div v-for="(authorBook) in authorBooks" :key="authorBook">
+              <BookInAuthor :book="authorBook" :times-bought="booksSales[authorBook.id]"/>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -63,6 +77,11 @@ import ChatMessage from 'components/ChatMessage.vue';
 import {CreateCommentDTO} from 'src/types/Forum/CreateCommentDTO';
 import {useAuthStore} from 'stores/auth';
 import {useQuasar} from 'quasar';
+import {BookSalesDTO} from 'src/types/BookSalesDTO';
+import {StatisticsService} from 'src/services/StatisticsService';
+import BookInAuthor from 'components/BookInAuthor.vue';
+import {BookDTO} from 'src/types/Books/BookDTO';
+import BookService from 'src/services/BookService';
 
 const $q = useQuasar()
 
@@ -161,6 +180,26 @@ function submitComment() {
     })
   })
 }
+
+// Books
+const authorBooks = ref<BookDTO[]>([])
+const bookService = new BookService()
+
+bookService.getBooksByAuthor(author.value.id).then((result) => {
+  authorBooks.value = result
+}).catch((error) => {
+  console.error(error)
+})
+
+// Statistics
+const booksSales = ref<BookSalesDTO>({} as BookSalesDTO)
+const statisticsService = new StatisticsService()
+
+statisticsService.getBooksSales(author.value.id).then((result) => {
+  booksSales.value = result
+}).catch((error) => {
+  console.error(error)
+})
 
 </script>
 
