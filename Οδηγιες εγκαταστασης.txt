@@ -1,0 +1,33 @@
+Προαπαιτουμενα
+--------
+Βημα 1: https://nodejs.org/en/download/ για το nodejs
+βημα 2: cd στο φακελο Flexbook.Quasar -> npm install
+βημα 3: npm install --global yarn
+βήμα 4: απαιτείται το VS2022
+
+ρυθμιση postgres server
+αρχικο βημα: ανοιγμα pgadmin
+βημα 1: psql binarys https://stackoverflow.com/questions/69544583/please-configure-the-postgresql-binary-path-in-the-preferences-dialog
+βημα 2: psql query tool στην postgres13
+βημα 3: σε query tool εκτελούμε τις παρακατω εντολες:
+ 	create user flexbook with encrypted password 'knowledge';
+	CREATE DATABASE "flexbook.dev";
+	GRANT ALL PRIVILEGES ON DATABASE "flexbook.dev" TO flexbook;
+βημα4: exit pgadmin
+
+
+βηματα για τελικη ρυθμιση
+βημα1: ανοιγω το solution της εφαρμογης Flexbook.sln
+βημα2: Package Manager Console -> Update-Database
+βημα3: ανοιγμα pgadmin -- > DELETE from "__EFMigrationsHistory" στο query tool της βασης flexbook.dev
+βημα4: εισαγωγη δεδομενων απο sample_files -> flexbookDB (query tool/ query command) 
+(ανοιγουμε με notapad και κανουμε αντιγραφη των queries στο query tool)
+
+βηματα για ανοιγμα back-end server
+βημα1: cd στο φακελο flexbook.web
+βημα2: dotnet run
+ή ανοιγεις το solution και το τρεχει απευθειας απο το visual studio (ανοιγει το swagger)
+
+βηματα για ανοιγμα front-end server
+βημα1: cd στον φακελο flexbook.quasar
+βημα2:	 yarn quasar dev
