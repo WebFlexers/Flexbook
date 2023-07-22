@@ -23,8 +23,7 @@
 βηματα για τελικη ρυθμιση
 βημα1: ανοιγω το solution της εφαρμογης Flexbook.sln
 βημα2: Package Manager Console -> Update-Database
-βημα3: ανοιγμα pgadmin -- > DELETE from "__EFMigrationsHistory" στο query tool της βασης flexbook.dev
-βημα4: εισαγωγη δεδομενων απο sample_files -> flexbookDB (query tool/ query command) 
+βημα3: εισαγωγη δεδομενων απο sample_files -> flexbookDB (query tool/ query command) 
 (ανοιγουμε με notapad και κανουμε αντιγραφη των queries στο query tool)
 
 βηματα για ανοιγμα back-end server
