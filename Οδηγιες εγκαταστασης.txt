@@ -13,6 +13,10 @@
  	create user flexbook with encrypted password 'knowledge';
 	CREATE DATABASE "flexbook.dev";
 	GRANT ALL PRIVILEGES ON DATABASE "flexbook.dev" TO flexbook;
+	
+	Μετάβαση σε query tool της νέας βάσης (flexbook.dev)
+	
+	GRANT ALL PRIVILEGES ON SCHEMA public TO flexbook;
 βημα4: exit pgadmin
 
 
@@ -30,4 +34,4 @@
 
 βηματα για ανοιγμα front-end server
 βημα1: cd στον φακελο flexbook.quasar
-βημα2:	 yarn quasar dev
+βημα2: yarn quasar dev
