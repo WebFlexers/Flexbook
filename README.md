@@ -1,4 +1,4 @@
-# Bookstore-Web-Application
+# Flexbook
 Bookstore Web Application made with ASP.NET Core for the backend and Quasar + Vue.js for the front end.
 
 Full Documentation: https://github.com/WebFlexers/Bookstore-Web-Application/blob/main/Presentation.pdf
