@@ -40,7 +40,7 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<FlexbookDbContext>(opts =>
 {
     opts.EnableDetailedErrors();
-    opts.UseNpgsql(builder.Configuration.GetConnectionString("flexbook.dev"));
+    opts.UseNpgsql(builder.Configuration.GetConnectionString("flexbook"));
 });
 
 // Inject services
